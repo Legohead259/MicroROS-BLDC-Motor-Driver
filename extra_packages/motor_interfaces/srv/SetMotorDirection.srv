@@ -1,0 +1,3 @@
+bool direction # FALSE - counter-clockwise; TRUE - clockwise
+---
+bool success

@@ -15,13 +15,15 @@
 
 
 TMAG5273 sensor;
-uint8_t i2cAddress = TMAG5273_I2C_ADDRESS_INITIAL;
+bool angleSensorInitialized = false;
+bool currentSensorInitialized = false;
 
 void initTMAG5273Callback(){
-    if(!sensor.begin(0x22)) { 
+    if(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) { 
         while(1); // Stop further code execution
     }
     sensor.setAngleEn(0x01);
+    angleSensorInitialized = true;
 }
 
 float readTMAG5273Callback(){
@@ -31,12 +33,8 @@ float readTMAG5273Callback(){
 GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callback);
 BLDCMotor motor = BLDCMotor(7);
 BLDCDriver6PWM driver = BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense);
-float targetVelocity = 0.0;
+float target = 0.0;
 bool direction = true; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
-Commander command = Commander(Serial);
-
-void doTarget(char* cmd) { command.scalar(&targetVelocity, cmd); }
-void doLimit(char* cmd) { command.scalar(&motor.voltage_limit, cmd); }
 
 void focBLDCSetup() {
     Wire.begin();
@@ -53,9 +51,6 @@ void focBLDCSetup() {
     motor.voltage_limit = 4;
     motor.controller = MotionControlType::velocity;
     motor.init();
-
-    command.add('T', doTarget, "target velocity");
-    command.add('L', doLimit, "voltage limit");
 }
 
 #endif // FOC_BLDC_H

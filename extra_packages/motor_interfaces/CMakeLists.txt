@@ -33,9 +33,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MotorStatus.msg"
   "srv/SetControllerMode.srv"
   "srv/SetMotorDirection.srv"
-  "srv/SetTargetPosition.srv"
-  "srv/SetTargetVelocity.srv"
-  "srv/SetTargetTorque.srv"
+  "srv/SetTarget.srv"
 )
 
 ament_package()

@@ -30,3 +30,20 @@ This will compile the custom package automatically.
 
 ### Custom Services
 [TODO]
+
+### MicroROS Meta Parameters
+To conserve memory, MicroROS artificially limits number of nodes, services, publishers, etc. that can be deployed by a single application.
+These parameters are defined in `micro_ros_platformio/metas/colcon.meta`.
+The parameters and their defaults are explained in the table below:
+
+| Parameter                     | Usage                                                         | Default
+|-------------------------------|---------------------------------------------------------------|----------
+| DRMW_UXRCE_MAX_NODES          | Limits the number of nodes                                    | 1
+| DRMW_UXRCE_MAX_PUBLISHERS     | Limits the number of topic publishers                         | 10
+| DRMW_UXRCE_MAX_SUBSCRIPTIONS  | Limits the number of topic subscriptions                      | 5
+| DRMW_UXRCE_MAX_SERVICES       | Limits the number of available services                       | 1
+| DRMW_UXRCE_MAX_CLIENTS        | Limits the number of clients                                  | 1
+| DRMW_UXRCE_MAX_HISTORY        | [TODO]                                                        | 4
+| DRMW_UXRCE_TRANSPORT          | Lists the DDS transport technique (custom, serial, UDP, etc.) | custom
+
+By changing these parameters, the MicroROS script can be expanded to handle complex server/client or pub/sub applications.

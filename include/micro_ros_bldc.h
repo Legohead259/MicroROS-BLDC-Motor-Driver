@@ -16,16 +16,14 @@
 #include "motor_interfaces/action/home.h"
 
 // Get the custom messages from the `motor_interfaces` package
+#include "motor_interfaces/msg/angular_acceleration.h"
 #include "motor_interfaces/msg/angular_velocity.h"
-#include "motor_interfaces/msg/encoder_angle.h"
-#include "motor_interfaces/msg/encoder_position.h"
-#include "motor_interfaces/msg/motor_direction.h"
+#include "motor_interfaces/msg/angular_position.h"
+#include "motor_interfaces/msg/motor_status.h"
 
 // Get the custom services from the `motor_interfaces` package
 #include "motor_interfaces/srv/set_motor_direction.h"
-#include "motor_interfaces/srv/set_target_velocity.h"
-// #include "tutorial_interfaces/srv/add_three_ints.h"
-
+#include "motor_interfaces/srv/set_target.h"
 
 // Define macros for checking function success
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ while(1); }} // Blocking
@@ -38,37 +36,42 @@ using Home_Goal = motor_interfaces__action__Home_Goal;
 using Home_Feedback = motor_interfaces__action__Home_Feedback;
 using Home_Result = motor_interfaces__action__Home_Result;
 
+using AngularAccelerationMsg = motor_interfaces__msg__AngularAcceleration;
 using AngularVelocityMsg = motor_interfaces__msg__AngularVelocity;
-using EncoderAngleMsg = motor_interfaces__msg__EncoderAngle;
-using EncoderPositionMsg = motor_interfaces__msg__EncoderPosition;
-using MotorDirectionMsg = motor_interfaces__msg__MotorDirection;
+using AngularPositionMsg = motor_interfaces__msg__AngularPosition;
+using MotorStatusMsg = motor_interfaces__msg__MotorStatus;
 
+using SetControllerMode_Request = motor_interfaces__srv__SetMotorDirection_Request;
+using SetControllerMode_Response = motor_interfaces__srv__SetMotorDirection_Response;
 using SetMotorDirection_Request = motor_interfaces__srv__SetMotorDirection_Request;
 using SetMotorDirection_Response = motor_interfaces__srv__SetMotorDirection_Response;
-using SetTargetVelocity_Request = motor_interfaces__srv__SetTargetVelocity_Request;
-using SetTargetVelocity_Response = motor_interfaces__srv__SetTargetVelocity_Response;
+using SetTarget_Request = motor_interfaces__srv__SetTarget_Request;
+using SetTarget_Response = motor_interfaces__srv__SetTarget_Response;
 
 // Instantiate message objects
 Home_Goal homeGoal;
 Home_Feedback homefeedback;
 Home_Result homeResult;
 
+rcl_publisher_t angularAccelerationPublisher;
 rcl_publisher_t angularVelocityPublisher;
 rcl_publisher_t angularPositionPublisher;
 rcl_publisher_t motorDirectionPublisher;
+rcl_timer_t angularAccelerationTimer;
 rcl_timer_t angularVelocityTimer;
 rcl_timer_t angularPositionTimer;
 rcl_timer_t motorDirectionTimer;
+AngularAccelerationMsg angularAccelerationMsg;
 AngularVelocityMsg angularVelocityMsg;
-EncoderAngleMsg angularPositionMsg;
-MotorDirectionMsg motorDirectionMsg;
+AngularPositionMsg angularPositionMsg;
+MotorStatusMsg motorDirectionMsg;
 
 rcl_service_t setMotorDirectionService;
 rcl_service_t setTargetVelocityService;
 SetMotorDirection_Request setMotorDirectionRequest;
 SetMotorDirection_Response setMotorDirectionResponse;
-SetTargetVelocity_Request setTargetVelocityRequest;
-SetTargetVelocity_Response setTargetVelocityResponse;
+SetTarget_Request setTargetVelocityRequest;
+SetTarget_Response setTargetVelocityResponse;
 
 // Instantiate ROS2 base objects
 rcl_allocator_t allocator;
@@ -108,18 +111,18 @@ void setMotorDirectionCallback(const void* req, void* res){
     targetVelocity = !direction ? -targetVelocity : targetVelocity;
 
     // Send response back to client
-    res_in->success = true;
+    res_in->result = true;
 }
 
 void setTargetVelocityCallback(const void* req, void* res) {
-    SetTargetVelocity_Request* req_in = (SetTargetVelocity_Request*) req;
-    SetTargetVelocity_Response* res_in = (SetTargetVelocity_Response*) res;
+    SetTarget_Request* req_in = (SetTarget_Request*) req;
+    SetTarget_Response* res_in = (SetTarget_Response*) res;
 
     // Set target velocity base don request value
     targetVelocity = !direction ? -req_in->target : req_in->target;
 
     // Send response back to client
-    res_in->success = true;
+    res_in->result = true;
 }
 
 
@@ -140,7 +143,7 @@ void angularPositionCallback(rcl_timer_t * timer, int64_t last_call_time) {
     if (timer != NULL) {
         RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularPositionMsg, NULL));
         angularPositionMsg.timestamp = millis();
-        angularPositionMsg.angle = sensor.getAngleEn() != 0 ? sensor.getAngleResult() : -999;
+        angularPositionMsg.angular_position = sensor.getAngleEn() != 0 ? sensor.getAngleResult() : -999;
     }
 }
 
@@ -167,7 +170,7 @@ void microROSNodeSetup() {
     RCCHECK(rclc_publisher_init_default(
         &angularPositionPublisher,
         &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(motor_interfaces, msg, EncoderAngle),
+        ROSIDL_GET_MSG_TYPE_SUPPORT(motor_interfaces, msg, AngularPosition),
         "/angular_position"));
 
     // Initialize servers
@@ -180,8 +183,8 @@ void microROSNodeSetup() {
     RCCHECK(rclc_service_init_default(
         &setTargetVelocityService, 
         &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTargetVelocity), 
-        "/set_target_velocity"));
+        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTarget), 
+        "/set_motor_target"));
 
     // Initialize timers
     RCCHECK(rclc_timer_init_default(

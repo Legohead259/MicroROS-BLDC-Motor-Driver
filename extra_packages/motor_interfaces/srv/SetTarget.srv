@@ -1,0 +1,30 @@
+# File: motor_interfaces/srv/SetTarget.srv
+#
+# motor_interfaces: ROS 2 package containing custom messages, services and actions for the control of a BLDC motor using SimpleFOC and MicroROS
+# SetTarget.srv: Custom service definition for changing the target used by the motor and controller, depending on the mode
+#
+# Description:
+# This service defines the interface for a request-response interaction for changing the target value of the controller and maintaining it.
+# Note that the implementation of the target will change depending on the controller mode.
+# See the below table for details.
+# The service will respond with a code described below according to the system state and effect.
+#
+# Request:
+# float32 target        The target value
+#
+# Response:
+# bool result          Result of the operation. TRUE - success, FALSE - failure
+#
+# Mode  | Name                   | Type     | Unit      | Limits
+# ------|------------------------|----------|-----------|----------
+#   0   | Position (closed loop) | Position | Rad       | [0, 2pi)
+#   1   | Velocity (closed loop) | Velocity | Rad/sec   | 
+#   3   | Torque (voltage)       | Voltage  | Volts     | 
+#   4   | Torque (DC current)    | Current  | Amps      |
+#   5   | Torque (FOC current)   | Current  | Amps      |
+#   6   | Position (open loop)   | Position | Rad       | [0, 2pi)
+#   7   | Velocity (open loop)   | Velocity | Rad/sec   |
+
+float32 target
+---
+uint8 result

@@ -14,6 +14,7 @@
 void motorControlCallback(rcl_timer_t* timer, int64_t last_call_time) {
     RCLC_UNUSED(last_call_time);
     if (timer != NULL) {
+        motor.loopFOC();
         motor.move(target);
     }
 }
@@ -70,14 +71,14 @@ void microROSNodeSetup() {
         RCL_MS_TO_NS(10),
         angularPositionCallback));
 
-    RCCHECK(rclc_timer_init_default(
-        &motorControlTimer,
-        &support,
-        RCL_MS_TO_NS(1),
-        motorControlCallback));
+    // RCCHECK(rclc_timer_init_default(
+    //     &motorControlTimer,
+    //     &support,
+    //     RCL_MS_TO_NS(1),
+    //     motorControlCallback));
 
     // Initialize an executor that will manage the execution of all the ROS entities (publishers, subscribers, services, timers)
-    RCCHECK(rclc_executor_init(&executor, &support.context, 4, &allocator));
+    RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
 
     // Add servers
     RCCHECK(rclc_executor_add_service(
@@ -103,7 +104,7 @@ void microROSNodeSetup() {
 
     // Add timers
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));
-    RCCHECK(rclc_executor_add_timer(&executor, &motorControlTimer));
+    // RCCHECK(rclc_executor_add_timer(&executor, &motorControlTimer));
 }
 
 #endif // micro_ros_bldc_h

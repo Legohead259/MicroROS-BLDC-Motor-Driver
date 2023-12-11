@@ -48,3 +48,27 @@ The parameters and their defaults are explained in the table below:
 | RMW_UXRCE_MAX_GUARD_CONDITION | Handles the number of guard conditions (timers) allowed       | 4
 
 By changing these parameters, the MicroROS script can be expanded to handle complex server/client or pub/sub applications.
+
+## Connecting to a ROS2 Host
+The MicroROS node can be connected to a ROS2 host through a MicroROS agent.
+The agent is a script and node within ROS2 that facilitates communication between the MicroROS instance and the rest of the DDS network.
+This appears as a transparent bridge between the nodes.
+The bridge can be over several different transport layers such as Serial, UDP, CAN-FD, and even custom implementations.
+See the [MicroROS transport docs](https://micro.ros.org/docs/tutorials/advanced/create_custom_transports/) for more details.
+
+To launch the script, source the local workspace from the root directory and run the script with:
+
+```
+source install/setup.bash
+ros2 run micro_ros_agent micro_ros_agent [transport_layer] [optional parameters]
+```
+
+### Example - Serial
+If the MicroROS instance is connected to the ROS2 host through a USB or Serial connection, the following command can be used to establish the agent bridge:
+
+```
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 -b 115200
+```
+
+This will connect to the MicroROS instance that is mounted to `/dev/ttyUSB0` with a baudrate of 115200 bits/sec.
+

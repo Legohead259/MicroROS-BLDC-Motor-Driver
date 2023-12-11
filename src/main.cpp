@@ -2,12 +2,8 @@
 #include "foc_bldc.h"
 
 void setup() {
-    focBLDCSetup();
-
     Serial.begin(115200);
-    Serial.println("Motor ready!");
-    Serial.println("Set target velocity [rad/s]");
-    _delay(1000);
+    focBLDCSetup();
     microROSNodeSetup();
 }
 

@@ -35,6 +35,14 @@ BLDCMotor motor = BLDCMotor(7);
 BLDCDriver6PWM driver = BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense);
 float target = 0.0;
 bool direction = true; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
+TaskHandle_t Task1;
+
+void controlMotorTask( void * parameter) {
+    for(;;) {
+        motor.loopFOC();
+        motor.move(target);
+    }
+}
 
 void focBLDCSetup() {
     Wire.begin();
@@ -51,6 +59,16 @@ void focBLDCSetup() {
     motor.voltage_limit = 4;
     motor.controller = MotionControlType::velocity;
     motor.init();
+    motor.initFOC();
+
+    xTaskCreatePinnedToCore(
+        controlMotorTask, /* Function to implement the task */
+        "Motor Control", /* Name of the task */
+        10000,  /* Stack size in words */
+        NULL,  /* Task input parameter */
+        0,  /* Priority of the task */
+        &Task1,  /* Task handle. */
+        0); /* Core where the task should run */
 }
 
 #endif // FOC_BLDC_H

@@ -28,9 +28,9 @@ void setControllerModeCallback(const void* req, void* res) {
     bool _isTorqueControl = _mode >= SetControlMode_ModeCodes::TORQUE_VOLTAGE && _mode <= SetControlMode_ModeCodes::TORQUE_FOC_CURRENT;
 
     // Check for motor failure mode
-    if (motor.motor_status != FOCMotorStatus::motor_error &&
-        motor.motor_status != FOCMotorStatus::motor_calib_failed &&
-        motor.motor_status != FOCMotorStatus::motor_init_failed) {
+    if (motor.motor_status == FOCMotorStatus::motor_error ||
+        motor.motor_status == FOCMotorStatus::motor_calib_failed ||
+        motor.motor_status == FOCMotorStatus::motor_init_failed) {
         
         res_in->result = SetControlMode_ResultCodes::FAILURE_FOC_ERROR;
         return;
@@ -86,7 +86,7 @@ void setMotorDirectionCallback(const void* req, void* res) {
     res_in->result = true;
 }
 
-void setTargetVelocityCallback(const void* req, void* res) {
+void setTargetCallback(const void* req, void* res) {
     SetTarget_Request* req_in = (SetTarget_Request*) req;
     SetTarget_Response* res_in = (SetTarget_Response*) res;
 

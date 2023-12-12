@@ -9,5 +9,7 @@ void setup() {
 
 void loop() {
     // Execute pending tasks in the executor. This will handle all ROS communications.
-    RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
+    // RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
+    motor.loopFOC();
+    motor.move(target);
 }

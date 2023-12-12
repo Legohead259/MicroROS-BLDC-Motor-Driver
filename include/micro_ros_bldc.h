@@ -11,11 +11,13 @@
 // =======================
 
 
-void motorControlCallback(rcl_timer_t* timer, int64_t last_call_time) {
-    RCLC_UNUSED(last_call_time);
-    if (timer != NULL) {
-        motor.loopFOC();
-        motor.move(target);
+TaskHandle_t MicroROSTask;
+
+void microROSTask( void * parameter) {
+    Serial.printf("Motor control on Core %d\r\n", xPortGetCoreID());
+    for(;;) {
+        // Execute pending tasks in the executor. This will handle all ROS communications.
+        RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
     }
 }
 
@@ -26,6 +28,15 @@ void motorControlCallback(rcl_timer_t* timer, int64_t last_call_time) {
 
 
 void microROSNodeSetup() {
+    xTaskCreatePinnedToCore(
+        microROSTask, /* Function to implement the task */
+        "microROS", /* Name of the task */
+        25000,  /* Stack size in words */
+        NULL,  /* Task input parameter */
+        0,  /* Priority of the task */
+        &MicroROSTask,  /* Task handle. */
+        0); /* Core where the task should run */
+
     set_microros_serial_transports(Serial); // Configure Micro-ROS library to use Arduino serial
     delay(2000); // Allow some time for everything to start properly
 
@@ -100,7 +111,7 @@ void microROSNodeSetup() {
         &setTargetVelocityService, 
         &setTargetVelocityRequest, 
         &setTargetVelocityResponse, 
-        setTargetVelocityCallback));
+        setTargetCallback));
 
     // Add timers
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));

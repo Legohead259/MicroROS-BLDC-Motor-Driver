@@ -57,23 +57,23 @@ void microROSNodeSetup() {
         "/angular_position"));
 
     // Initialize services
-    RCCHECK(rclc_service_init_default(
-        &setControllerModeService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-        "/set_controller_mode"));
+    // RCCHECK(rclc_service_init_default(
+    //     &setControllerModeService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
+    //     "/set_controller_mode"));
 
-    RCCHECK(rclc_service_init_default(
-        &setMotorDirectionService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetMotorDirection), 
-        "/set_motor_direction"));
+    // RCCHECK(rclc_service_init_default(
+    //     &setMotorDirectionService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetMotorDirection), 
+    //     "/set_motor_direction"));
 
-    RCCHECK(rclc_service_init_default(
-        &setTargetVelocityService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTarget), 
-        "/set_motor_target"));
+    // RCCHECK(rclc_service_init_default(
+    //     &setTargetVelocityService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTarget), 
+    //     "/set_motor_target"));
 
     // Initialize timers
     RCCHECK(rclc_timer_init_default(
@@ -81,12 +81,6 @@ void microROSNodeSetup() {
         &support,
         RCL_MS_TO_NS(10),
         angularPositionCallback));
-
-    // RCCHECK(rclc_timer_init_default(
-    //     &motorControlTimer,
-    //     &support,
-    //     RCL_MS_TO_NS(1),
-    //     motorControlCallback));
 
     // Initialize an executor that will manage the execution of all the ROS entities (publishers, subscribers, services, timers)
     RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
@@ -115,7 +109,6 @@ void microROSNodeSetup() {
 
     // Add timers
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));
-    // RCCHECK(rclc_executor_add_timer(&executor, &motorControlTimer));
 }
 
 #endif // micro_ros_bldc_h

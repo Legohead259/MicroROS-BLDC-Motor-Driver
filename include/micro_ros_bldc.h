@@ -4,6 +4,7 @@
 #include "micro_ros__actions.h"
 #include "micro_ros__pubsub.h"
 #include "micro_ros__services.h"
+#include "neopixel.h"
 
 
 // =======================
@@ -19,6 +20,10 @@ void microROSTask( void * parameter) {
         // Execute pending tasks in the executor. This will handle all ROS communications.
         RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
     }
+}
+
+void neopixelCallback(rcl_timer_t * timer, int64_t last_call_time) {
+    ledStateMachine.executeState();
 }
 
 
@@ -82,6 +87,12 @@ void microROSNodeSetup() {
         RCL_MS_TO_NS(10),
         angularPositionCallback));
 
+    RCCHECK(rclc_timer_init_default(
+        &neopixelTimer,
+        &support,
+        RCL_MS_TO_NS(10),
+        neopixelCallback));
+
     // Initialize an executor that will manage the execution of all the ROS entities (publishers, subscribers, services, timers)
     RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
 
@@ -109,6 +120,7 @@ void microROSNodeSetup() {
 
     // Add timers
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));
+    RCCHECK(rclc_executor_add_timer(&executor, &neopixelTimer));
 }
 
 #endif // micro_ros_bldc_h

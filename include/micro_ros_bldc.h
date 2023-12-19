@@ -14,7 +14,7 @@
 TaskHandle_t MicroROSTask;
 
 void microROSTask( void * parameter) {
-    Serial.printf("Motor control on Core %d\r\n", xPortGetCoreID());
+    Serial1.printf("MicroROS running on Core %d\r\n", xPortGetCoreID());
     for(;;) {
         // Execute pending tasks in the executor. This will handle all ROS communications.
         RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
@@ -86,26 +86,26 @@ void microROSNodeSetup() {
     RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
 
     // Add servers
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setControllerModeService, 
-        &setControllerModeRequest, 
-        &setControllerModeResponse, 
-        setControllerModeCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setControllerModeService, 
+    //     &setControllerModeRequest, 
+    //     &setControllerModeResponse, 
+    //     setControllerModeCallback));
 
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setMotorDirectionService, 
-        &setMotorDirectionRequest, 
-        &setMotorDirectionResponse, 
-        setMotorDirectionCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setMotorDirectionService, 
+    //     &setMotorDirectionRequest, 
+    //     &setMotorDirectionResponse, 
+    //     setMotorDirectionCallback));
     
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setTargetVelocityService, 
-        &setTargetVelocityRequest, 
-        &setTargetVelocityResponse, 
-        setTargetCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setTargetVelocityService, 
+    //     &setTargetVelocityRequest, 
+    //     &setTargetVelocityResponse, 
+    //     setTargetCallback));
 
     // Add timers
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));

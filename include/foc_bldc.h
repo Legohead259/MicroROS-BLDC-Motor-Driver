@@ -13,7 +13,6 @@
 #define wl33      33
 #define curSense  32
 
-
 TMAG5273 sensor;
 bool angleSensorInitialized = false;
 bool currentSensorInitialized = false;
@@ -33,12 +32,12 @@ float readTMAG5273Callback(){
 GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callback);
 BLDCMotor motor = BLDCMotor(7);
 BLDCDriver6PWM driver = BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense);
-float target = 5.0;
+float target = 0.0;
 bool direction = true; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
-TaskHandle_t Task1;
+TaskHandle_t focTask;
 
 void controlMotorTask( void * parameter) {
-    Serial.printf("Motor control on Core %d\r\n", xPortGetCoreID());
+    Serial1.printf("Motor control on Core %d\r\n", xPortGetCoreID());
     for(;;) {
         motor.loopFOC();
         motor.move(target);
@@ -46,18 +45,14 @@ void controlMotorTask( void * parameter) {
 }
 
 void focBLDCSetup() {
-    Wire.begin();
-    // use monitoring with serial 
-    Serial.begin(115200);
-
     // initialize magnetic sensor hardware
-    Serial.println("Initializing FOC sensor...");
+    Serial1.println("Initializing FOC sensor...");
     sensorFOC.init();
     // link the motor to the sensor
     motor.linkSensor(&sensorFOC);
 
     // driver config
-    Serial.println("Initializing driver...");
+    Serial1.println("Initializing driver...");
     driver.init();
     motor.linkDriver(&driver);
 
@@ -80,14 +75,14 @@ void focBLDCSetup() {
     // velocity low pass filtering
     // default 5ms - try different values to see what is the best. 
     // the lower the less filtered
-    motor.LPF_velocity.Tf = 0.01;
+    // motor.LPF_velocity.Tf = 0.01;
 
     // since the phase resistance is provided we set the current limit not voltage
     // default 0.2
     motor.current_limit = 1; // Amps
 
     // comment out if not needed
-    motor.useMonitoring(Serial);
+    motor.useMonitoring(Serial1);
 
     // initialize motor
     motor.init();
@@ -97,17 +92,14 @@ void focBLDCSetup() {
     Serial.println("Motor ready.");
     _delay(1000);
 
-    // xTaskCreatePinnedToCore(
-    //     controlMotorTask, /* Function to implement the task */
-    //     "Motor Control", /* Name of the task */
-    //     10000,  /* Stack size in words */
-    //     NULL,  /* Task input parameter */
-    //     0,  /* Priority of the task */
-    //     &Task1,  /* Task handle. */
-    //     0); /* Core where the task should run */
-
-    Serial.print("setup() running on core ");
-    Serial.println(xPortGetCoreID());
+    xTaskCreatePinnedToCore(
+        controlMotorTask, /* Function to implement the task */
+        "Motor Control", /* Name of the task */
+        10000,  /* Stack size in words */
+        NULL,  /* Task input parameter */
+        0,  /* Priority of the task */
+        &focTask,  /* Task handle. */
+        1); /* Core where the task should run */
 }
 
 #endif // FOC_BLDC_H

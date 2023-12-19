@@ -1,15 +1,18 @@
 #include "micro_ros_bldc.h"
 #include "foc_bldc.h"
 
+#define RX1_PIN 15
+#define TX1_PIN 12
+
 void setup() {
     Serial.begin(115200);
-    // focBLDCSetup();
+    Serial1.begin(115200, SERIAL_8N1, RX1_PIN, TX1_PIN);
+    Wire.begin();
+
+    focBLDCSetup();
     microROSNodeSetup();
 }
 
 void loop() {
-    // Execute pending tasks in the executor. This will handle all ROS communications.
-    // RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
-    // motor.loopFOC();
-    // motor.move(target);
+    
 }

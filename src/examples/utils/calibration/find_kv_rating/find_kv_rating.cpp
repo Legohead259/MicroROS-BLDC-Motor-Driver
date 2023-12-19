@@ -7,14 +7,45 @@
  * - To make this estimation more credible you can try increasing the target voltage (or decrease in some cases) 
  * - The KV rating should be relatively static number - it should not change considerably with the increase in the voltage
  */
-#include "foc_bldc.h"
+
+#include <SimpleFOC.h>
+#include <SparkFun_TMAG5273_Arduino_Library.h>
+#include <Wire.h>
+
+#define uh16      16
+#define ul17      17
+#define vh18      18
+#define wh19      19
+#define vl23      23
+#define wl33      33
+#define curSense  32
+
+TMAG5273 sensor;
+bool angleSensorInitialized = false;
+bool currentSensorInitialized = false;
+
+void initTMAG5273Callback(){
+    if(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) { 
+        while(1); // Stop further code execution
+    }
+    sensor.setAngleEn(0x01);
+    angleSensorInitialized = true;
+}
+
+float readTMAG5273Callback(){
+    return sensor.getAngleResult() / 180 * PI;
+}
+
+GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callback);
+BLDCMotor motor = BLDCMotor(7);
+BLDCDriver6PWM driver = BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense);
 
 // voltage set point variable
 float targetVoltage = 1;
 
 // instantiate the commander
-// Commander command = Commander(Serial);
-// void doTarget(char* cmd) { command.scalar(&targetVoltage, cmd); }
+Commander command = Commander(Serial);
+void doTarget(char* cmd) { command.scalar(&targetVoltage, cmd); }
 void calcKV(char* cmd) { 
     // calculate the KV
     Serial.println(motor.shaft_velocity/motor.target*30.0f/_PI);

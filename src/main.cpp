@@ -14,10 +14,5 @@ void setup() {
 }
 
 void loop() {
-    // Execute pending tasks in the executor. This will handle all ROS communications.
-    // RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
-    char _statsBuf[200];
-    vTaskGetRunTimeStats(_statsBuf);
-    Serial1.printf(_statsBuf);
-    delay(100);
+    
 }

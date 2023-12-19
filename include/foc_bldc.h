@@ -13,7 +13,6 @@
 #define wl33      33
 #define curSense  32
 
-
 TMAG5273 sensor;
 bool angleSensorInitialized = false;
 bool currentSensorInitialized = false;

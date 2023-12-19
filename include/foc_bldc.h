@@ -89,8 +89,7 @@ void focBLDCSetup() {
     // align sensor and start FOC
     motor.initFOC();
 
-    Serial.println("Motor ready.");
-    _delay(1000);
+    Serial1.println("Motor ready.");
 
     xTaskCreatePinnedToCore(
         controlMotorTask, /* Function to implement the task */

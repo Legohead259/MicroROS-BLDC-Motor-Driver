@@ -54,8 +54,7 @@ rcl_allocator_t allocator;
 rclc_support_t support;
 rcl_node_t node;
 rclc_executor_t executor;
-rcl_timer_t motorControlTimer;
-rcl_timer_t motorFOCTimer;
+rcl_timer_t neopixelTimer;
 
 // Define various parameters
 enum SetControlMode_ModeCodes : uint8_t {

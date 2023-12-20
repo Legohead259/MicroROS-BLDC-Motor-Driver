@@ -16,6 +16,13 @@
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ while(1); }} // Blocking
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ }} // Non-blocking
 
+// Define macros for executing a task every interval
+#define EXECUTE_EVERY_N_MS(MS, X)  do { \
+    static volatile int64_t init = -1; \
+    if (init == -1) { init = uxr_millis();} \
+    if (uxr_millis() - init > MS) { X; init = uxr_millis();} \
+} while (0)\
+
 // Get the custom actions form the `motor_interfaces` package
 #include "motor_interfaces/action/home.h"
 
@@ -50,13 +57,23 @@ using SetTarget_Request = motor_interfaces__srv__SetTarget_Request;
 using SetTarget_Response = motor_interfaces__srv__SetTarget_Response;
 
 // Instantiate ROS2 base objects
-rcl_allocator_t allocator;
-rclc_support_t support;
-rcl_node_t node;
-rclc_executor_t executor;
-rcl_timer_t neopixelTimer;
+extern rcl_allocator_t allocator;
+extern rclc_support_t support;
+extern rcl_node_t node;
+extern rclc_executor_t executor;
+extern rcl_timer_t neopixelTimer;
 
 // Define various parameters
+
+enum AgentState {
+    WAITING_AGENT,
+    AGENT_AVAILABLE,
+    AGENT_CONNECTED,
+    AGENT_DISCONNECTED
+};
+
+extern AgentState agentState;
+
 enum SetControlMode_ModeCodes : uint8_t {
     POSITION_CLOSED_LOOP    = 1,    // Maintain a target position (in rad), using the position sensor feedback
     VELOCITY_CLOSED_LOOP    = 2,    // Maintain a target velocity (in rad/sec), using the position sensor feedback

@@ -91,11 +91,11 @@ void setTargetCallback(const void* req, void* res) {
     SetTarget_Response* res_in = (SetTarget_Response*) res;
 
     // Set target velocity based on request value
-    target = direction ? req_in->target : -req_in->target;
+    target = req_in->target;
 
     // Update system state from target
     if (target != 0) {
-        systemState = direction ? PARTIAL_FORWARD : PARTIAL_REVERSE;
+        systemState = (target > 0) ? PARTIAL_FORWARD : PARTIAL_REVERSE;
     }
     // TODO: Set and check maxes (FULL_FORWARD, FULL_REVERSE)
     else {

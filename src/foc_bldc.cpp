@@ -37,9 +37,13 @@ GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callba
 
 
 BLDCMotor motor = BLDCMotor(7);
-BLDCDriver6PWM driver = BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense);
+BLDCDriver6PWM driver = BLDCDriver6PWM(
+                            PHASE_U_HIGH, PHASE_U_LOW, 
+                            PHASE_V_HIGH, PHASE_V_LOW, 
+                            PHASE_W_HIGH, PHASE_W_LOW, 
+                            DRIVER_ENABLE);
+
 float target = 0.0;
-bool direction = true; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
 TaskHandle_t focTask;
 
 void controlMotorTask( void * parameter) {

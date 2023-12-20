@@ -52,10 +52,3 @@ void LEDStateMachine::executeState() {
             break;
     }
 }
-
-void ledTaskCallback( void * parameter) {
-    Serial1.printf("LED tasking on Core %d\r\n", xPortGetCoreID());
-    for(;;) {
-        ledStateMachine.executeState();
-    }
-}

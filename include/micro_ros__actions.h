@@ -4,8 +4,8 @@
 #include "micro_ros__definitions.h"
 
 // Instantiate message objects
-Home_Goal homeGoal;
-Home_Feedback homefeedback;
-Home_Result homeResult;
+extern Home_Goal homeGoal;
+extern Home_Feedback homefeedback;
+extern Home_Result homeResult;
 
 #endif // MICRO_ROS_ACTIONS_H

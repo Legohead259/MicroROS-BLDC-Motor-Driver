@@ -19,20 +19,20 @@ bool createPublishers() {
 }
 
 bool createServices() {
-    RCCHECK(rclc_service_init_default(
-        &setControllerModeService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-        "/set_controller_mode"));
+    // RCCHECK(rclc_service_init_default(
+    //     &setControllerModeService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
+    //     "/set_controller_mode"));
+
+    // RCCHECK(rclc_service_init_default(
+    //     &setMotorDirectionService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetMotorDirection), 
+    //     "/set_motor_direction"));
 
     RCCHECK(rclc_service_init_default(
-        &setMotorDirectionService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetMotorDirection), 
-        "/set_motor_direction"));
-
-    RCCHECK(rclc_service_init_default(
-        &setTargetVelocityService, 
+        &setTargetService, 
         &node, 
         ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTarget), 
         "/set_motor_target"));
@@ -41,25 +41,25 @@ bool createServices() {
 }
 
 bool addServices() {
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setControllerModeService, 
-        &setControllerModeRequest, 
-        &setControllerModeResponse, 
-        setControllerModeCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setControllerModeService, 
+    //     &setControllerModeRequest, 
+    //     &setControllerModeResponse, 
+    //     setControllerModeCallback));
 
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setMotorDirectionService, 
-        &setMotorDirectionRequest, 
-        &setMotorDirectionResponse, 
-        setMotorDirectionCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setMotorDirectionService, 
+    //     &setMotorDirectionRequest, 
+    //     &setMotorDirectionResponse, 
+    //     setMotorDirectionCallback));
     
     RCCHECK(rclc_executor_add_service(
         &executor, 
-        &setTargetVelocityService, 
-        &setTargetVelocityRequest, 
-        &setTargetVelocityResponse, 
+        &setTargetService, 
+        &setTargetRequest, 
+        &setTargetResponse, 
         setTargetCallback));
 
     return true; 
@@ -71,12 +71,6 @@ bool createTimers() {
         &support,
         RCL_MS_TO_NS(10),
         angularPositionCallback));
-
-    // RCCHECK(rclc_timer_init_default(
-    //     &neopixelTimer,
-    //     &support,
-    //     RCL_MS_TO_NS(10),
-    //     neopixelTimerCallback));
 
     return true;
 }
@@ -100,12 +94,12 @@ bool createEntities() {
 
     // Create application components
     createPublishers();
-    // createServices();
+    createServices();
     createTimers();
 
     // Create executor
     RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
-    // addServices();
+    addServices();
     addTimers();
 
     return true;
@@ -118,7 +112,7 @@ void destroyEntities() {
     rcl_publisher_fini(&angularPositionPublisher, &node);
     rcl_timer_fini(&angularPositionTimer);
     rcl_timer_fini(&neopixelTimer);
-    // TODO: destroy services
+    rcl_service_fini(&setTargetService, &node);
     rclc_executor_fini(&executor);
     rcl_node_fini(&node);
     rclc_support_fini(&support);
@@ -138,8 +132,9 @@ void microROSTaskCallback(void* parameters) {
                 break;
 
             case AGENT_AVAILABLE:
-                agentState = (true == createEntities()) ? AGENT_CONNECTED : WAITING_AGENT;
-                if (agentState == WAITING_AGENT) {
+                agentState = createEntities() ? AGENT_CONNECTED : WAITING_AGENT; // Check if entities are properly created
+                systemState = agentState == AGENT_CONNECTED ? IDLE_WITH_CONNECTION : systemState; // Update system state
+                if (agentState == WAITING_AGENT) { // If entities are not properly created, destroy them
                     destroyEntities();
                 };
                 break;
@@ -148,7 +143,6 @@ void microROSTaskCallback(void* parameters) {
                 EXECUTE_EVERY_N_MS(200, agentState = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_CONNECTED : AGENT_DISCONNECTED;);
                 if (agentState == AGENT_CONNECTED) {
                     // Execute pending tasks in the executor. This will handle all ROS communications.
-                    systemState = IDLE_WITH_CONNECTION;
                     RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
                 }
                 break;
@@ -162,17 +156,7 @@ void microROSTaskCallback(void* parameters) {
             default:
                 break;
         }
-
-        if (agentState == AGENT_CONNECTED) {
-            digitalWrite(LED_PIN, 1);
-        } else {
-            digitalWrite(LED_PIN, 0);
-        }
     }
-}
-
-void neopixelTimerCallback(rcl_timer_t * timer, int64_t last_call_time) {
-    ledStateMachine.executeState();
 }
 
 void microROSNodeSetup() {

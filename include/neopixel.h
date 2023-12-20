@@ -32,7 +32,7 @@ public:
     void executeState();
 
 private:
-    void blink(uint32_t color);
+    void asyncBlink(uint32_t color, uint32_t interval=BLINK_PERIOD);
 
 };
 

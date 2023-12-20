@@ -16,39 +16,44 @@ void LEDStateMachine::begin() {
     strip.begin();
     strip.setBrightness(MAX_BRIGHTNESS);
     strip.show(); // Initialize all pixels to 'off'
-
-    // Set up LED task in RTOS
-    // xTaskCreatePinnedToCore(
-    //     ledTaskCallback, /* Function to implement the task */
-    //     "Diagnostic LED", /* Name of the task */
-    //     2500,  /* Stack size in words */
-    //     NULL,  /* Task input parameter */
-    //     1,  /* Priority of the task */
-    //     &ledTask,  /* Task handle. */
-    //     0); /* Core where the task should run */
 }
 
 void LEDStateMachine::executeState() {
     switch (currentState) {
         case IDLE_NO_CONNECTION:
-            if (_lastMillis+BLINK_PERIOD <= millis()) {
-                if (!isLEDOn) {
-                    strip.setPixelColor(0, YELLOW);
-                    strip.show();
-                    isLEDOn = true;
-                } else {
-                    strip.setPixelColor(0, LED_OFF);
-                    strip.show();
-                    isLEDOn = false;
-                }
-                _lastMillis = millis();
-            }
+            asyncBlink(YELLOW);
             break;
         
         case IDLE_WITH_CONNECTION:
+            strip.setPixelColor(0, YELLOW);
+            strip.show();
+            isLEDOn = true;
+            break;
+
+        case PARTIAL_FORWARD:
+            asyncBlink(GREEN, 125);
+            break;
+
+        case PARTIAL_REVERSE:
+            asyncBlink(RED, 125);
             break;
         
         default:
             break;
+    }
+}
+
+void LEDStateMachine::asyncBlink(uint32_t color, uint32_t interval) {
+    if (_lastMillis+interval <= millis()) { // Asynchronous blink
+        if (!isLEDOn) {
+            strip.setPixelColor(0, color);
+            strip.show();
+            isLEDOn = true;
+        } else {
+            strip.setPixelColor(0, LED_OFF);
+            strip.show();
+            isLEDOn = false;
+        }
+        _lastMillis = millis();
     }
 }

@@ -8,13 +8,13 @@
 
 rcl_service_t setControllerModeService;
 rcl_service_t setMotorDirectionService;
-rcl_service_t setTargetVelocityService;
+rcl_service_t setTargetService;
 SetControllerMode_Request setControllerModeRequest;
 SetControllerMode_Response setControllerModeResponse;
 SetMotorDirection_Request setMotorDirectionRequest;
 SetMotorDirection_Response setMotorDirectionResponse;
-SetTarget_Request setTargetVelocityRequest;
-SetTarget_Response setTargetVelocityResponse;
+SetTarget_Request setTargetRequest;
+SetTarget_Response setTargetResponse;
 
 
 // =========================
@@ -93,8 +93,17 @@ void setTargetCallback(const void* req, void* res) {
     SetTarget_Request* req_in = (SetTarget_Request*) req;
     SetTarget_Response* res_in = (SetTarget_Response*) res;
 
-    // Set target velocity base don request value
-    target = !direction ? -req_in->target : req_in->target;
+    // Set target velocity based on request value
+    target = direction ? req_in->target : -req_in->target;
+
+    // Update system state from target
+    if (target != 0) {
+        systemState = direction ? PARTIAL_FORWARD : PARTIAL_REVERSE;
+    }
+    // TODO: Set and check maxes (FULL_FORWARD, FULL_REVERSE)
+    else {
+        systemState = IDLE_WITH_CONNECTION;
+    }
 
     // Send response back to client
     res_in->result = true;

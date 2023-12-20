@@ -18,10 +18,5 @@ void setup() {
 }
 
 void loop() {
-    // Serial1.printf("LED tasking running on Core %d\r\n", xPortGetCoreID());
-    // Serial1.printf("Current state: %d\r\n", systemState);
-    // for(;;) {
-    //     ledStateMachine.executeState();
-    // }
-    // ledStateMachine.executeState();
+
 }

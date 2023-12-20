@@ -11,13 +11,13 @@
 
 extern rcl_service_t setControllerModeService;
 extern rcl_service_t setMotorDirectionService;
-extern rcl_service_t setTargetVelocityService;
+extern rcl_service_t setTargetService;
 extern SetControllerMode_Request setControllerModeRequest;
 extern SetControllerMode_Response setControllerModeResponse;
 extern SetMotorDirection_Request setMotorDirectionRequest;
 extern SetMotorDirection_Response setMotorDirectionResponse;
-extern SetTarget_Request setTargetVelocityRequest;
-extern SetTarget_Response setTargetVelocityResponse;
+extern SetTarget_Request setTargetRequest;
+extern SetTarget_Response setTargetResponse;
 
 
 // =========================

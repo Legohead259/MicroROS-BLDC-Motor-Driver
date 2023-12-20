@@ -19,17 +19,17 @@ bool createPublishers() {
 }
 
 bool createServices() {
-    // RCCHECK(rclc_service_init_default(
-    //     &setControllerModeService, 
-    //     &node, 
-    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-    //     "/set_controller_mode"));
+    RCCHECK(rclc_service_init_default(
+        &setControllerModeService, 
+        &node, 
+        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
+        "/set_controller_mode"));
 
-    // RCCHECK(rclc_service_init_default(
-    //     &setMotorDirectionService, 
-    //     &node, 
-    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetMotorDirection), 
-    //     "/set_motor_direction"));
+    RCCHECK(rclc_service_init_default(
+        &deviceIdentifyService, 
+        &node, 
+        ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
+        "/device_identify"));
 
     RCCHECK(rclc_service_init_default(
         &setTargetService, 
@@ -41,19 +41,19 @@ bool createServices() {
 }
 
 bool addServices() {
-    // RCCHECK(rclc_executor_add_service(
-    //     &executor, 
-    //     &setControllerModeService, 
-    //     &setControllerModeRequest, 
-    //     &setControllerModeResponse, 
-    //     setControllerModeCallback));
+    RCCHECK(rclc_executor_add_service(
+        &executor, 
+        &setControllerModeService, 
+        &setControllerModeRequest, 
+        &setControllerModeResponse, 
+        setControllerModeCallback));
 
-    // RCCHECK(rclc_executor_add_service(
-    //     &executor, 
-    //     &setMotorDirectionService, 
-    //     &setMotorDirectionRequest, 
-    //     &setMotorDirectionResponse, 
-    //     setMotorDirectionCallback));
+    RCCHECK(rclc_executor_add_service(
+        &executor, 
+        &deviceIdentifyService, 
+        &deviceIdentifyRequest, 
+        &deviceIdentifyResponse, 
+        deviceIdentifyCallback));
     
     RCCHECK(rclc_executor_add_service(
         &executor, 
@@ -77,7 +77,6 @@ bool createTimers() {
 
 bool addTimers() {
     RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));
-    // RCCHECK(rclc_executor_add_timer(&executor, &neopixelTimer));
 
     return true;
 }
@@ -133,7 +132,9 @@ void microROSTaskCallback(void* parameters) {
 
             case AGENT_AVAILABLE:
                 agentState = createEntities() ? AGENT_CONNECTED : WAITING_AGENT; // Check if entities are properly created
-                systemState = agentState == AGENT_CONNECTED ? IDLE_WITH_CONNECTION : systemState; // Update system state
+                if (agentState == AGENT_CONNECTED) { // Update system state
+                    changeSystemState(IDLE_WITH_CONNECTION);
+                }
                 if (agentState == WAITING_AGENT) { // If entities are not properly created, destroy them
                     destroyEntities();
                 };
@@ -150,7 +151,7 @@ void microROSTaskCallback(void* parameters) {
             case AGENT_DISCONNECTED:
                 destroyEntities();
                 agentState = WAITING_AGENT;
-                systemState = IDLE_NO_CONNECTION;
+                changeSystemState(IDLE_NO_CONNECTION);
                 break;
                 
             default:

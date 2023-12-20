@@ -7,12 +7,12 @@
 
 
 rcl_service_t setControllerModeService;
-rcl_service_t setMotorDirectionService;
+rcl_service_t deviceIdentifyService;
 rcl_service_t setTargetService;
 SetControllerMode_Request setControllerModeRequest;
 SetControllerMode_Response setControllerModeResponse;
-SetMotorDirection_Request setMotorDirectionRequest;
-SetMotorDirection_Response setMotorDirectionResponse;
+Trigger_Request deviceIdentifyRequest;
+Trigger_Response deviceIdentifyResponse;
 SetTarget_Request setTargetRequest;
 SetTarget_Response setTargetResponse;
 
@@ -76,17 +76,14 @@ void setControllerModeCallback(const void* req, void* res) {
     res_in->result = SetControlMode_ResultCodes::SUCCESS;
 }
 
-void setMotorDirectionCallback(const void* req, void* res) {
-    SetMotorDirection_Request* req_in = (SetMotorDirection_Request*) req;
-    SetMotorDirection_Response* res_in = (SetMotorDirection_Response*) res;
+void deviceIdentifyCallback(const void* req, void* res) {
+    Trigger_Request* req_in = (Trigger_Request*) req;
+    Trigger_Response* res_in = (Trigger_Response*) res;
 
-    // Set target velocity based on request direction
-    // FALSE - counter-clockwise; TRUE - clockwise
-    direction = req_in->direction;
-    target = !direction ? -target : target;
+    changeSystemState(DEVICE_IDENTIFY);
 
     // Send response back to client
-    res_in->result = true;
+    res_in->success = true;
 }
 
 void setTargetCallback(const void* req, void* res) {

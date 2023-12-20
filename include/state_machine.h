@@ -17,6 +17,7 @@ enum State {
 };
 
 extern State systemState;
+extern State previousSystemState;
 
 class StateMachine {
 public:
@@ -29,5 +30,10 @@ protected:
     // Variable to store the current state
     State &currentState;
 };
+
+static void changeSystemState(State newState) {
+    previousSystemState = systemState;
+    systemState = newState;
+}
 
 #endif // STATE_MACHINE_H

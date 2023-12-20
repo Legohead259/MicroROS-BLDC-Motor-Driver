@@ -35,7 +35,7 @@
 
 // Get the custom services from the `motor_interfaces` package
 #include "motor_interfaces/srv/set_controller_mode.h"
-#include "motor_interfaces/srv/set_motor_direction.h"
+#include "std_srvs/srv/trigger.h"
 #include "motor_interfaces/srv/set_target.h"
 
 // Interface type format {package}__{interface [action/srv/msg]}__{InterfaceName}_{Additional [Response/Request]}
@@ -52,8 +52,8 @@ using MotorStatusMsg = motor_interfaces__msg__MotorStatus;
 
 using SetControllerMode_Request = motor_interfaces__srv__SetControllerMode_Request;
 using SetControllerMode_Response = motor_interfaces__srv__SetControllerMode_Response;
-using SetMotorDirection_Request = motor_interfaces__srv__SetMotorDirection_Request;
-using SetMotorDirection_Response = motor_interfaces__srv__SetMotorDirection_Response;
+using Trigger_Request = std_srvs__srv__Trigger_Request;
+using Trigger_Response = std_srvs__srv__Trigger_Response;
 using SetTarget_Request = motor_interfaces__srv__SetTarget_Request;
 using SetTarget_Response = motor_interfaces__srv__SetTarget_Response;
 

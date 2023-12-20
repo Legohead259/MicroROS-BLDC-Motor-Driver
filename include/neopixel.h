@@ -8,10 +8,12 @@
 #define LED_PIN 2
 #define MAX_BRIGHTNESS 32
 #define BLINK_PERIOD 500 // ms
+#define IDENTIFY_TIMEOUT 5000 // ms
 
 extern Adafruit_NeoPixel strip;
 
 const uint32_t LED_OFF  = strip.Color(0, 0, 0);
+const uint32_t WHITE    = strip.Color(255, 255, 255);
 const uint32_t BLUE     = strip.Color(0, 0, 255);
 const uint32_t GREEN    = strip.Color(0, 255, 0);
 const uint32_t RED      = strip.Color(255, 0, 0);
@@ -32,8 +34,9 @@ public:
     void executeState();
 
 private:
+    void setLEDColor(uint32_t color);
     void asyncBlink(uint32_t color, uint32_t interval=BLINK_PERIOD);
-
+    void asyncAlternatingBlink(uint32_t firstColor, uint32_t secondColor, uint32_t interval=BLINK_PERIOD);
 };
 
 extern LEDStateMachine ledStateMachine;

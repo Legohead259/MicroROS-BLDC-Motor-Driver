@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "foc_bldc.h"
+#include "state_machine.h"
 
 // The micro_ros_platformio library provides the functions to communicate with ROS2
 #include <micro_ros_platformio.h>
@@ -16,6 +17,13 @@
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ while(1); }} // Blocking
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ }} // Non-blocking
 
+// Define macros for executing a task every interval
+#define EXECUTE_EVERY_N_MS(MS, X)  do { \
+    static volatile int64_t init = -1; \
+    if (init == -1) { init = uxr_millis();} \
+    if (uxr_millis() - init > MS) { X; init = uxr_millis();} \
+} while (0)\
+
 // Get the custom actions form the `motor_interfaces` package
 #include "motor_interfaces/action/home.h"
 
@@ -27,7 +35,7 @@
 
 // Get the custom services from the `motor_interfaces` package
 #include "motor_interfaces/srv/set_controller_mode.h"
-#include "motor_interfaces/srv/set_motor_direction.h"
+#include "std_srvs/srv/trigger.h"
 #include "motor_interfaces/srv/set_target.h"
 
 // Interface type format {package}__{interface [action/srv/msg]}__{InterfaceName}_{Additional [Response/Request]}
@@ -44,20 +52,29 @@ using MotorStatusMsg = motor_interfaces__msg__MotorStatus;
 
 using SetControllerMode_Request = motor_interfaces__srv__SetControllerMode_Request;
 using SetControllerMode_Response = motor_interfaces__srv__SetControllerMode_Response;
-using SetMotorDirection_Request = motor_interfaces__srv__SetMotorDirection_Request;
-using SetMotorDirection_Response = motor_interfaces__srv__SetMotorDirection_Response;
+using Trigger_Request = std_srvs__srv__Trigger_Request;
+using Trigger_Response = std_srvs__srv__Trigger_Response;
 using SetTarget_Request = motor_interfaces__srv__SetTarget_Request;
 using SetTarget_Response = motor_interfaces__srv__SetTarget_Response;
 
 // Instantiate ROS2 base objects
-rcl_allocator_t allocator;
-rclc_support_t support;
-rcl_node_t node;
-rclc_executor_t executor;
-rcl_timer_t motorControlTimer;
-rcl_timer_t motorFOCTimer;
+extern rcl_allocator_t allocator;
+extern rclc_support_t support;
+extern rcl_node_t node;
+extern rclc_executor_t executor;
+extern rcl_timer_t neopixelTimer;
 
 // Define various parameters
+
+enum AgentState {
+    WAITING_AGENT,
+    AGENT_AVAILABLE,
+    AGENT_CONNECTED,
+    AGENT_DISCONNECTED
+};
+
+extern AgentState agentState;
+
 enum SetControlMode_ModeCodes : uint8_t {
     POSITION_CLOSED_LOOP    = 1,    // Maintain a target position (in rad), using the position sensor feedback
     VELOCITY_CLOSED_LOOP    = 2,    // Maintain a target velocity (in rad/sec), using the position sensor feedback

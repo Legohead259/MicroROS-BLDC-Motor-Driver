@@ -3,32 +3,31 @@
 
 #include "micro_ros__definitions.h"
 
-rcl_publisher_t angularAccelerationPublisher;
-rcl_publisher_t angularVelocityPublisher;
-rcl_publisher_t angularPositionPublisher;
-rcl_publisher_t motorDirectionPublisher;
-rcl_timer_t angularAccelerationTimer;
-rcl_timer_t angularVelocityTimer;
-rcl_timer_t angularPositionTimer;
-rcl_timer_t motorDirectionTimer;
-AngularAccelerationMsg angularAccelerationMsg;
-AngularVelocityMsg angularVelocityMsg;
-AngularPositionMsg angularPositionMsg;
-MotorStatusMsg motorDirectionMsg;
-
 
 // =======================
-// === TIMER CALLBACKS ===
+// === PUB/SUB OBJECTS ===
 // =======================
 
 
-void angularPositionCallback(rcl_timer_t * timer, int64_t last_call_time) {
-    RCLC_UNUSED(last_call_time);
-    if (timer != NULL) {
-        RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularPositionMsg, NULL));
-        angularPositionMsg.timestamp = millis();
-        angularPositionMsg.angular_position = sensor.getAngleEn() != 0 ? sensor.getAngleResult() : -999;
-    }
-}
+extern rcl_publisher_t angularAccelerationPublisher;
+extern rcl_publisher_t angularVelocityPublisher;
+extern rcl_publisher_t angularPositionPublisher;
+extern rcl_publisher_t motorDirectionPublisher;
+extern rcl_timer_t angularAccelerationTimer;
+extern rcl_timer_t angularVelocityTimer;
+extern rcl_timer_t angularPositionTimer;
+extern rcl_timer_t motorDirectionTimer;
+extern AngularAccelerationMsg angularAccelerationMsg;
+extern AngularVelocityMsg angularVelocityMsg;
+extern AngularPositionMsg angularPositionMsg;
+extern MotorStatusMsg motorDirectionMsg;
+
+
+// ===========================
+// === PUBLISHER CALLBACKS ===
+// ===========================
+
+
+void angularPositionCallback(rcl_timer_t * timer, int64_t last_call_time);
 
 #endif // MICRO_ROS__PUBSUB_H

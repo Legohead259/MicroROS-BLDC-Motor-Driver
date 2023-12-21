@@ -10,7 +10,7 @@ void setup() {
     sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL);
 
     ledStateMachine.begin();
-    // focBLDCSetup();
+    focBLDCSetup();
     microROSNodeSetup();
 }
 

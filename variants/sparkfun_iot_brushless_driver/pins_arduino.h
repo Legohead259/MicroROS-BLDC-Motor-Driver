@@ -11,7 +11,7 @@
 #define digitalPinToInterrupt(p)    (((p)<40)?(p):-1)
 #define digitalPinHasPWM(p)         (p < 34)
 
-static const uint8_t LED_BUILTIN = 2;
+static const uint8_t LED_BUILTIN = 5;
 #define BUILTIN_LED  LED_BUILTIN // backward compatibility
 #define LED_BUILTIN LED_BUILTIN
 
@@ -70,5 +70,12 @@ static const uint8_t PHASE_V_LOW    = 23;
 static const uint8_t PHASE_W_LOW    = 33;
 static const uint8_t CURRENT_SENSE  = 32;
 static const uint8_t DRIVER_ENABLE  = 5;
+static const uint8_t DRIVER_DIAG    = 34;
+static const uint8_t PHASE_U_SENSE  = 35;
+static const uint8_t PHASE_V_SENSE  = 36;
+static const uint8_t PHASE_W_SENSE  = 39;
 
+// Peripheral Pins
+static const uint8_t NEOPIXEL_DATA  = 2;
+static const uint8_t TMAG5273_INT   = 4;
 #endif /* Pins_Arduino_h */

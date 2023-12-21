@@ -23,29 +23,13 @@
  */
 
 
-// #include "esp32-hal-gpio.h"
-// #include "pins_arduino.h"
+#include "esp32-hal-gpio.h"
+#include "pins_arduino.h"
 
-// extern "C" {
+extern "C" {
 
-// // Initialize variant/board, called before setup()
-// void initVariant(void) {
-//     // Initialize Input/Output pins
-//     pinMode(RIGHT_MOTOR_IN1, OUTPUT);
-//     pinMode(RIGHT_MOTOR_IN2, OUTPUT);
-//     pinMode(LEFT_MOTOR_IN1, OUTPUT);
-//     pinMode(LEFT_MOTOR_IN2, OUTPUT);
-//     pinMode(ARM_MOTOR_IN1, OUTPUT);
-//     pinMode(ARM_MOTOR_IN2, OUTPUT);
-//     // pinMode(USB_DETECT, INPUT);
-//     // pinMode(SD_CARD_DETECT, INPUT);
-//     // pinMode(BATTERY_ALERT, INPUT);
-//     // pinMode(LED_BUILTIN, OUTPUT);
-
-//     // // Set GPS reset pin to high initially
-//     // digitalWrite(GPS_RESET, HIGH);
+// Initialize variant/board, called before setup()
+void initVariant(void) {
     
-//     // Start I2C bus
-//     // Wire.begin(SDA, SCL);
-// }
-// }
+}
+}

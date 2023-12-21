@@ -5,7 +5,6 @@
 #include "state_machine.h"
 
 #define NUM_PIXELS 1
-#define LED_PIN 2
 #define MAX_BRIGHTNESS 32
 #define BLINK_PERIOD 500 // ms
 #define IDENTIFY_TIMEOUT 5000 // ms

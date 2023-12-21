@@ -3,7 +3,7 @@
 #define LED_DIN_PIN 2
 #define NUM_LEDS 1
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_PIXELS, LED_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_PIXELS, NEOPIXEL_DATA, NEO_GRB + NEO_KHZ800);
 
 LEDStateMachine ledStateMachine = LEDStateMachine(systemState);
 

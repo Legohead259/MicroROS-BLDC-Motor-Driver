@@ -78,4 +78,7 @@ static const uint8_t PHASE_W_SENSE  = 39;
 // Peripheral Pins
 static const uint8_t NEOPIXEL_DATA  = 2;
 static const uint8_t TMAG5273_INT   = 4;
+static const uint8_t RX1_PIN        = 15;
+static const uint8_t TX1_PIN        = 12;
+
 #endif /* Pins_Arduino_h */

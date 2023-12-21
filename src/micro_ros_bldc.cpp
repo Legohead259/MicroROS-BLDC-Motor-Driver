@@ -92,14 +92,14 @@ bool createEntities() {
     RCCHECK(rclc_node_init_default(&node, "bldc_node", "", &support));
 
     // Create application components
-    createPublishers();
+    // createPublishers();
     createServices();
     createTimers();
 
     // Create executor
     RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
     addServices();
-    addTimers();
+    // addTimers();
 
     return true;
 }

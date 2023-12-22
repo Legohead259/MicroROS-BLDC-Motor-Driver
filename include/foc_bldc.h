@@ -4,7 +4,9 @@
 #include <SimpleFOC.h>
 #include <SparkFun_TMAG5273_Arduino_Library.h>
 #include <Wire.h>
+#include <mutex>
 
+extern std::mutex sensorFOCMutex;
 extern TMAG5273 sensor;
 extern bool angleSensorInitialized;
 extern bool currentSensorInitialized;
@@ -17,7 +19,6 @@ extern GenericSensor sensorFOC;
 extern BLDCMotor motor;
 extern BLDCDriver6PWM driver;
 extern float target;
-extern bool direction; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
 extern TaskHandle_t focTask;
 
 void controlMotorTask( void * parameter);

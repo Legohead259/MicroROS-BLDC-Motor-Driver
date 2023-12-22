@@ -6,6 +6,7 @@
 // ===================
 
 
+std::mutex sensorFOCMutex;
 TMAG5273 sensor;
 bool angleSensorInitialized = false;
 bool currentSensorInitialized = false;
@@ -16,15 +17,11 @@ bool currentSensorInitialized = false;
 // ================================
 
 
-void initTMAG5273Callback(){
-    if(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) { 
-        while(1); // Stop further code execution
-    }
-    sensor.setAngleEn(0x01);
-    angleSensorInitialized = true;
+void initTMAG5273Callback() {
+    return;
 }
 
-float readTMAG5273Callback(){
+float readTMAG5273Callback() {
     return sensor.getAngleResult() / 180 * PI;
 }
 
@@ -49,8 +46,11 @@ TaskHandle_t focTask;
 void controlMotorTask( void * parameter) {
     Serial1.printf("Motor control on Core %d\r\n", xPortGetCoreID());
     for(;;) {
+        sensorFOCMutex.lock(); // Block execution until sensorFOC is released, then grab it
         motor.loopFOC();
         motor.move(target);
+        sensorFOCMutex.unlock(); // Release sensorFOC
+        delay(10);
     }
 }
 
@@ -106,7 +106,7 @@ void focBLDCSetup() {
         "Motor Control", /* Name of the task */
         10000,  /* Stack size in words */
         NULL,  /* Task input parameter */
-        0,  /* Priority of the task */
+        1,  /* Priority of the task */
         &focTask,  /* Task handle. */
         1); /* Core where the task should run */
 }

@@ -12,11 +12,9 @@ rcl_publisher_t angularPositionPublisher;
 rcl_publisher_t motorDirectionPublisher;
 rcl_timer_t angularAccelerationTimer;
 rcl_timer_t angularVelocityTimer;
-rcl_timer_t angularPositionTimer;
+rcl_timer_t angularMeasurementTimer;
 rcl_timer_t motorDirectionTimer;
-AngularAccelerationMsg angularAccelerationMsg;
-AngularVelocityMsg angularVelocityMsg;
-AngularPositionMsg angularPositionMsg;
+AngularMeasurementMsg angularMeasurementMsg;
 MotorStatusMsg motorDirectionMsg;
 
 
@@ -25,11 +23,15 @@ MotorStatusMsg motorDirectionMsg;
 // ===========================
 
 
-void angularPositionCallback(rcl_timer_t * timer, int64_t last_call_time) {
+void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time) {
     RCLC_UNUSED(last_call_time);
     if (timer != NULL) {
-        RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularPositionMsg, NULL));
-        angularPositionMsg.timestamp = millis();
-        angularPositionMsg.angular_position = sensor.getAngleEn() != 0 ? sensor.getAngleResult() : -999;
+        sensorFOCMutex.lock(); // Block execution until sensorFOC is released, then grab it
+        RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularMeasurementMsg, NULL));
+        sensorFOC.update();
+        angularMeasurementMsg.timestamp = millis();
+        angularMeasurementMsg.angular_position = sensorFOC.getMechanicalAngle();
+        angularMeasurementMsg.angular_velocity = sensorFOC.getVelocity();
+        sensorFOCMutex.unlock(); // Release sensorFOC
     }
 }

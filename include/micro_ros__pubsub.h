@@ -15,11 +15,9 @@ extern rcl_publisher_t angularPositionPublisher;
 extern rcl_publisher_t motorDirectionPublisher;
 extern rcl_timer_t angularAccelerationTimer;
 extern rcl_timer_t angularVelocityTimer;
-extern rcl_timer_t angularPositionTimer;
+extern rcl_timer_t angularMeasurementTimer;
 extern rcl_timer_t motorDirectionTimer;
-extern AngularAccelerationMsg angularAccelerationMsg;
-extern AngularVelocityMsg angularVelocityMsg;
-extern AngularPositionMsg angularPositionMsg;
+extern AngularMeasurementMsg angularMeasurementMsg;
 extern MotorStatusMsg motorDirectionMsg;
 
 
@@ -28,6 +26,6 @@ extern MotorStatusMsg motorDirectionMsg;
 // ===========================
 
 
-void angularPositionCallback(rcl_timer_t * timer, int64_t last_call_time);
+void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time);
 
 #endif // MICRO_ROS__PUBSUB_H

@@ -4,7 +4,13 @@
 #include <SimpleFOC.h>
 #include <SparkFun_TMAG5273_Arduino_Library.h>
 #include <Wire.h>
+#include <mutex>
 
+extern SemaphoreHandle_t xSensorFOCMutex;
+extern std::mutex sensorFOCMutex;
+extern uint32_t shaftReadTime;
+extern float shaftAngle;
+extern float shaftAngularVelocity;
 extern TMAG5273 sensor;
 extern bool angleSensorInitialized;
 extern bool currentSensorInitialized;

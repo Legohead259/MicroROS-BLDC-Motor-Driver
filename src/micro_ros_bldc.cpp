@@ -12,7 +12,7 @@ bool createPublishers() {
     RCCHECK(rclc_publisher_init_default(
         &angularPositionPublisher,
         &node,
-        ROSIDL_GET_MSG_TYPE_SUPPORT(motor_interfaces, msg, AngularPosition),
+        ROSIDL_GET_MSG_TYPE_SUPPORT(motor_interfaces, msg, AngularMeasurement),
         "/angular_position"));
 
     return true;
@@ -67,16 +67,16 @@ bool addServices() {
 
 bool createTimers() {
     RCCHECK(rclc_timer_init_default(
-        &angularPositionTimer,
+        &angularMeasurementTimer,
         &support,
         RCL_MS_TO_NS(10),
-        angularPositionCallback));
+        angularMeasurementCallback));
 
     return true;
 }
 
 bool addTimers() {
-    RCCHECK(rclc_executor_add_timer(&executor, &angularPositionTimer));
+    RCCHECK(rclc_executor_add_timer(&executor, &angularMeasurementTimer));
 
     return true;
 }
@@ -109,7 +109,7 @@ void destroyEntities() {
     (void) rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
 
     rcl_publisher_fini(&angularPositionPublisher, &node);
-    rcl_timer_fini(&angularPositionTimer);
+    rcl_timer_fini(&angularMeasurementTimer);
     rcl_timer_fini(&neopixelTimer);
     rcl_service_fini(&setTargetService, &node);
     rclc_executor_fini(&executor);

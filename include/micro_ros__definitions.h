@@ -2,6 +2,7 @@
 #define MICRO_ROS__DEFINITIONS_H
 
 #include <Arduino.h>
+#include <mutex>
 #include "foc_bldc.h"
 #include "state_machine.h"
 
@@ -28,15 +29,14 @@
 #include "motor_interfaces/action/home.h"
 
 // Get the custom messages from the `motor_interfaces` package
-#include "motor_interfaces/msg/angular_acceleration.h"
-#include "motor_interfaces/msg/angular_velocity.h"
-#include "motor_interfaces/msg/angular_position.h"
+#include "motor_interfaces/msg/angular_measurement.h"
 #include "motor_interfaces/msg/motor_status.h"
 
 // Get the custom services from the `motor_interfaces` package
 #include "motor_interfaces/srv/set_controller_mode.h"
-#include "std_srvs/srv/trigger.h"
+#include "motor_interfaces/srv/set_foc_parameters.h"
 #include "motor_interfaces/srv/set_target.h"
+#include "std_srvs/srv/trigger.h"
 
 // Interface type format {package}__{interface [action/srv/msg]}__{InterfaceName}_{Additional [Response/Request]}
 
@@ -45,17 +45,17 @@ using Home_Goal = motor_interfaces__action__Home_Goal;
 using Home_Feedback = motor_interfaces__action__Home_Feedback;
 using Home_Result = motor_interfaces__action__Home_Result;
 
-using AngularAccelerationMsg = motor_interfaces__msg__AngularAcceleration;
-using AngularVelocityMsg = motor_interfaces__msg__AngularVelocity;
-using AngularPositionMsg = motor_interfaces__msg__AngularPosition;
+using AngularMeasurementMsg = motor_interfaces__msg__AngularMeasurement;
 using MotorStatusMsg = motor_interfaces__msg__MotorStatus;
 
 using SetControllerMode_Request = motor_interfaces__srv__SetControllerMode_Request;
 using SetControllerMode_Response = motor_interfaces__srv__SetControllerMode_Response;
-using Trigger_Request = std_srvs__srv__Trigger_Request;
-using Trigger_Response = std_srvs__srv__Trigger_Response;
+using SetFocParameters_Request = motor_interfaces__srv__SetFocParameters_Request;
+using SetFocParameters_Response = motor_interfaces__srv__SetFocParameters_Response;
 using SetTarget_Request = motor_interfaces__srv__SetTarget_Request;
 using SetTarget_Response = motor_interfaces__srv__SetTarget_Response;
+using Trigger_Request = std_srvs__srv__Trigger_Request;
+using Trigger_Response = std_srvs__srv__Trigger_Response;
 
 // Instantiate ROS2 base objects
 extern rcl_allocator_t allocator;

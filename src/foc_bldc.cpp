@@ -27,13 +27,13 @@ void initTMAG5273Callback() {
 
 float readTMAG5273Callback() {
     // return shaftAngle;
-    Serial1.println("Trying to lock mutex in readTMAG5273Callback()");
-    sensorFOCMutex.lock();
-    Serial1.println("Locked mutex in readTMAG5273Callback()");
+    // Serial1.println("Trying to lock mutex in readTMAG5273Callback()");
+    // sensorFOCMutex.lock();
+    // Serial1.println("Locked mutex in readTMAG5273Callback()");
     float _angle = sensor.getAngleResult() / 180 * PI;
-    Serial1.println("Unlocking mutex in readTMAG5273Callback()");
-    sensorFOCMutex.unlock();
-    Serial1.println("readTMAG5273Callback() finished!");
+    // Serial1.println("Unlocking mutex in readTMAG5273Callback()");
+    // sensorFOCMutex.unlock();
+    // Serial1.println("readTMAG5273Callback() finished!");
     return _angle;
 }
 
@@ -59,9 +59,19 @@ void controlMotorTask( void * parameter) {
     Serial1.printf("Motor control on Core %d\r\n", xPortGetCoreID());
     for(;;) {
         uint32_t _startMicros = micros();
+        // Serial1.println("Trying to lock mutex in controlMotorTask()");
+        sensorFOCMutex.lock();
+        // Serial1.println("Locked mutex in controlMotorTask()");
+
         motor.loopFOC();
         // Serial1.printf("Time to finish loopFOC(): %lu us\r\n", micros() - _startMicros);
         motor.move(target);
+
+        // Serial1.println("Unlocking mutex in controlMotorTask()");
+        sensorFOCMutex.unlock();
+        // Serial1.println("controlMotorTask() finished!");
+
+        delay(10);
     }
 }
 
@@ -117,7 +127,7 @@ void focBLDCSetup() {
         "Motor Control", /* Name of the task */
         10000,  /* Stack size in words */
         NULL,  /* Task input parameter */
-        0,  /* Priority of the task */
+        1,  /* Priority of the task */
         &focTask,  /* Task handle. */
         1); /* Core where the task should run */
 }

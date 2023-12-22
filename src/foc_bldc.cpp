@@ -6,14 +6,10 @@
 // ===================
 
 
-SemaphoreHandle_t xSensorFOCMutex = NULL;
 std::mutex sensorFOCMutex;
 TMAG5273 sensor;
 bool angleSensorInitialized = false;
 bool currentSensorInitialized = false;
-uint32_t shaftReadTime = 0;
-float shaftAngle = 0;
-float shaftAngularVelocity = 0;
 
 
 // ================================
@@ -26,15 +22,7 @@ void initTMAG5273Callback() {
 }
 
 float readTMAG5273Callback() {
-    // return shaftAngle;
-    // Serial1.println("Trying to lock mutex in readTMAG5273Callback()");
-    // sensorFOCMutex.lock();
-    // Serial1.println("Locked mutex in readTMAG5273Callback()");
-    float _angle = sensor.getAngleResult() / 180 * PI;
-    // Serial1.println("Unlocking mutex in readTMAG5273Callback()");
-    // sensorFOCMutex.unlock();
-    // Serial1.println("readTMAG5273Callback() finished!");
-    return _angle;
+    return sensor.getAngleResult() / 180 * PI;
 }
 
 GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callback);
@@ -58,19 +46,10 @@ TaskHandle_t focTask;
 void controlMotorTask( void * parameter) {
     Serial1.printf("Motor control on Core %d\r\n", xPortGetCoreID());
     for(;;) {
-        uint32_t _startMicros = micros();
-        // Serial1.println("Trying to lock mutex in controlMotorTask()");
-        sensorFOCMutex.lock();
-        // Serial1.println("Locked mutex in controlMotorTask()");
-
+        sensorFOCMutex.lock(); // Block execution until sensorFOC is released, then grab it
         motor.loopFOC();
-        // Serial1.printf("Time to finish loopFOC(): %lu us\r\n", micros() - _startMicros);
         motor.move(target);
-
-        // Serial1.println("Unlocking mutex in controlMotorTask()");
-        sensorFOCMutex.unlock();
-        // Serial1.println("controlMotorTask() finished!");
-
+        sensorFOCMutex.unlock(); // Release sensorFOC
         delay(10);
     }
 }

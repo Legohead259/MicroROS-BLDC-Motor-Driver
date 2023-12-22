@@ -6,11 +6,7 @@
 #include <Wire.h>
 #include <mutex>
 
-extern SemaphoreHandle_t xSensorFOCMutex;
 extern std::mutex sensorFOCMutex;
-extern uint32_t shaftReadTime;
-extern float shaftAngle;
-extern float shaftAngularVelocity;
 extern TMAG5273 sensor;
 extern bool angleSensorInitialized;
 extern bool currentSensorInitialized;
@@ -23,7 +19,6 @@ extern GenericSensor sensorFOC;
 extern BLDCMotor motor;
 extern BLDCDriver6PWM driver;
 extern float target;
-extern bool direction; // Motor direction. FALSE - counter-clockwise; TRUE - clockwise
 extern TaskHandle_t focTask;
 
 void controlMotorTask( void * parameter);

@@ -26,26 +26,12 @@ MotorStatusMsg motorDirectionMsg;
 void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time) {
     RCLC_UNUSED(last_call_time);
     if (timer != NULL) {
-        // std::lock_guard<std::mutex> lock(sensorFOCMutex);
-        // Serial1.println("Trying to lock mutex in angularMeasurementCallback()");
-        sensorFOCMutex.lock();
-        // Serial1.println("Locked mutex in angularMeasurementCallback()");
+        sensorFOCMutex.lock(); // Block execution until sensorFOC is released, then grab it
         RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularMeasurementMsg, NULL));
-        // angularMeasurementMsg.timestamp = shaftReadTime;
-        // angularMeasurementMsg.angular_position = shaftAngle;
-        // angularMeasurementMsg.angular_velocity = shaftAngularVelocity;
-
         sensorFOC.update();
         angularMeasurementMsg.timestamp = millis();
-        angularMeasurementMsg.angular_position = sensorFOC.getAngle() - sensorFOC.getFullRotations();
+        angularMeasurementMsg.angular_position = sensorFOC.getMechanicalAngle();
         angularMeasurementMsg.angular_velocity = sensorFOC.getVelocity();
-
-        // angularMeasurementMsg.timestamp = millis();
-        // angularMeasurementMsg.angular_position = sensor.getAngleResult() / 180 * PI;
-        // angularMeasurementMsg.angular_velocity = sensorFOC.getVelocity();
-        
-        // Serial1.println("Unlocking mutex in angularMeasurementCallback()");
-        sensorFOCMutex.unlock();
-        // Serial1.println("angularMeasurementCallback() finished!");
+        sensorFOCMutex.unlock(); // Release sensorFOC
     }
 }

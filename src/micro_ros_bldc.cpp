@@ -37,6 +37,18 @@ bool createServices() {
         ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetTarget), 
         "/set_motor_target"));
 
+    RCCHECK(rclc_service_init_default(
+        &enableMotorService, 
+        &node, 
+        ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
+        "/enable_motor"));
+
+    RCCHECK(rclc_service_init_default(
+        &disableMotorService, 
+        &node, 
+        ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
+        "/disable_motor"));
+
     return true;
 }
 
@@ -61,6 +73,20 @@ bool addServices() {
         &setTargetRequest, 
         &setTargetResponse, 
         setTargetCallback));
+
+    RCCHECK(rclc_executor_add_service(
+        &executor, 
+        &enableMotorService, 
+        &enableMotorRequest, 
+        &enableMotorResponse, 
+        enableMotorCallback));
+
+    RCCHECK(rclc_executor_add_service(
+        &executor, 
+        &disableMotorService, 
+        &disableMotorRequest, 
+        &disableMotorResponse, 
+        disableMotorCallback));
 
     return true; 
 }

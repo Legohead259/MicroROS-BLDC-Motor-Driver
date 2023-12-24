@@ -160,9 +160,11 @@ void microROSTaskCallback(void* parameters) {
                 agentState = createEntities() ? AGENT_CONNECTED : WAITING_AGENT; // Check if entities are properly created
                 if (agentState == AGENT_CONNECTED) { // Update system state
                     changeSystemState(IDLE_WITH_CONNECTION);
+                    motor.enable();
                 }
                 if (agentState == WAITING_AGENT) { // If entities are not properly created, destroy them
                     destroyEntities();
+                    motor.disable();
                 };
                 break;
             
@@ -178,6 +180,7 @@ void microROSTaskCallback(void* parameters) {
                 destroyEntities();
                 agentState = WAITING_AGENT;
                 changeSystemState(IDLE_NO_CONNECTION);
+                motor.disable();
                 break;
                 
             default:

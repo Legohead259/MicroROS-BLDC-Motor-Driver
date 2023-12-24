@@ -134,13 +134,13 @@ void destroyEntities() {
     rmw_context_t * rmw_context = rcl_context_get_rmw_context(&support.context);
     (void) rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
 
-    rcl_publisher_fini(&angularPositionPublisher, &node);
-    rcl_timer_fini(&angularMeasurementTimer);
-    rcl_timer_fini(&neopixelTimer);
-    rcl_service_fini(&setTargetService, &node);
-    rclc_executor_fini(&executor);
-    rcl_node_fini(&node);
-    rclc_support_fini(&support);
+    RCSOFTCHECK(rcl_publisher_fini(&angularPositionPublisher, &node));
+    RCSOFTCHECK(rcl_timer_fini(&angularMeasurementTimer));
+    RCSOFTCHECK(rcl_timer_fini(&neopixelTimer));
+    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rclc_executor_fini(&executor));
+    RCSOFTCHECK(rcl_node_fini(&node));
+    RCSOFTCHECK(rclc_support_fini(&support));
 }
 
 void microROSTaskCallback(void* parameters) {

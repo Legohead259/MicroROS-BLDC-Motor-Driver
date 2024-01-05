@@ -10,26 +10,106 @@ Preferences parameterSettings;
 #endif // ARDUINO_ARCH_ESP32
 
 rclc_parameter_server_t parameterService;
-parameter_t controllerMode = {.key=PARAM_NAME__CONTROLLER_MODE, .type=RCLC_PARAMETER_INT};
-parameter_t polePairs{.key=PARAM_NAME__POLE_PAIRS, .type=RCLC_PARAMETER_INT};
-parameter_t phaseResistance{.key=PARAM_NAME__PHASE_RESISTANCE, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t kvRating{.key=PARAM_NAME__KV_RATING, .type=RCLC_PARAMETER_INT};
-parameter_t phaseInductance{.key=PARAM_NAME__PHASE_INDUCTANCE, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t velocityP{.key=PARAM_NAME__VELOCITY_P, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t velocityI{.key=PARAM_NAME__VELOCITY_I, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t velocityD{.key=PARAM_NAME__VELOCITY_D, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t velocityOutputRamp{.key=PARAM_NAME__VELOCITY_OUTPUT_RAMP, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t velocityLPFTf{.key=PARAM_NAME__VELOCITY_LPF_TF, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t angleP{.key=PARAM_NAME__ANGLE_P, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t angleI{.key=PARAM_NAME__ANGLE_I, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t angleD{.key=PARAM_NAME__ANGLE_D, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t angleOutputRamp{.key=PARAM_NAME__ANGLE_OUTPUT_RAMP, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t angleLPFTf{.key=PARAM_NAME__ANGLE_LPF_TF, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t driverVoltageLimit{.key=PARAM_NAME__DRIVER_VOLTAGE_LIMIT, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t driverCurrentLimit{.key=PARAM_NAME__DRIVER_CURRENT_LIMIT, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t motorVoltageLimit{.key=PARAM_NAME__MOTOR_VOLTAGE_LIMIT, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t motorCurrentLimit{.key=PARAM_NAME__MOTOR_CURRENT_LIMIT, .type=RCLC_PARAMETER_DOUBLE};
-parameter_t motorVelocityLimit{.key=PARAM_NAME__MOTOR_VELOCITY_LIMIT, .type=RCLC_PARAMETER_DOUBLE};
+parameter_t controllerMode = {
+    .key=PARAM_NAME__CONTROLLER_MODE, 
+    .type=RCLC_PARAMETER_INT,
+    .onChangePtr=controllerModeChangeCallback
+};
+parameter_t polePairs{
+    .key=PARAM_NAME__POLE_PAIRS, 
+    .type=RCLC_PARAMETER_INT,
+    .onChangePtr=polePairsChangeCallback
+};
+parameter_t phaseResistance{
+    .key=PARAM_NAME__PHASE_RESISTANCE, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=phaseResistanceChangeCallback
+};
+parameter_t kvRating{
+    .key=PARAM_NAME__KV_RATING, 
+    .type=RCLC_PARAMETER_INT,
+    .onChangePtr=kvRatingChangeCallback
+};
+parameter_t phaseInductance{
+    .key=PARAM_NAME__PHASE_INDUCTANCE, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=phaseInductanceChangeCallback
+};
+parameter_t velocityP{
+    .key=PARAM_NAME__VELOCITY_P, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=velocityPChangeCallback
+};
+parameter_t velocityI{
+    .key=PARAM_NAME__VELOCITY_I,
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=velocityIChangeCallback
+};
+parameter_t velocityD{
+    .key=PARAM_NAME__VELOCITY_D, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=velocityDChangeCallback
+};
+parameter_t velocityOutputRamp{
+    .key=PARAM_NAME__VELOCITY_OUTPUT_RAMP, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=velocityRampChangeCallback
+};
+parameter_t velocityLPFTf{
+    .key=PARAM_NAME__VELOCITY_LPF_TF, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=velocityLPFChangeCallback
+};
+parameter_t angleP{
+    .key=PARAM_NAME__ANGLE_P, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=anglePChangeCallback
+};
+parameter_t angleI{
+    .key=PARAM_NAME__ANGLE_I, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=angleIChangeCallback
+};
+parameter_t angleD{
+    .key=PARAM_NAME__ANGLE_D, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=angleDChangeCallback
+};
+parameter_t angleOutputRamp{
+    .key=PARAM_NAME__ANGLE_OUTPUT_RAMP, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=angleRampChangeCallback
+};
+parameter_t angleLPFTf{
+    .key=PARAM_NAME__ANGLE_LPF_TF, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=angleLFPChangeCallback
+};
+parameter_t driverVoltageLimit{
+    .key=PARAM_NAME__DRIVER_VOLTAGE_LIMIT, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=driverVoltageLimitChangeCallback
+};
+parameter_t driverCurrentLimit{
+    .key=PARAM_NAME__DRIVER_CURRENT_LIMIT, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=driverCurrentLimitChangeCallback
+};
+parameter_t motorVoltageLimit{
+    .key=PARAM_NAME__MOTOR_VOLTAGE_LIMIT, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=motorVoltageLimitChangeCallback
+};
+parameter_t motorCurrentLimit{
+    .key=PARAM_NAME__MOTOR_CURRENT_LIMIT, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=motorCurrentLimitChangeCallback
+};
+parameter_t motorVelocityLimit{
+    .key=PARAM_NAME__MOTOR_VELOCITY_LIMIT, 
+    .type=RCLC_PARAMETER_DOUBLE,
+    .onChangePtr=motorVelocityLimitChangeCallback
+};
 
 parameter_t* params[NUM_PARAMETERS] = {
     &controllerMode,
@@ -116,7 +196,6 @@ void initializeParameterService() {
         if (params[i]->type == RCLC_PARAMETER_NOT_SET) { continue; } // Check for bad parameters
 
         RCSOFTCHECK(rclc_add_parameter(&parameterService, params[i]->key, params[i]->type));
-        Serial1.printf("Added %s of type: %d\r\n", params[i]->key, params[i]->type); // Debug
 
         switch (params[i]->type) {
             case RCLC_PARAMETER_BOOL:
@@ -138,8 +217,6 @@ void initializeParameterService() {
                     params[i]->double_value));
                 break;
         }
-
-        Serial1.printf("Set value of %s\r\n", params[i]->key); // Debug
     }
 }
 
@@ -159,36 +236,148 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
         Serial1.printf("Deleting parameter %s\n", oldParam->name.data); // Debug
         return false; // Do not allow deleting parameters
     } 
-    else {
-    //     Serial1.printf("Parameter %s modified.", oldParam->name.data); // Debug
-    //     switch (oldParam->value.type) {
-    //     case RCLC_PARAMETER_BOOL:
-    //         Serial1.printf(
-    //         " Old value: %d, New value: %d (bool)", oldParam->value.bool_value,
-    //         newParam->value.bool_value); // Debug
-    //         break;
-    //     case RCLC_PARAMETER_INT:
-    //         Serial1.printf(
-    //         " Old value: %ld, New value: %ld (int)", oldParam->value.integer_value,
-    //         newParam->value.integer_value); // Debug
-    //         break;
-    //     case RCLC_PARAMETER_DOUBLE:
-    //         Serial1.printf(
-    //         " Old value: %f, New value: %f (double)", oldParam->value.double_value,
-    //         newParam->value.double_value); // Debug
-    //         break;
-    //     default:
-    //         break;
-    //     }
-    //     printf("\n");
-
+    else { // Check for changing parameters
         for (uint8_t i=0; i<NUM_PARAMETERS; i++) { // Iterate through the parameter array
-            if (strcmp(newParam->name.data, PARAM_NAME__CONTROLLER_MODE) == 0) {
-                Serial1.println("Editing controller mode"); // DEBUG
+            if (strcmp(newParam->name.data, params[i]->key) == 0) { // Check if parameter is in array
+                Serial1.printf("Editing %s\r\n", params[i]->key); // DEBUG
+                switch (newParam->value.type) { // Check parameter type and set new value accordingly
+                    case RCLC_PARAMETER_BOOL:
+                        params[i]->bool_value = newParam->value.bool_value;
+                        break;
+                    case RCLC_PARAMETER_INT:
+                        params[i]->integer_value = newParam->value.integer_value;
+                        break;
+                    case RCLC_PARAMETER_DOUBLE:
+                        params[i]->double_value = newParam->value.double_value;
+                        break;
+                    default:
+                        break;
+                }
+                params[i]->onChange(); // Execute the parameters change function
+                break;
             }
+            else { return false; }
         }
     }
 
-
     return true;
+}
+
+
+// ==================================
+// === PARAMETER CHANGE CALLBACKS ===
+// ==================================
+
+
+void controllerModeChangeCallback(parameter_t* param) {
+    uint8_t _mode = param->integer_value;
+    bool _isClosedLoop = _mode < SetControlMode_ModeCodes::POSITION_OPEN_LOOP;
+    bool _isTorqueControl = _mode >= SetControlMode_ModeCodes::TORQUE_VOLTAGE && _mode <= SetControlMode_ModeCodes::TORQUE_FOC_CURRENT;
+
+    // Check for motor failure mode
+    if (motor.motor_status == FOCMotorStatus::motor_error ||
+        motor.motor_status == FOCMotorStatus::motor_calib_failed ||
+        motor.motor_status == FOCMotorStatus::motor_init_failed) {
+        
+        // res_in->result = SetControlMode_ResultCodes::FAILURE_FOC_ERROR;
+        return;
+    }
+
+    // Check if requested mode is closed-loop and feedback sensor initialized
+    if ((_isClosedLoop && !angleSensorInitialized)) {
+        // Account for torque control without angle sensor, but with current sensor
+        if (!(_isTorqueControl && currentSensorInitialized)) {
+            // res_in->result = SetControlMode_ResultCodes::FAILURE_FEEDBACK_ERROR;
+            return;
+        }
+    }
+
+    // Set controller mode
+    switch (_mode) {
+    case SetControlMode_ModeCodes::POSITION_CLOSED_LOOP:
+        motor.controller = MotionControlType::angle;
+        break;
+    case SetControlMode_ModeCodes::VELOCITY_CLOSED_LOOP:
+        motor.controller = MotionControlType::velocity;
+        break;
+    case SetControlMode_ModeCodes::TORQUE_VOLTAGE:
+    case SetControlMode_ModeCodes::TORQUE_CURRENT:
+    case SetControlMode_ModeCodes::TORQUE_FOC_CURRENT:
+        motor.controller = MotionControlType::torque;
+        break;
+    case SetControlMode_ModeCodes::POSITION_OPEN_LOOP:
+        motor.controller = MotionControlType::angle_openloop;
+        break;
+    case SetControlMode_ModeCodes::VELOCITY_OPEN_LOOP:
+        motor.controller = MotionControlType::velocity_openloop;
+        break;
+    default:
+        // res_in->result = SetControlMode_ResultCodes::FAILURE_UNSPECIFIED;
+        return;
+    }
+
+    // Return successful result
+    // res_in->result = SetControlMode_ResultCodes::SUCCESS;
+    Serial1.println("Set motor control mode Using callback!");
+}
+
+void polePairsChangeCallback(parameter_t* param) {
+
+}
+
+void phaseResistanceChangeCallback(parameter_t* param) {
+
+}
+
+void kvRatingChangeCallback(parameter_t* param) {
+
+}
+
+void phaseInductanceChangeCallback(parameter_t* param) {
+
+}
+void velocityPChangeCallback(parameter_t* param) {
+
+}
+void velocityIChangeCallback(parameter_t* param) {
+
+}
+void velocityDChangeCallback(parameter_t* param) {
+
+}
+void velocityRampChangeCallback(parameter_t* param) {
+
+}
+void velocityLPFChangeCallback(parameter_t* param) {
+
+}
+void anglePChangeCallback(parameter_t* param) {
+
+}
+void angleIChangeCallback(parameter_t* param) {
+
+}
+void angleDChangeCallback(parameter_t* param) {
+
+}
+void angleRampChangeCallback(parameter_t* param) {
+
+}
+void angleLFPChangeCallback(parameter_t* param) {
+
+}
+void driverVoltageLimitChangeCallback(parameter_t* param) {
+
+}
+void driverCurrentLimitChangeCallback(parameter_t* param) {
+
+}
+void motorVoltageLimitChangeCallback(parameter_t* param) {
+
+}
+void motorCurrentLimitChangeCallback(parameter_t* param) {
+
+}
+void motorVelocityLimitChangeCallback(parameter_t* param) {
+
 }

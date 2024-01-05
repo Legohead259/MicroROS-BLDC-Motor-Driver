@@ -37,13 +37,20 @@ extern Preferences parameterSettings;
 
 #define NUM_PARAMETERS 20
 
-struct parameter_t {
+struct parameter_t; // Forward declare the struct
+
+typedef std::function<void(parameter_t*)> ParameterChangeHandler;
+
+typedef struct parameter_t {
     const char* key;
     rclc_parameter_type_t type;
     bool bool_value;
     int64_t integer_value;
     double double_value;
-};
+    ParameterChangeHandler onChangePtr;
+
+    void onChange() { if (onChangePtr != nullptr) onChangePtr(this); }
+} parameter_t;
 
 extern parameter_t controllerMode;
 extern parameter_t polePairs;
@@ -77,8 +84,32 @@ const rclc_parameter_options_t parameterServiceOpts = {
 };
 
 void initializeParameterService();
-void addBooleanParameter(const char* paramName, bool paramValue);
-void addIntegerParameter();
-void addDoubleParameter();
+
+
+// ==================================
+// === PARAMETER CHANGE CALLBACKS ===
+// ==================================
+
+
+void controllerModeChangeCallback(parameter_t* param);
+void polePairsChangeCallback(parameter_t* param);
+void phaseResistanceChangeCallback(parameter_t* param);
+void kvRatingChangeCallback(parameter_t* param);
+void phaseInductanceChangeCallback(parameter_t* param);
+void velocityPChangeCallback(parameter_t* param);
+void velocityIChangeCallback(parameter_t* param);
+void velocityDChangeCallback(parameter_t* param);
+void velocityRampChangeCallback(parameter_t* param);
+void velocityLPFChangeCallback(parameter_t* param);
+void anglePChangeCallback(parameter_t* param);
+void angleIChangeCallback(parameter_t* param);
+void angleDChangeCallback(parameter_t* param);
+void angleRampChangeCallback(parameter_t* param);
+void angleLFPChangeCallback(parameter_t* param);
+void driverVoltageLimitChangeCallback(parameter_t* param);
+void driverCurrentLimitChangeCallback(parameter_t* param);
+void motorVoltageLimitChangeCallback(parameter_t* param);
+void motorCurrentLimitChangeCallback(parameter_t* param);
+void motorVelocityLimitChangeCallback(parameter_t* param);
 
 #endif // MICRO_ROS__PARAMETERS_H

@@ -19,12 +19,6 @@ bool createPublishers() {
 }
 
 bool createServices() {
-    // RCCHECK(rclc_service_init_default(
-    //     &setControllerModeService, 
-    //     &node, 
-    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-    //     "/set_controller_mode"));
-
     RCCHECK(rclc_service_init_default(
         &deviceIdentifyService, 
         &node, 
@@ -49,28 +43,15 @@ bool createServices() {
         ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
         "/disable_motor"));
 
-    // RCCHECK(rclc_parameter_server_init_with_option(
-    //     &parameterService, 
-    //     &node,
-    //     &parameterServiceOpts));
-
-    Serial1.println(rclc_parameter_server_init_with_option(
-        &parameterService,
+    RCCHECK(rclc_parameter_server_init_with_option(
+        &parameterService, 
         &node,
-        &parameterServiceOpts
-    ));
+        &parameterServiceOpts));
 
     return true;
 }
 
 bool addServices() {
-    // RCCHECK(rclc_executor_add_service(
-    //     &executor, 
-    //     &setControllerModeService, 
-    //     &setControllerModeRequest, 
-    //     &setControllerModeResponse, 
-    //     setControllerModeCallback));
-
     RCCHECK(rclc_executor_add_service(
         &executor, 
         &deviceIdentifyService, 

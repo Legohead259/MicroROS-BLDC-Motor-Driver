@@ -134,8 +134,8 @@ parameter_t* params[NUM_PARAMETERS] = {
     &motorVelocityLimit
 };
 
-void initializeParameterService() {
-    #ifdef ARDUINO_ARCH_ESP32
+#ifdef ARDUINO_ARCH_ESP32
+void loadPreferences() {
     parameterSettings.begin("uros_params", false);
     
     // parameterSettings.clear(); // DEBUG
@@ -186,6 +186,12 @@ void initializeParameterService() {
             params[i]->type = RCLC_PARAMETER_NOT_SET;
         }
     }
+}
+#endif // ARDUINO_ARCH_ESP32
+
+void initializeParameterService() {
+    #ifdef ARDUINO_ARCH_ESP32
+    loadPreferences();
     #endif // ARDUINO_ARCH_ESP32
 
     // TODO: Support out NVS systems for other MCUs

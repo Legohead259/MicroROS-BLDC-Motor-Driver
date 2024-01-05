@@ -19,11 +19,11 @@ bool createPublishers() {
 }
 
 bool createServices() {
-    RCCHECK(rclc_service_init_default(
-        &setControllerModeService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-        "/set_controller_mode"));
+    // RCCHECK(rclc_service_init_default(
+    //     &setControllerModeService, 
+    //     &node, 
+    //     ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
+    //     "/set_controller_mode"));
 
     RCCHECK(rclc_service_init_default(
         &deviceIdentifyService, 
@@ -48,6 +48,17 @@ bool createServices() {
         &node, 
         ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
         "/disable_motor"));
+
+    // RCCHECK(rclc_parameter_server_init_with_option(
+    //     &parameterService, 
+    //     &node,
+    //     &parameterServiceOpts));
+
+    Serial1.println(rclc_parameter_server_init_with_option(
+        &parameterService,
+        &node,
+        &parameterServiceOpts
+    ));
 
     return true;
 }
@@ -88,6 +99,11 @@ bool addServices() {
         &disableMotorResponse, 
         disableMotorCallback));
 
+    RCCHECK(rclc_executor_add_parameter_server(
+        &executor, 
+        &parameterService, 
+        onParameterChangedCallback));
+
     return true; 
 }
 
@@ -123,9 +139,11 @@ bool createEntities() {
     createTimers();
 
     // Create executor
-    RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
-    addServices();
-    addTimers();
+    RCCHECK(rclc_executor_init(&executor, &support.context, 10+RCLC_EXECUTOR_PARAMETER_SERVER_HANDLES, &allocator));
+    // addServices();
+    // addTimers();
+
+    // initializeParameterService();
 
     return true;
 }
@@ -138,6 +156,11 @@ void destroyEntities() {
     RCSOFTCHECK(rcl_timer_fini(&angularMeasurementTimer));
     RCSOFTCHECK(rcl_timer_fini(&neopixelTimer));
     RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rclc_parameter_server_fini(&parameterService, &node));
     RCSOFTCHECK(rclc_executor_fini(&executor));
     RCSOFTCHECK(rcl_node_fini(&node));
     RCSOFTCHECK(rclc_support_fini(&support));

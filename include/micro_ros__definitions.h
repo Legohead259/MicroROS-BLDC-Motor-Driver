@@ -13,6 +13,12 @@
 #include <rcl/rcl.h>
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
+#include <rclc_parameter/rclc_parameter.h>
+
+// Non-Volatile Memory libraries
+#ifdef ARDUINO_ARCH_ESP32
+#include <Preferences.h>
+#endif // ARDUINO_ARCH_ESP32
 
 // Define macros for checking function success
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){ while(1); }} // Blocking
@@ -62,7 +68,6 @@ extern rcl_allocator_t allocator;
 extern rclc_support_t support;
 extern rcl_node_t node;
 extern rclc_executor_t executor;
-extern rcl_timer_t neopixelTimer;
 
 // Define various parameters
 

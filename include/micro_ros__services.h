@@ -92,7 +92,7 @@ extern parameter_base_t* params[NUM_PARAMETERS];
 // Initialize parameter server options
 const rclc_parameter_options_t parameterServiceOpts = {
     .notify_changed_over_dds = true,        // Publish parameter events to other ROS 2 nodes as well.
-    .max_params = 4,           // Maximum number of parameters allowed on the rclc_parameter_server_t object.
+    .max_params = NUM_PARAMETERS,           // Maximum number of parameters allowed on the rclc_parameter_server_t object.
     .allow_undeclared_parameters = false,   // Allows creation of parameters from external parameter clients.
     .low_mem_mode = false                   // Reduces the memory used by the parameter server, applies constraints
 };

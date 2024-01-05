@@ -64,12 +64,12 @@ bool createServices() {
 }
 
 bool addServices() {
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setControllerModeService, 
-        &setControllerModeRequest, 
-        &setControllerModeResponse, 
-        setControllerModeCallback));
+    // RCCHECK(rclc_executor_add_service(
+    //     &executor, 
+    //     &setControllerModeService, 
+    //     &setControllerModeRequest, 
+    //     &setControllerModeResponse, 
+    //     setControllerModeCallback));
 
     RCCHECK(rclc_executor_add_service(
         &executor, 
@@ -140,10 +140,10 @@ bool createEntities() {
 
     // Create executor
     RCCHECK(rclc_executor_init(&executor, &support.context, 10+RCLC_EXECUTOR_PARAMETER_SERVER_HANDLES, &allocator));
-    // addServices();
-    // addTimers();
+    addServices();
+    addTimers();
 
-    // initializeParameterService();
+    initializeParameterService();
 
     return true;
 }
@@ -155,11 +155,11 @@ void destroyEntities() {
     RCSOFTCHECK(rcl_publisher_fini(&angularPositionPublisher, &node));
     RCSOFTCHECK(rcl_timer_fini(&angularMeasurementTimer));
     RCSOFTCHECK(rcl_timer_fini(&neopixelTimer));
+    RCSOFTCHECK(rcl_service_fini(&setControllerModeService, &node));
+    RCSOFTCHECK(rcl_service_fini(&deviceIdentifyService, &node));
     RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
-    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
-    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
-    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
-    RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&enableMotorService, &node));
+    RCSOFTCHECK(rcl_service_fini(&disableMotorService, &node));
     RCSOFTCHECK(rclc_parameter_server_fini(&parameterService, &node));
     RCSOFTCHECK(rclc_executor_fini(&executor));
     RCSOFTCHECK(rcl_node_fini(&node));
@@ -167,7 +167,7 @@ void destroyEntities() {
 }
 
 void microROSTaskCallback(void* parameters) {
-    Serial1.printf("MicroROS running on Core %d\r\n", xPortGetCoreID());
+    Serial1.printf("MicroROS running on Core %d\r\n", xPortGetCoreID()); // Debug
     for(;;) {
         
         // Handle system LED

@@ -90,11 +90,6 @@ parameter_t driverVoltageLimit{
     .type=RCLC_PARAMETER_DOUBLE,
     .onChangePtr=driverVoltageLimitChangeCallback
 };
-parameter_t driverCurrentLimit{
-    .key=PARAM_NAME__DRIVER_CURRENT_LIMIT, 
-    .type=RCLC_PARAMETER_DOUBLE,
-    .onChangePtr=driverCurrentLimitChangeCallback
-};
 parameter_t motorVoltageLimit{
     .key=PARAM_NAME__MOTOR_VOLTAGE_LIMIT, 
     .type=RCLC_PARAMETER_DOUBLE,
@@ -128,7 +123,6 @@ parameter_t* params[NUM_PARAMETERS] = {
     &angleOutputRamp,
     &angleLPFTf,
     &driverVoltageLimit,
-    &driverCurrentLimit,
     &motorVoltageLimit,
     &motorCurrentLimit,
     &motorVelocityLimit
@@ -159,7 +153,6 @@ void loadPreferences() {
         parameterSettings.putDouble(PARAM_NAME__ANGLE_OUTPUT_RAMP, 1e6);
         parameterSettings.putDouble(PARAM_NAME__ANGLE_LPF_TF, 0);
         parameterSettings.putDouble(PARAM_NAME__DRIVER_VOLTAGE_LIMIT, 7);
-        parameterSettings.putDouble(PARAM_NAME__DRIVER_CURRENT_LIMIT, 0.2);
         parameterSettings.putDouble(PARAM_NAME__MOTOR_VOLTAGE_LIMIT, 7);
         parameterSettings.putDouble(PARAM_NAME__MOTOR_CURRENT_LIMIT, 0.2);
         parameterSettings.putDouble(PARAM_NAME__MOTOR_VELOCITY_LIMIT, 10);
@@ -260,6 +253,7 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
                         break;
                 }
                 params[i]->onChange(); // Execute the parameters change function
+                saveParam(params[i]);
                 break;
             }
             else { return false; }
@@ -267,6 +261,25 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
     }
 
     return true;
+}
+
+void saveParam(parameter_t* param) {
+    // TODO: replace parameterSettings call with generic "save bool/int/double" callback
+    #ifdef ARDUINO_ARCH_ESP32
+    switch (param->type) {
+        case RCLC_PARAMETER_BOOL:
+            parameterSettings.putBool(param->key, param->bool_value);
+            break;
+        case RCLC_PARAMETER_INT:
+            parameterSettings.putInt(param->key, param->integer_value);
+            break;
+        case RCLC_PARAMETER_DOUBLE:
+            parameterSettings.putDouble(param->key, param->double_value);
+            break;
+        default:
+            break;
+    }
+    #endif // ARDUINO_ARCH_ESP32
 }
 
 
@@ -328,62 +341,73 @@ void controllerModeChangeCallback(parameter_t* param) {
 }
 
 void polePairsChangeCallback(parameter_t* param) {
-
+    motor.pole_pairs = param->integer_value;
 }
 
 void phaseResistanceChangeCallback(parameter_t* param) {
-
+    motor.phase_resistance = param->double_value;
 }
 
 void kvRatingChangeCallback(parameter_t* param) {
-
+    motor.KV_rating = param->integer_value;
 }
 
 void phaseInductanceChangeCallback(parameter_t* param) {
-
+    motor.phase_inductance = param->double_value;
 }
+
 void velocityPChangeCallback(parameter_t* param) {
-
+    motor.PID_velocity.P = param->double_value;
 }
+
 void velocityIChangeCallback(parameter_t* param) {
-
+    motor.PID_velocity.I = param->double_value;
 }
+
 void velocityDChangeCallback(parameter_t* param) {
-
+    motor.PID_velocity.D = param->double_value;
 }
+
 void velocityRampChangeCallback(parameter_t* param) {
-
+    motor.PID_velocity.output_ramp = param->double_value;
 }
+
 void velocityLPFChangeCallback(parameter_t* param) {
-
+    motor.LPF_velocity.Tf = param->double_value;
 }
+
 void anglePChangeCallback(parameter_t* param) {
-
+    motor.P_angle.P = param->double_value;
 }
+
 void angleIChangeCallback(parameter_t* param) {
-
+    motor.P_angle.I = param->double_value;
 }
+
 void angleDChangeCallback(parameter_t* param) {
-
+    motor.P_angle.D = param->double_value;
 }
+
 void angleRampChangeCallback(parameter_t* param) {
-
+    motor.P_angle.output_ramp = param->double_value;
 }
+
 void angleLFPChangeCallback(parameter_t* param) {
-
+    motor.LPF_angle.Tf = param->double_value;
 }
+
 void driverVoltageLimitChangeCallback(parameter_t* param) {
-
+    driver.voltage_limit = param->double_value;
 }
-void driverCurrentLimitChangeCallback(parameter_t* param) {
 
-}
 void motorVoltageLimitChangeCallback(parameter_t* param) {
-
+    motor.voltage_limit = param->double_value;
 }
+
 void motorCurrentLimitChangeCallback(parameter_t* param) {
-
+    motor.current_limit = param->double_value;
 }
-void motorVelocityLimitChangeCallback(parameter_t* param) {
 
+void motorVelocityLimitChangeCallback(parameter_t* param) {
+    motor.voltage_limit = param->double_value;
 }

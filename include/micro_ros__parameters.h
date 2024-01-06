@@ -30,12 +30,11 @@ extern Preferences parameterSettings;
 #define PARAM_NAME__ANGLE_OUTPUT_RAMP       "angle_ramp"
 #define PARAM_NAME__ANGLE_LPF_TF            "angle_lpf_tf"
 #define PARAM_NAME__DRIVER_VOLTAGE_LIMIT    "driver_v_limit"
-#define PARAM_NAME__DRIVER_CURRENT_LIMIT    "driver_i_limit"
 #define PARAM_NAME__MOTOR_VOLTAGE_LIMIT     "motor_v_limit"
 #define PARAM_NAME__MOTOR_CURRENT_LIMIT     "motor_i_limit"
 #define PARAM_NAME__MOTOR_VELOCITY_LIMIT    "motor_vel_limit"
 
-#define NUM_PARAMETERS 20
+#define NUM_PARAMETERS 19
 
 struct parameter_t; // Forward declare the struct
 
@@ -68,7 +67,6 @@ extern parameter_t angleD;
 extern parameter_t angleOutputRamp;
 extern parameter_t angleLPFTf;
 extern parameter_t driverVoltageLimit;
-extern parameter_t driverCurrentLimit;
 extern parameter_t motorVoltageLimit;
 extern parameter_t motorCurrentLimit;
 extern parameter_t motorVelocityLimit;
@@ -84,6 +82,8 @@ const rclc_parameter_options_t parameterServiceOpts = {
 };
 
 void initializeParameterService();
+
+void saveParam(parameter_t* param);
 
 
 // ==================================

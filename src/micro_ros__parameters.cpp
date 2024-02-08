@@ -236,7 +236,9 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
         return false; // Do not allow deleting parameters
     } 
     else { // Check for changing parameters
+        Serial1.printf("Checking for: %s\r\n", newParam->name.data);
         for (uint8_t i=0; i<NUM_PARAMETERS; i++) { // Iterate through the parameter array
+            Serial1.printf("\t Comparing against: %s\r\n", params[i]->key);
             if (strcmp(newParam->name.data, params[i]->key) == 0) { // Check if parameter is in array
                 Serial1.printf("Editing %s\r\n", params[i]->key); // DEBUG
                 switch (newParam->value.type) { // Check parameter type and set new value accordingly
@@ -254,10 +256,10 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
                 }
                 params[i]->onChange(); // Execute the parameters change function
                 saveParam(params[i]);
-                break;
+                return true;
             }
-            else { return false; }
         }
+        return false;
     }
 
     return true;
@@ -342,6 +344,7 @@ void controllerModeChangeCallback(parameter_t* param) {
 
 void polePairsChangeCallback(parameter_t* param) {
     motor.pole_pairs = param->integer_value;
+    Serial1.println("Set pole pairs Using callback!");
 }
 
 void phaseResistanceChangeCallback(parameter_t* param) {

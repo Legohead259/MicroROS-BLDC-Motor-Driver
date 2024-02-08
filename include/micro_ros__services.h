@@ -3,7 +3,6 @@
 
 #include "micro_ros__definitions.h"
 
-
 // =======================
 // === SERVICE OBJECTS ===
 // =======================
@@ -14,6 +13,7 @@ extern rcl_service_t deviceIdentifyService;
 extern rcl_service_t setTargetService;
 extern rcl_service_t enableMotorService;
 extern rcl_service_t disableMotorService;
+extern rclc_parameter_server_t parameterService;
 extern SetControllerMode_Request setControllerModeRequest;
 extern SetControllerMode_Response setControllerModeResponse;
 extern Trigger_Request deviceIdentifyRequest;
@@ -36,5 +36,6 @@ void deviceIdentifyCallback(const void* req, void* res);
 void setTargetCallback(const void* req, void* res);
 void enableMotorCallback(const void* req, void* res);
 void disableMotorCallback(const void* req, void* res);
+bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newParam, void* context);
 
 #endif // MICRO_ROS__SERVICES_H

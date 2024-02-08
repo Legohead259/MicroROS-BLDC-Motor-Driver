@@ -5,6 +5,7 @@
 #include "micro_ros__actions.h"
 #include "micro_ros__pubsub.h"
 #include "micro_ros__services.h"
+#include "micro_ros__parameters.h"
 #include "neopixel.h"
 
 

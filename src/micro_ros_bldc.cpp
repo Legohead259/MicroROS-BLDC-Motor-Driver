@@ -20,12 +20,6 @@ bool createPublishers() {
 
 bool createServices() {
     RCCHECK(rclc_service_init_default(
-        &setControllerModeService, 
-        &node, 
-        ROSIDL_GET_SRV_TYPE_SUPPORT(motor_interfaces, srv, SetControllerMode), 
-        "/set_controller_mode"));
-
-    RCCHECK(rclc_service_init_default(
         &deviceIdentifyService, 
         &node, 
         ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
@@ -49,17 +43,15 @@ bool createServices() {
         ROSIDL_GET_SRV_TYPE_SUPPORT(std_srvs, srv, Trigger), 
         "/disable_motor"));
 
+    RCCHECK(rclc_parameter_server_init_with_option(
+        &parameterService, 
+        &node,
+        &parameterServiceOpts));
+
     return true;
 }
 
 bool addServices() {
-    RCCHECK(rclc_executor_add_service(
-        &executor, 
-        &setControllerModeService, 
-        &setControllerModeRequest, 
-        &setControllerModeResponse, 
-        setControllerModeCallback));
-
     RCCHECK(rclc_executor_add_service(
         &executor, 
         &deviceIdentifyService, 
@@ -87,6 +79,11 @@ bool addServices() {
         &disableMotorRequest, 
         &disableMotorResponse, 
         disableMotorCallback));
+
+    RCCHECK(rclc_executor_add_parameter_server(
+        &executor, 
+        &parameterService, 
+        onParameterChangedCallback));
 
     return true; 
 }
@@ -123,9 +120,11 @@ bool createEntities() {
     createTimers();
 
     // Create executor
-    RCCHECK(rclc_executor_init(&executor, &support.context, 10, &allocator));
+    RCCHECK(rclc_executor_init(&executor, &support.context, 10+RCLC_EXECUTOR_PARAMETER_SERVER_HANDLES, &allocator));
     addServices();
     addTimers();
+
+    initializeParameterService();
 
     return true;
 }
@@ -137,14 +136,19 @@ void destroyEntities() {
     RCSOFTCHECK(rcl_publisher_fini(&angularPositionPublisher, &node));
     RCSOFTCHECK(rcl_timer_fini(&angularMeasurementTimer));
     RCSOFTCHECK(rcl_timer_fini(&neopixelTimer));
+    RCSOFTCHECK(rcl_service_fini(&setControllerModeService, &node));
+    RCSOFTCHECK(rcl_service_fini(&deviceIdentifyService, &node));
     RCSOFTCHECK(rcl_service_fini(&setTargetService, &node));
+    RCSOFTCHECK(rcl_service_fini(&enableMotorService, &node));
+    RCSOFTCHECK(rcl_service_fini(&disableMotorService, &node));
+    RCSOFTCHECK(rclc_parameter_server_fini(&parameterService, &node));
     RCSOFTCHECK(rclc_executor_fini(&executor));
     RCSOFTCHECK(rcl_node_fini(&node));
     RCSOFTCHECK(rclc_support_fini(&support));
 }
 
 void microROSTaskCallback(void* parameters) {
-    Serial1.printf("MicroROS running on Core %d\r\n", xPortGetCoreID());
+    Serial1.printf("MicroROS running on Core %d\r\n", xPortGetCoreID()); // Debug
     for(;;) {
         
         // Handle system LED

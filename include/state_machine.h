@@ -24,7 +24,7 @@ public:
     StateMachine(State &initialState) : currentState(initialState) {}
 
     // Function to perform actions based on the current state
-    virtual void executeState();
+    virtual void executeState() {};
 
 protected:
     // Variable to store the current state

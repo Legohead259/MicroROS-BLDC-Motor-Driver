@@ -157,23 +157,23 @@ void loadPreferences() {
         parameterSettings.putDouble(PARAM_NAME__MOTOR_CURRENT_LIMIT, 0.2);
         parameterSettings.putDouble(PARAM_NAME__MOTOR_VELOCITY_LIMIT, 10);
     }
-    Serial1.println("Found parameter file"); // Debug
-    Serial1.println("Loading parameters into memory..."); // Debug
+    // Serial1.println("Found parameter file"); // Debug
+    // Serial1.println("Loading parameters into memory..."); // Debug
     // Iterate through the parameter array in memory and put loaded values there
     for (uint8_t i = 0; i < NUM_PARAMETERS; i++) {
-        Serial1.printf("Loading key: %s...\t", params[i]->key); // Debug
+        // Serial1.printf("Loading key: %s...\t", params[i]->key); // Debug
 
         if (params[i]->type == RCLC_PARAMETER_BOOL) {
             params[i]->bool_value = parameterSettings.getBool(params[i]->key);
-            Serial1.printf("Got boolean parameter!\tValue: %s\r\n", params[i]->bool_value ? "TRUE" : "FALSE"); // Debug
+            // Serial1.printf("Got boolean parameter!\tValue: %s\r\n", params[i]->bool_value ? "TRUE" : "FALSE"); // Debug
         }
         else if (params[i]->type == RCLC_PARAMETER_INT) {
             params[i]->integer_value = parameterSettings.getInt(params[i]->key);
-            Serial1.printf("Got integer parameter!\tValue: %d\r\n", params[i]->integer_value); // Debug
+            // Serial1.printf("Got integer parameter!\tValue: %d\r\n", params[i]->integer_value); // Debug
         } 
         else if (params[i]->type == RCLC_PARAMETER_DOUBLE) {
             params[i]->double_value = parameterSettings.getDouble(params[i]->key);
-            Serial1.printf("Got double parameter!\tValue: %0.3f\r\n", params[i]->double_value); // Debug
+            // Serial1.printf("Got double parameter!\tValue: %0.3f\r\n", params[i]->double_value); // Debug
         }
         else {
             params[i]->type = RCLC_PARAMETER_NOT_SET;
@@ -236,11 +236,11 @@ bool onParameterChangedCallback(const Parameter* oldParam, const Parameter* newP
         return false; // Do not allow deleting parameters
     } 
     else { // Check for changing parameters
-        Serial1.printf("Checking for: %s\r\n", newParam->name.data);
+        // Serial1.printf("Checking for: %s\r\n", newParam->name.data); // Debug
         for (uint8_t i=0; i<NUM_PARAMETERS; i++) { // Iterate through the parameter array
             Serial1.printf("\t Comparing against: %s\r\n", params[i]->key);
             if (strcmp(newParam->name.data, params[i]->key) == 0) { // Check if parameter is in array
-                Serial1.printf("Editing %s\r\n", params[i]->key); // DEBUG
+                // Serial1.printf("Editing %s\r\n", params[i]->key); // DEBUG
                 switch (newParam->value.type) { // Check parameter type and set new value accordingly
                     case RCLC_PARAMETER_BOOL:
                         params[i]->bool_value = newParam->value.bool_value;

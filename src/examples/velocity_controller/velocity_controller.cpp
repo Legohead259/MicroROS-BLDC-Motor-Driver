@@ -1,6 +1,32 @@
 #include <SimpleFOC.h>
-#include "foc_bldc.h"
+#include <SparkFun_TMAG5273_Arduino_Library.h>
 #include <Arduino.h>
+
+void initTMAG5273Callback();
+float readTMAG5273Callback();
+
+TMAG5273 sensor;
+GenericSensor sensorFOC = GenericSensor(readTMAG5273Callback, initTMAG5273Callback);
+BLDCMotor motor = BLDCMotor(7);
+BLDCDriver6PWM driver = BLDCDriver6PWM(
+                            PHASE_U_HIGH, PHASE_U_LOW, 
+                            PHASE_V_HIGH, PHASE_V_LOW, 
+                            PHASE_W_HIGH, PHASE_W_LOW, 
+                            DRIVER_ENABLE);
+
+float target = 0.0;
+
+void initTMAG5273Callback() {
+    sensor.setAngleEn(false);
+    if (!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) {
+        Serial.println("Sensor failed to init...");
+        while(1);
+    }
+    sensor.setAngleEn(true);
+}
+float readTMAG5273Callback() {
+    return sensor.getAngleResult() / 180 * PI;
+}
 
 void setup() {
     Wire.begin();
@@ -15,10 +41,14 @@ void setup() {
 
     // driver config
     Serial.println("Initializing driver...");
+    driver.voltage_power_supply = 3.3;
+    driver.pwm_frequency = 20000;
+    driver.voltage_limit = 4;
     driver.init();
     motor.linkDriver(&driver);
 
     // set motion control loop to be used
+    motor.voltage_limit = 4.0;
     motor.controller = MotionControlType::velocity;
 
     // controller configuration 
@@ -27,9 +57,9 @@ void setup() {
     // controller configuration based on the control type 
     // velocity PID controller parameters
     // default P=0.5 I = 10 D =0
-    motor.PID_velocity.P = 0.2;
-    motor.PID_velocity.I = 20;
-    motor.PID_velocity.D = 0.001;
+    motor.PID_velocity.P = 0.1;
+    motor.PID_velocity.I = 1.0;
+    motor.PID_velocity.D = 0.0;
     // jerk control using voltage voltage ramp
     // default value is 300 volts per sec  ~ 0.3V per millisecond
     motor.PID_velocity.output_ramp = 1000;
@@ -56,7 +86,7 @@ void setup() {
 }
 
 // velocity set point variable
-float target_velocity = 10; // 2Rad/s ~ 20rpm
+float target_velocity = 50; // 2Rad/s ~ 20rpm
 
 void loop() {
     // main FOC algorithm function

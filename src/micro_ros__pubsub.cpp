@@ -30,8 +30,8 @@ void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time) {
         RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularMeasurementMsg, NULL));
         sensorFOC.update();
         angularMeasurementMsg.timestamp = millis();
-        angularMeasurementMsg.angular_position = sensorFOC.getMechanicalAngle();
-        angularMeasurementMsg.angular_velocity = sensorFOC.getVelocity();
+        angularMeasurementMsg.angular_position = motor.shaftAngle();
+        angularMeasurementMsg.angular_velocity = motor.shaftVelocity();
         sensorFOCMutex.unlock(); // Release sensorFOC
     }
 }

@@ -49,6 +49,7 @@ void setup() {
 
     // set motion control loop to be used
     motor.voltage_limit = 4.0;
+    motor.KV_rating = 600;
     motor.controller = MotionControlType::velocity;
 
     // controller configuration 

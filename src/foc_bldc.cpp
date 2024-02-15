@@ -63,6 +63,8 @@ void focBLDCSetup() {
 
     // driver config
     Serial1.println("Initializing driver...");
+    driver.voltage_power_supply = 3.3;
+    driver.pwm_frequency = 20000;
     driver.init();
     motor.linkDriver(&driver);
 
@@ -98,6 +100,7 @@ void focBLDCSetup() {
     motor.init();
     // align sensor and start FOC
     motor.initFOC();
+    motor.disable();
 
     Serial1.println("Motor ready.");
 

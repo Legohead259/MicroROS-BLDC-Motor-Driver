@@ -25,6 +25,7 @@ bool angleSensorInitialized = false;
 bool currentSensorInitialized = false;
 
 void initTMAG5273Callback(){
+    sensor.setAngleEn(false);
     if(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) { 
         while(1); // Stop further code execution
     }

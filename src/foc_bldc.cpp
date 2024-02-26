@@ -9,6 +9,7 @@
 std::mutex sensorFOCMutex;
 TMAG5273 sensor;
 bool angleSensorInitialized = false;
+InlineCurrentSense currentSensor = InlineCurrentSense(0.012, 20, PHASE_U_SENSE, PHASE_V_SENSE, PHASE_W_SENSE);
 bool currentSensorInitialized = false;
 
 
@@ -62,11 +63,12 @@ void focBLDCSetup() {
     motor.linkSensor(&sensorFOC);
 
     // driver config
-    Serial1.println("Initializing driver...");
+    Serial1.print("Initializing driver...");
     driver.voltage_power_supply = 3.3;
     driver.pwm_frequency = 20000;
     driver.init();
     motor.linkDriver(&driver);
+    Serial1.println("done!");
 
     // set motion control loop to be used
     motor.controller = MotionControlType::velocity;
@@ -98,6 +100,17 @@ void focBLDCSetup() {
 
     // initialize motor
     motor.init();
+
+    // Current Sensor init
+    Serial1.print("Initializing current sensor...");
+    if (!currentSensor.init()) {
+        Serial1.println("Current sense init failed!");
+        while(1); // Block further code execution
+    }
+    currentSensor.linkDriver(&driver);
+    motor.linkCurrentSense(&currentSensor);
+    Serial1.println("done!");
+    
     // align sensor and start FOC
     motor.initFOC();
     motor.disable();

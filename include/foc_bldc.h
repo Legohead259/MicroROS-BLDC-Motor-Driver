@@ -9,6 +9,7 @@
 extern std::mutex sensorFOCMutex;
 extern TMAG5273 sensor;
 extern bool angleSensorInitialized;
+extern InlineCurrentSense currentSensor;
 extern bool currentSensorInitialized;
 
 void initTMAG5273Callback();

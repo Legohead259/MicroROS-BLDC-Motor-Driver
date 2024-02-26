@@ -1,3 +1,3 @@
 [submodule "extra_packages/motor_interfaces"]
 	path = extra_packages/motor_interfaces
-	url = https://github.com/Legohead259/MicroROS-ESC-Interfaces
+	url = https://github.com/Legohead259/OlympianESC-Interfaces

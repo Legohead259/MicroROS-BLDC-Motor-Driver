@@ -19,7 +19,15 @@ bool currentSensorInitialized = false;
 
 
 void initTMAG5273Callback() {
-    return;
+    Serial1.print("Starting TMAG5273...");
+    if(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL)) { 
+        Serial1.println("Failed to start TMAG5273");
+        while(1); // Stop further code execution
+    }
+    sensor.setConvAvg(TMAG5273_X32_CONVERSION);
+    sensor.setAngleEn(0x01);
+    angleSensorInitialized = true;
+    Serial1.println("Done!");
 }
 
 float readTMAG5273Callback() {
@@ -70,31 +78,6 @@ void focBLDCSetup() {
     motor.linkDriver(&driver);
     Serial1.println("done!");
 
-    // set motion control loop to be used
-    motor.controller = MotionControlType::velocity;
-
-    // controller configuration 
-    // default parameters in defaults.h
-
-    // controller configuration based on the control type 
-    // velocity PID controller parameters
-    // default P=0.5 I = 10 D =0
-    motor.PID_velocity.P = 0.2;
-    motor.PID_velocity.I = 20;
-    motor.PID_velocity.D = 0.001;
-    // jerk control using voltage voltage ramp
-    // default value is 300 volts per sec  ~ 0.3V per millisecond
-    motor.PID_velocity.output_ramp = 1000;
-
-    // velocity low pass filtering
-    // default 5ms - try different values to see what is the best. 
-    // the lower the less filtered
-    // motor.LPF_velocity.Tf = 0.01;
-
-    // since the phase resistance is provided we set the current limit not voltage
-    // default 0.2
-    motor.current_limit = 1; // Amps
-
     // comment out if not needed
     motor.useMonitoring(Serial1);
 
@@ -110,7 +93,7 @@ void focBLDCSetup() {
     currentSensor.linkDriver(&driver);
     motor.linkCurrentSense(&currentSensor);
     Serial1.println("done!");
-    
+
     // align sensor and start FOC
     motor.initFOC();
     motor.disable();

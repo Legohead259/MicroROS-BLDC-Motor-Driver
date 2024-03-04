@@ -5,6 +5,7 @@
 #include <mutex>
 #include "foc_bldc.h"
 #include "state_machine.h"
+#include "micro_ros__joystick_map.h"
 
 // The micro_ros_platformio library provides the functions to communicate with ROS2
 #include <micro_ros_platformio.h>
@@ -14,6 +15,8 @@
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 #include <rclc_parameter/rclc_parameter.h>
+#include <micro_ros_utilities/type_utilities.h>
+#include <micro_ros_utilities/string_utilities.h>
 
 // Non-Volatile Memory libraries
 #ifdef ARDUINO_ARCH_ESP32
@@ -44,6 +47,9 @@
 #include "motor_interfaces/srv/set_target.h"
 #include "std_srvs/srv/trigger.h"
 
+// Get the joystick message from the `sensor_msgs` package
+#include <sensor_msgs/msg/joy.h>
+
 // Interface type format {package}__{interface [action/srv/msg]}__{InterfaceName}_{Additional [Response/Request]}
 
 // Redeclare types for readability
@@ -53,6 +59,7 @@ using Home_Result = motor_interfaces__action__Home_Result;
 
 using AngularMeasurementMsg = motor_interfaces__msg__AngularMeasurement;
 using MotorStatusMsg = motor_interfaces__msg__MotorStatus;
+using JoystickMsg = sensor_msgs__msg__Joy;
 
 using SetControllerMode_Request = motor_interfaces__srv__SetControllerMode_Request;
 using SetControllerMode_Response = motor_interfaces__srv__SetControllerMode_Response;

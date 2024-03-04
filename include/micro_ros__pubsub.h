@@ -19,6 +19,9 @@ extern rcl_timer_t angularMeasurementTimer;
 extern rcl_timer_t motorDirectionTimer;
 extern AngularMeasurementMsg angularMeasurementMsg;
 extern MotorStatusMsg motorDirectionMsg;
+extern rcl_subscription_t joySubscriber;
+extern JoystickMsg joystickMsg;
+
 
 
 // ===========================
@@ -27,5 +30,13 @@ extern MotorStatusMsg motorDirectionMsg;
 
 
 void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time);
+
+
+// ============================
+// === SUBSCRIBER CALLBACKS ===
+// ============================
+
+
+void joystickCallback(const void* msgin);
 
 #endif // MICRO_ROS__PUBSUB_H

@@ -18,6 +18,28 @@ bool createPublishers() {
     return true;
 }
 
+bool createSubscribers() {
+    RCCHECK(rclc_subscription_init_best_effort(
+        &joySubscriber,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Joy),
+        "joy"));
+
+    Serial1.print("Setting subscriber memory..."); // Debug
+    // Initialize subscriber message memory
+    micro_ros_utilities_memory_conf_t conf = {
+        .max_ros2_type_sequence_capacity = 20,
+        .max_basic_type_sequence_capacity = 20,
+    };
+    Serial1.print(micro_ros_utilities_create_message_memory(
+        ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Joy),
+        &joystickMsg,
+        conf));
+    Serial1.println("done!"); // Debug
+
+    return true;
+}
+
 bool createServices() {
     RCCHECK(rclc_service_init_default(
         &deviceIdentifyService, 
@@ -99,7 +121,20 @@ bool createTimers() {
 }
 
 bool addTimers() {
-    RCCHECK(rclc_executor_add_timer(&executor, &angularMeasurementTimer));
+    RCCHECK(rclc_executor_add_timer(
+        &executor, 
+        &angularMeasurementTimer));
+
+    return true;
+}
+
+bool addSubscribers() {
+    RCCHECK(rclc_executor_add_subscription(
+        &executor, 
+        &joySubscriber, 
+        &joystickMsg, 
+        &joystickCallback, 
+        ON_NEW_DATA));
 
     return true;
 }
@@ -116,6 +151,7 @@ bool createEntities() {
 
     // Create application components
     createPublishers();
+    createSubscribers();
     createServices();
     createTimers();
 
@@ -123,6 +159,7 @@ bool createEntities() {
     RCCHECK(rclc_executor_init(&executor, &support.context, 10+RCLC_EXECUTOR_PARAMETER_SERVER_HANDLES, &allocator));
     addServices();
     addTimers();
+    addSubscribers();
 
     initializeParameterService();
 

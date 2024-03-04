@@ -19,7 +19,7 @@
 */
 void setup() {
     Wire.begin();
-    Serial.begin(115200);
+    Serial.begin(500000);
     Serial1.begin(115200, SERIAL_8N1, RX1_PIN, TX1_PIN);
 
     Serial1.print("Starting LED state machine...");

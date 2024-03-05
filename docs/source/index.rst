@@ -7,10 +7,11 @@ Welcome to OlympianESC-Docs's documentation!
 ============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Source Code:
 
    code/main_cpp
+   code/state_machine_h
    code/neopixel_h
 
 

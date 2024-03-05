@@ -24,24 +24,24 @@
 
 // Enum to represent different states
 enum State {
-    IDLE_NO_CONNECTION,     // Micro-ROS node is awaiting connection to Agent
-    IDLE_WITH_CONNECTION,   // Micro-ROS node is connected to Agent
-    PARTIAL_FORWARD,        // Motor is moving forward, but not at full speed
-    PARTIAL_REVERSE,        // Motor is moving reverse, but not at full speed
-    FULL_FORWARD,           // Motor is moving forward at full speed
-    FULL_REVERSE,           // Motor is moving reverse at full speed
-    DEVICE_IDENTIFY,        // Micro-ROS node is commanded to identify itself using the LED
-    MOTOR_DISABLED,         // Motor is disabled due to motor fault
-    SENSOR_FAULT,           // One or more sensors have encountered an error
-    DRIVER_FAULT,           // The motor driver has encountered an error
-    TRANSPORT_FAULT         // The Micro-ROS transport layer has encountered an error
+    IDLE_NO_CONNECTION,     ///< Micro-ROS node is awaiting connection to Agent
+    IDLE_WITH_CONNECTION,   ///< Micro-ROS node is connected to Agent
+    PARTIAL_FORWARD,        ///< Motor is moving forward, but not at full speed
+    PARTIAL_REVERSE,        ///< Motor is moving reverse, but not at full speed
+    FULL_FORWARD,           ///< Motor is moving forward at full speed
+    FULL_REVERSE,           ///< Motor is moving reverse at full speed
+    DEVICE_IDENTIFY,        ///< Micro-ROS node is commanded to identify itself using the LED
+    MOTOR_DISABLED,         ///< Motor is disabled due to motor fault
+    SENSOR_FAULT,           ///< One or more sensors have encountered an error
+    DRIVER_FAULT,           ///< The motor driver has encountered an error
+    TRANSPORT_FAULT         ///< The Micro-ROS transport layer has encountered an error
 };
 
-extern State systemState;           // Current system state. Defaults to `IDLE_NO_CONNECTION`.
-extern State previousSystemState;   // Previous system state. Defaults to `IDLE_NO_CONNECTION`.
+extern State systemState;           ///< Current system state. Defaults to `IDLE_NO_CONNECTION`.
+extern State previousSystemState;   ///< Previous system state. Defaults to `IDLE_NO_CONNECTION`.
 
 /**
- * @brief 
+ * @brief Superclass object that encapsulates and handles a changing system state variable
  * 
  */
 class StateMachine {
@@ -74,8 +74,7 @@ public:
     }
 
 protected:
-    // Variable to store the pointer to the memory address of the current system state
-    State &currentState;
+    State &currentState; ///< Variable to store the pointer to the memory address of the current system state
 };
 
 #endif // STATE_MACHINE_H

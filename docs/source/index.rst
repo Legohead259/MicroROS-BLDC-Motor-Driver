@@ -8,9 +8,10 @@ Welcome to OlympianESC-Docs's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Source Code:
 
    code/main_cpp
+   code/neopixel_h
 
 
 Indices and tables

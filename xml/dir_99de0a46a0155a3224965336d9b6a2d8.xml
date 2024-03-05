@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_99de0a46a0155a3224965336d9b6a2d8" kind="dir">
+    <compoundname>src/examples/velocity_controller</compoundname>
+    <innerfile refid="velocity__controller_8cpp">velocity_controller.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/examples/velocity_controller/"/>
+  </compounddef>
+</doxygen>

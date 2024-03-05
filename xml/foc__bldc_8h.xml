@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="foc__bldc_8h" kind="file" language="C++">
+    <compoundname>foc_bldc.h</compoundname>
+    <includes local="no">SimpleFOC.h</includes>
+    <includes local="no">SparkFun_TMAG5273_Arduino_Library.h</includes>
+    <includes local="no">Wire.h</includes>
+    <includes local="no">mutex</includes>
+    <includedby refid="foc__bldc_8cpp" local="yes">src/foc_bldc.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="micro__ros____definitions_8h" local="yes">include/micro_ros__definitions.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>SparkFun_TMAG5273_Arduino_Library.h</label>
+      </node>
+      <node id="1">
+        <label>include/foc_bldc.h</label>
+        <link refid="foc__bldc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SimpleFOC.h</label>
+      </node>
+      <node id="4">
+        <label>Wire.h</label>
+      </node>
+      <node id="5">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/foc_bldc.h</label>
+        <link refid="foc__bldc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="foc__bldc_8h_1a4c40d548d989499dc4a3a77aede2d93f" prot="public" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex sensorFOCMutex</definition>
+        <argsstring></argsstring>
+        <name>sensorFOCMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="10" column="19" bodyfile="src/foc_bldc.cpp" bodystart="9" bodyend="-1" declfile="include/foc_bldc.h" declline="10" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a9343f492686bfe94b4735ca07dd49aa3" prot="public" static="no" mutable="no">
+        <type>TMAG5273</type>
+        <definition>TMAG5273 sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="11" column="17" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="5" bodyend="-1" declfile="include/foc_bldc.h" declline="11" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a3ff5bcdab699434551e1ea0e2b871e18" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool angleSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>angleSensorInitialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="12" column="13" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="24" bodyend="-1" declfile="include/foc_bldc.h" declline="12" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a4480c9f4d7ef0bd18abfd4dc0c84d7d7" prot="public" static="no" mutable="no">
+        <type>InlineCurrentSense</type>
+        <definition>InlineCurrentSense currentSensor</definition>
+        <argsstring></argsstring>
+        <name>currentSensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="13" column="27" bodyfile="src/foc_bldc.cpp" bodystart="12" bodyend="-1" declfile="include/foc_bldc.h" declline="13" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a5cd99dd593a81c89459b762b3cd1a631" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool currentSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>currentSensorInitialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="14" column="13" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="25" bodyend="-1" declfile="include/foc_bldc.h" declline="14" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a43d80622234e4367e362e93b7d565fe9" prot="public" static="no" mutable="no">
+        <type>GenericSensor</type>
+        <definition>GenericSensor sensorFOC</definition>
+        <argsstring></argsstring>
+        <name>sensorFOC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="19" column="22" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="40" bodyend="-1" declfile="include/foc_bldc.h" declline="19" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a98c14dc9cab98a575a69b871b98716f7" prot="public" static="no" mutable="no">
+        <type>BLDCMotor</type>
+        <definition>BLDCMotor motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="21" column="18" bodyfile="src/examples/factory/factory.cpp" bodystart="52" bodyend="-1" declfile="include/foc_bldc.h" declline="21" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a773de43e86b02898d484d10269046d53" prot="public" static="no" mutable="no">
+        <type>BLDCDriver6PWM</type>
+        <definition>BLDCDriver6PWM driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="22" column="23" bodyfile="src/examples/factory/factory.cpp" bodystart="53" bodyend="-1" declfile="include/foc_bldc.h" declline="22" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1af0df2177301e4061ab72ade2ea437bcd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="23" column="14" bodyfile="src/examples/velocity_controller/velocity_controller.cpp" bodystart="17" bodyend="-1" declfile="include/foc_bldc.h" declline="23" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8h_1a4e14b8ccf1889aa0f74cfca37a46b5bf" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t focTask</definition>
+        <argsstring></argsstring>
+        <name>focTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="24" column="21" bodyfile="src/foc_bldc.cpp" bodystart="53" bodyend="-1" declfile="include/foc_bldc.h" declline="24" declcolumn="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="foc__bldc_8h_1aec4b6990ed1c828cbaa9325ffcccb0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>initTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="16" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="27" bodyend="34" declfile="include/foc_bldc.h" declline="16" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8h_1af0ef01945756ce82a3e53cabab6aa93c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float readTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>readTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="17" column="7" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="36" bodyend="38" declfile="include/foc_bldc.h" declline="17" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8h_1ab2efd9e24cbf7f3c2170cfb77e289938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void controlMotorTask</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>controlMotorTask</name>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="26" column="6" bodyfile="src/foc_bldc.cpp" bodystart="55" bodyend="64" declfile="include/foc_bldc.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8h_1ab5a39290deaf7e2a4297d2975acdbde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void focBLDCSetup</definition>
+        <argsstring>()</argsstring>
+        <name>focBLDCSetup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/foc_bldc.h" line="28" column="6" bodyfile="src/foc_bldc.cpp" bodystart="66" bodyend="111" declfile="include/foc_bldc.h" declline="28" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FOC_BLDC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FOC_BLDC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SimpleFOC.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SparkFun_TMAG5273_Arduino_Library.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>std::mutex<sp/>sensorFOCMutex;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>TMAG5273<sp/>sensor;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>angleSensorInitialized;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>InlineCurrentSense<sp/>currentSensor;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>currentSensorInitialized;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initTMAG5273Callback();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>readTMAG5273Callback();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>GenericSensor<sp/>sensorFOC;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>BLDCMotor<sp/>motor;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>BLDCDriver6PWM<sp/>driver;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>target;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>TaskHandle_t<sp/>focTask;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>controlMotorTask(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>parameter);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>focBLDCSetup();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>FOC_BLDC_H</highlight></codeline>
+    </programlisting>
+    <location file="include/foc_bldc.h"/>
+  </compounddef>
+</doxygen>

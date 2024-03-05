@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="micro__ros____services_8h" kind="file" language="C++">
+    <compoundname>micro_ros__services.h</compoundname>
+    <includes refid="micro__ros____definitions_8h" local="yes">micro_ros__definitions.h</includes>
+    <includedby refid="micro__ros____services_8cpp" local="yes">src/micro_ros__services.cpp</includedby>
+    <includedby refid="micro__ros__bldc_8h" local="yes">include/micro_ros_bldc.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/micro_ros__services.h</label>
+        <link refid="micro__ros____services_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="micro__ros____services_8h_1aace5e13482886fc99a9298b09c2293cc" prot="public" static="no" mutable="no">
+        <type>rcl_service_t</type>
+        <definition>rcl_service_t setControllerModeService</definition>
+        <argsstring></argsstring>
+        <name>setControllerModeService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="11" column="22" bodyfile="src/micro_ros__services.cpp" bodystart="9" bodyend="-1" declfile="include/micro_ros__services.h" declline="11" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1aa46c4bab400debad112f26a7f574a6d2" prot="public" static="no" mutable="no">
+        <type>rcl_service_t</type>
+        <definition>rcl_service_t deviceIdentifyService</definition>
+        <argsstring></argsstring>
+        <name>deviceIdentifyService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="12" column="22" bodyfile="src/micro_ros__services.cpp" bodystart="10" bodyend="-1" declfile="include/micro_ros__services.h" declline="12" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1ad2551bc90361be5f770a85265e5c8aed" prot="public" static="no" mutable="no">
+        <type>rcl_service_t</type>
+        <definition>rcl_service_t setTargetService</definition>
+        <argsstring></argsstring>
+        <name>setTargetService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="13" column="22" bodyfile="src/micro_ros__services.cpp" bodystart="11" bodyend="-1" declfile="include/micro_ros__services.h" declline="13" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a23cd8e0ccafb5fe2d53b42b6df01abbd" prot="public" static="no" mutable="no">
+        <type>rcl_service_t</type>
+        <definition>rcl_service_t enableMotorService</definition>
+        <argsstring></argsstring>
+        <name>enableMotorService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="14" column="22" bodyfile="src/micro_ros__services.cpp" bodystart="12" bodyend="-1" declfile="include/micro_ros__services.h" declline="14" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a9d7fe3beee9c4281e572c6c481125980" prot="public" static="no" mutable="no">
+        <type>rcl_service_t</type>
+        <definition>rcl_service_t disableMotorService</definition>
+        <argsstring></argsstring>
+        <name>disableMotorService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="15" column="22" bodyfile="src/micro_ros__services.cpp" bodystart="13" bodyend="-1" declfile="include/micro_ros__services.h" declline="15" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a72b7850231d565312c959cdf960e110e" prot="public" static="no" mutable="no">
+        <type>rclc_parameter_server_t</type>
+        <definition>rclc_parameter_server_t parameterService</definition>
+        <argsstring></argsstring>
+        <name>parameterService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="16" column="32" bodyfile="src/micro_ros__parameters.cpp" bodystart="12" bodyend="-1" declfile="include/micro_ros__services.h" declline="16" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a746106ddd614dd4f58767dfd29fe9701" prot="public" static="no" mutable="no">
+        <type>SetControllerMode_Request</type>
+        <definition>SetControllerMode_Request setControllerModeRequest</definition>
+        <argsstring></argsstring>
+        <name>setControllerModeRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="17" column="34" bodyfile="src/micro_ros__services.cpp" bodystart="14" bodyend="-1" declfile="include/micro_ros__services.h" declline="17" declcolumn="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a9429bdd38e3b5ef9faa28489b12b9845" prot="public" static="no" mutable="no">
+        <type>SetControllerMode_Response</type>
+        <definition>SetControllerMode_Response setControllerModeResponse</definition>
+        <argsstring></argsstring>
+        <name>setControllerModeResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="18" column="35" bodyfile="src/micro_ros__services.cpp" bodystart="15" bodyend="-1" declfile="include/micro_ros__services.h" declline="18" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a96e4b27d9b0bdc531dbda98af7b6e31a" prot="public" static="no" mutable="no">
+        <type>Trigger_Request</type>
+        <definition>Trigger_Request deviceIdentifyRequest</definition>
+        <argsstring></argsstring>
+        <name>deviceIdentifyRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="19" column="24" bodyfile="src/micro_ros__services.cpp" bodystart="16" bodyend="-1" declfile="include/micro_ros__services.h" declline="19" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a60147dee6c533611ea6cb5a81a529851" prot="public" static="no" mutable="no">
+        <type>Trigger_Response</type>
+        <definition>Trigger_Response deviceIdentifyResponse</definition>
+        <argsstring></argsstring>
+        <name>deviceIdentifyResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="20" column="25" bodyfile="src/micro_ros__services.cpp" bodystart="17" bodyend="-1" declfile="include/micro_ros__services.h" declline="20" declcolumn="25"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a25b5023937018ce36d59ff0fe2135baf" prot="public" static="no" mutable="no">
+        <type>SetTarget_Request</type>
+        <definition>SetTarget_Request setTargetRequest</definition>
+        <argsstring></argsstring>
+        <name>setTargetRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="21" column="26" bodyfile="src/micro_ros__services.cpp" bodystart="18" bodyend="-1" declfile="include/micro_ros__services.h" declline="21" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1ab1480c01ca2ac82ebb3cde139258d60a" prot="public" static="no" mutable="no">
+        <type>SetTarget_Response</type>
+        <definition>SetTarget_Response setTargetResponse</definition>
+        <argsstring></argsstring>
+        <name>setTargetResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="22" column="27" bodyfile="src/micro_ros__services.cpp" bodystart="19" bodyend="-1" declfile="include/micro_ros__services.h" declline="22" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1ac82e069e26cac991dab8a532352a09b9" prot="public" static="no" mutable="no">
+        <type>Trigger_Request</type>
+        <definition>Trigger_Request enableMotorRequest</definition>
+        <argsstring></argsstring>
+        <name>enableMotorRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="23" column="24" bodyfile="src/micro_ros__services.cpp" bodystart="20" bodyend="-1" declfile="include/micro_ros__services.h" declline="23" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1adba08029f60bd805e9f17396c0da36d7" prot="public" static="no" mutable="no">
+        <type>Trigger_Request</type>
+        <definition>Trigger_Request enableMotorResponse</definition>
+        <argsstring></argsstring>
+        <name>enableMotorResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="24" column="24" bodyfile="src/micro_ros__services.cpp" bodystart="21" bodyend="-1" declfile="include/micro_ros__services.h" declline="24" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a13728fb1abb70fe1adb93540bd2d0954" prot="public" static="no" mutable="no">
+        <type>Trigger_Request</type>
+        <definition>Trigger_Request disableMotorRequest</definition>
+        <argsstring></argsstring>
+        <name>disableMotorRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="25" column="24" bodyfile="src/micro_ros__services.cpp" bodystart="22" bodyend="-1" declfile="include/micro_ros__services.h" declline="25" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____services_8h_1a25193ac3b7a04f517f70e118173f2f0f" prot="public" static="no" mutable="no">
+        <type>Trigger_Request</type>
+        <definition>Trigger_Request disableMotorResponse</definition>
+        <argsstring></argsstring>
+        <name>disableMotorResponse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="26" column="24" bodyfile="src/micro_ros__services.cpp" bodystart="23" bodyend="-1" declfile="include/micro_ros__services.h" declline="26" declcolumn="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="micro__ros____services_8h_1a73a1849adc766090cb5b877735c64350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setControllerModeCallback</definition>
+        <argsstring>(const void *req, void *res)</argsstring>
+        <name>setControllerModeCallback</name>
+        <param>
+          <type>const void *</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="34" column="6" declfile="include/micro_ros__services.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____services_8h_1a782ec79b5ae87206ca094e020c9bc2bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deviceIdentifyCallback</definition>
+        <argsstring>(const void *req, void *res)</argsstring>
+        <name>deviceIdentifyCallback</name>
+        <param>
+          <type>const void *</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="35" column="6" bodyfile="src/micro_ros__services.cpp" bodystart="31" bodyend="39" declfile="include/micro_ros__services.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____services_8h_1a21b1f8e57c8e53b37135b0e7e265d06f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setTargetCallback</definition>
+        <argsstring>(const void *req, void *res)</argsstring>
+        <name>setTargetCallback</name>
+        <param>
+          <type>const void *</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="36" column="6" bodyfile="src/micro_ros__services.cpp" bodystart="41" bodyend="59" declfile="include/micro_ros__services.h" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____services_8h_1ae167bd2292b5dde47fdeedef06edaa69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void enableMotorCallback</definition>
+        <argsstring>(const void *req, void *res)</argsstring>
+        <name>enableMotorCallback</name>
+        <param>
+          <type>const void *</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="37" column="6" bodyfile="src/micro_ros__services.cpp" bodystart="61" bodyend="67" declfile="include/micro_ros__services.h" declline="37" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____services_8h_1abee505532ba182e9a70c413607923ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void disableMotorCallback</definition>
+        <argsstring>(const void *req, void *res)</argsstring>
+        <name>disableMotorCallback</name>
+        <param>
+          <type>const void *</type>
+          <declname>req</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="38" column="6" bodyfile="src/micro_ros__services.cpp" bodystart="69" bodyend="75" declfile="include/micro_ros__services.h" declline="38" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____services_8h_1aa18b2ee6603b11159022f0ca6bb3274b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool onParameterChangedCallback</definition>
+        <argsstring>(const Parameter *oldParam, const Parameter *newParam, void *context)</argsstring>
+        <name>onParameterChangedCallback</name>
+        <param>
+          <type>const Parameter *</type>
+          <declname>oldParam</declname>
+        </param>
+        <param>
+          <type>const Parameter *</type>
+          <declname>newParam</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__services.h" line="39" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="222" bodyend="266" declfile="include/micro_ros__services.h" declline="39" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MICRO_ROS__SERVICES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_ROS__SERVICES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__definitions.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>SERVICE<sp/>OBJECTS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rcl_service_t<sp/>setControllerModeService;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rcl_service_t<sp/>deviceIdentifyService;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rcl_service_t<sp/>setTargetService;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rcl_service_t<sp/>enableMotorService;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rcl_service_t<sp/>disableMotorService;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>rclc_parameter_server_t<sp/>parameterService;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SetControllerMode_Request<sp/>setControllerModeRequest;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SetControllerMode_Response<sp/>setControllerModeResponse;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Request<sp/>deviceIdentifyRequest;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Response<sp/>deviceIdentifyResponse;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SetTarget_Request<sp/>setTargetRequest;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>SetTarget_Response<sp/>setTargetResponse;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Request<sp/>enableMotorRequest;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Request<sp/>enableMotorResponse;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Request<sp/>disableMotorRequest;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Trigger_Request<sp/>disableMotorResponse;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>SERVICE<sp/>CALLBACKS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setControllerModeCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>req,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>res);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>deviceIdentifyCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>req,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>res);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTargetCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>req,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>res);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enableMotorCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>req,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>res);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>disableMotorCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>req,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>res);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>onParameterChangedCallback(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Parameter*<sp/>oldParam,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Parameter*<sp/>newParam,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>context);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_ROS__SERVICES_H</highlight></codeline>
+    </programlisting>
+    <location file="include/micro_ros__services.h"/>
+  </compounddef>
+</doxygen>

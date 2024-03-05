@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="micro-ros__reconnection_8cpp" kind="file" language="C++">
+    <compoundname>micro-ros_reconnection.cpp</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">micro_ros_platformio.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">rcl/rcl.h</includes>
+    <includes local="no">rcl/error_handling.h</includes>
+    <includes local="no">rclc/rclc.h</includes>
+    <includes local="no">rclc/executor.h</includes>
+    <includes local="no">rmw_microros/rmw_microros.h</includes>
+    <includes local="no">std_msgs/msg/int32.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp</label>
+        <link refid="micro-ros__reconnection_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>rclc/rclc.h</label>
+      </node>
+      <node id="5">
+        <label>rcl/rcl.h</label>
+      </node>
+      <node id="3">
+        <label>micro_ros_platformio.h</label>
+      </node>
+      <node id="9">
+        <label>rmw_microros/rmw_microros.h</label>
+      </node>
+      <node id="10">
+        <label>std_msgs/msg/int32.h</label>
+      </node>
+      <node id="6">
+        <label>rcl/error_handling.h</label>
+      </node>
+      <node id="8">
+        <label>rclc/executor.h</label>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="micro-ros__reconnection_8cpp_1ae0a96fcbd05806f45faa9fb11f771b52" prot="public" static="no">
+        <name>RX1_PIN</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="14" column="9" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro-ros__reconnection_8cpp_1a1e8125b2e82abc63c65b375cf008b44d" prot="public" static="no">
+        <name>TX1_PIN</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="15" column="9" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro-ros__reconnection_8cpp_1ab4553be4db9860d940f81d7447173b2f" prot="public" static="no">
+        <name>LED_PIN</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="16" column="9" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro-ros__reconnection_8cpp_1a9cb001747cb67f240459b3b105a63529" prot="public" static="no">
+        <name>RCCHECK</name>
+        <param><defname>fn</defname></param>
+        <initializer>{ rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){return false;}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="17" column="9" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro-ros__reconnection_8cpp_1ab3935ba9b16dcda80eca9c91dc4a9a19" prot="public" static="no">
+        <name>EXECUTE_EVERY_N_MS</name>
+        <param><defname>MS</defname></param>
+        <param><defname>X</defname></param>
+        <initializer>    do { \
+    static volatile int64_t init = -1; \
+    if (init == -1) { init = uxr_millis();} \
+    if (uxr_millis() - init &gt; MS) { X; init = uxr_millis();} \
+} while (0)\</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="18" column="9" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="micro-ros__reconnection_8cpp_1aa19be6305a5a4485e1e70de70ed7d677" prot="public" static="no" strong="no">
+        <type></type>
+        <name>states</name>
+        <enumvalue id="micro-ros__reconnection_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a4b07b1c37e48ea6881eb449841444e1d" prot="public">
+          <name>WAITING_AGENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="micro-ros__reconnection_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a8350504a9b42263345a187afc2a8f68e" prot="public">
+          <name>AGENT_AVAILABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="micro-ros__reconnection_8cpp_1aa19be6305a5a4485e1e70de70ed7d677a086ba9293c4067ddc1011eb4dffde038" prot="public">
+          <name>AGENT_CONNECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="micro-ros__reconnection_8cpp_1aa19be6305a5a4485e1e70de70ed7d677ac731163daa32a8b5dbbda4811a67fd1b" prot="public">
+          <name>AGENT_DISCONNECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="33" column="1" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="33" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1ad7ca784e9d6a36f1a990ccef47340149" prot="public" static="no" mutable="no">
+        <type>rclc_support_t</type>
+        <definition>rclc_support_t support</definition>
+        <argsstring></argsstring>
+        <name>support</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="24" column="16" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1ab69e3b0b5d335275c7e2da94c0886b1c" prot="public" static="no" mutable="no">
+        <type>rcl_node_t</type>
+        <definition>rcl_node_t node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="25" column="12" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1af9d2cadeca4b4137782e75dc578211f6" prot="public" static="no" mutable="no">
+        <type>rcl_timer_t</type>
+        <definition>rcl_timer_t timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="26" column="13" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1a864bc8f364fa8dd00b7265f7fd39ce84" prot="public" static="no" mutable="no">
+        <type>rclc_executor_t</type>
+        <definition>rclc_executor_t executor</definition>
+        <argsstring></argsstring>
+        <name>executor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="27" column="17" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1acc1518bac7ff8bf75ac11589055d7578" prot="public" static="no" mutable="no">
+        <type>rcl_allocator_t</type>
+        <definition>rcl_allocator_t allocator</definition>
+        <argsstring></argsstring>
+        <name>allocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="28" column="17" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1a8ffa76516285452da809edea3a85870f" prot="public" static="no" mutable="no">
+        <type>rcl_publisher_t</type>
+        <definition>rcl_publisher_t publisher</definition>
+        <argsstring></argsstring>
+        <name>publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="29" column="17" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1af3db42f680713f9bd83e1f606d895619" prot="public" static="no" mutable="no">
+        <type>std_msgs__msg__Int32</type>
+        <definition>std_msgs__msg__Int32 msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="30" column="22" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1a0e7da3fb0c22544996026e974e687fb0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_ros_init_successful</definition>
+        <argsstring></argsstring>
+        <name>micro_ros_init_successful</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="31" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro-ros__reconnection_8cpp_1aa56f777b40743798ee0726ba4ded17a9" prot="public" static="no" mutable="no">
+        <type>enum states</type>
+        <definition>enum states state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="38" column="7"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="micro-ros__reconnection_8cpp_1ad7851cc53e8c293a41ade5c4ea9020b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void timer_callback</definition>
+        <argsstring>(rcl_timer_t *timer, int64_t last_call_time)</argsstring>
+        <name>timer_callback</name>
+        <param>
+          <type>rcl_timer_t *</type>
+          <declname>timer</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>last_call_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="40" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="40" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="micro-ros__reconnection_8cpp_1a6ebcd257d8ca3d30c19a587407dcc007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool create_entities</definition>
+        <argsstring>()</argsstring>
+        <name>create_entities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="53" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="53" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="micro-ros__reconnection_8cpp_1a6ec56d5719b6286a3f5fd83f5b26eddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void destroy_entities</definition>
+        <argsstring>()</argsstring>
+        <name>destroy_entities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="85" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="85" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="micro-ros__reconnection_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="96" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="96" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="micro-ros__reconnection_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" line="107" column="6" bodyfile="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp" bodystart="107" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro_ros_platformio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rcl/rcl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rcl/error_handling.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclc/rclc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclc/executor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rmw_microros/rmw_microros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;std_msgs/msg/int32.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RX1_PIN<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TX1_PIN<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LED_PIN<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RCCHECK(fn)<sp/>{<sp/>rcl_ret_t<sp/>temp_rc<sp/>=<sp/>fn;<sp/>if((temp_rc<sp/>!=<sp/>RCL_RET_OK)){return<sp/>false;}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EXECUTE_EVERY_N_MS(MS,<sp/>X)<sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>static<sp/>volatile<sp/>int64_t<sp/>init<sp/>=<sp/>-1;<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(init<sp/>==<sp/>-1)<sp/>{<sp/>init<sp/>=<sp/>uxr_millis();}<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(uxr_millis()<sp/>-<sp/>init<sp/>&gt;<sp/>MS)<sp/>{<sp/>X;<sp/>init<sp/>=<sp/>uxr_millis();}<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor">}<sp/>while<sp/>(0)\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">rclc_support_t<sp/>support;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">rcl_node_t<sp/>node;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">rcl_timer_t<sp/>timer;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">rclc_executor_t<sp/>executor;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">rcl_allocator_t<sp/>allocator;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">rcl_publisher_t<sp/>publisher;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">std_msgs__msg__Int32<sp/>msg;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>micro_ros_init_successful;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>states<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>WAITING_AGENT,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>AGENT_AVAILABLE,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>AGENT_CONNECTED,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>AGENT_DISCONNECTED</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/>state;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>timer_callback(rcl_timer_t<sp/>*<sp/>timer,<sp/>int64_t<sp/>last_call_time)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>last_call_time;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timer<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcl_publish(&amp;publisher,<sp/>&amp;msg,<sp/>NULL);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg.data++;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions<sp/>create_entities<sp/>and<sp/>destroy_entities<sp/>can<sp/>take<sp/>several<sp/>seconds.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>order<sp/>to<sp/>reduce<sp/>this<sp/>rebuild<sp/>the<sp/>library<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-<sp/>RMW_UXRCE_ENTITY_CREATION_DESTROY_TIMEOUT=0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-<sp/>UCLIENT_MAX_SESSION_CONNECTION_ATTEMPTS=3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>create_entities()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>allocator<sp/>=<sp/>rcl_get_default_allocator();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>init_options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_support_init(&amp;support,<sp/>0,<sp/>NULL,<sp/>&amp;allocator));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_node_init_default(&amp;node,<sp/></highlight><highlight class="stringliteral">&quot;int32_publisher_rclc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>&amp;support));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>publisher</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_publisher_init_best_effort(</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;publisher,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;node,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs,<sp/>msg,<sp/>Int32),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;std_msgs_msg_Int32&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>timer,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timer_timeout<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_timer_init_default(</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;timer,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;support,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RCL_MS_TO_NS(timer_timeout),</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer_callback));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>executor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>executor<sp/>=<sp/>rclc_executor_get_zero_initialized_executor();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_executor_init(&amp;executor,<sp/>&amp;support.context,<sp/>1,<sp/>&amp;allocator));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_executor_add_timer(&amp;executor,<sp/>&amp;timer));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroy_entities()<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>rmw_context_t<sp/>*<sp/>rmw_context<sp/>=<sp/>rcl_context_get_rmw_context(&amp;support.context);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)<sp/>rmw_uros_set_context_entity_destroy_session_timeout(rmw_context,<sp/>0);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>rcl_publisher_fini(&amp;publisher,<sp/>&amp;node);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>rcl_timer_fini(&amp;timer);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>rclc_executor_fini(&amp;executor);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>rcl_node_fini(&amp;node);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>rclc_support_fini(&amp;support);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.begin(115200,<sp/>SERIAL_8N1,<sp/>RX1_PIN,<sp/>TX1_PIN);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>set_microros_serial_transports(Serial);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(LED_PIN,<sp/>OUTPUT);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>state<sp/>=<sp/>WAITING_AGENT;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>msg.data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(state)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WAITING_AGENT:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXECUTE_EVERY_N_MS(500,<sp/>state<sp/>=<sp/>(RMW_RET_OK<sp/>==<sp/>rmw_uros_ping_agent(100,<sp/>1))<sp/>?<sp/>AGENT_AVAILABLE<sp/>:<sp/>WAITING_AGENT;);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AGENT_AVAILABLE:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>==<sp/>create_entities())<sp/>?<sp/>AGENT_CONNECTED<sp/>:<sp/>WAITING_AGENT;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>WAITING_AGENT)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destroy_entities();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AGENT_CONNECTED:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXECUTE_EVERY_N_MS(200,<sp/>state<sp/>=<sp/>(RMW_RET_OK<sp/>==<sp/>rmw_uros_ping_agent(100,<sp/>1))<sp/>?<sp/>AGENT_CONNECTED<sp/>:<sp/>AGENT_DISCONNECTED;);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>AGENT_CONNECTED)<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rclc_executor_spin_some(&amp;executor,<sp/>RCL_MS_TO_NS(100));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>AGENT_DISCONNECTED:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destroy_entities();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>WAITING_AGENT;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(state<sp/>==<sp/>AGENT_CONNECTED)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(LED_PIN,<sp/>1);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(LED_PIN,<sp/>0);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/examples/micro-ros_reconnection/micro-ros_reconnection.cpp"/>
+  </compounddef>
+</doxygen>

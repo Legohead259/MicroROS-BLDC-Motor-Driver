@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classLEDStateMachine" kind="class" language="C++" prot="public">
+    <compoundname>LEDStateMachine</compoundname>
+    <basecompoundref refid="classStateMachine" prot="public" virt="non-virtual">StateMachine</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classLEDStateMachine_1a618aead359e8e8cebeaf1e1653eb4284" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LEDStateMachine::LEDStateMachine</definition>
+        <argsstring>(State &amp;currentStatePtr)</argsstring>
+        <name>LEDStateMachine</name>
+        <param>
+          <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref> &amp;</type>
+          <declname>currentStatePtr</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classLEDStateMachine" kindref="compound">LEDStateMachine</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentStatePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the global <computeroutput>currentState</computeroutput> variable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="68" column="5" bodyfile="include/neopixel.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classLEDStateMachine_1a6ed1eea0bc40da373e40e267b46e06ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LEDStateMachine::begin</definition>
+        <argsstring>(void)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the NeoPixel LED and sets its brightness to <computeroutput>MAX_BRIGHTNESS</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="74" column="10" bodyfile="src/neopixel.cpp" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classLEDStateMachine_1a5553c8f564dead6ffa8c5f716e6a82cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void LEDStateMachine::executeState</definition>
+        <argsstring>()</argsstring>
+        <name>executeState</name>
+        <reimplements refid="classStateMachine_1a2104bc41da7c2e3142635bfeb9bbfe58">executeState</reimplements>
+        <briefdescription>
+<para>Executes various LED state tasks based on the current system state. This should be executed in a continuous loop as it needs constant updating. Any LED functions executed within should be asynchronous (non-blocking). If applicable, they should also be thread safe. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="82" column="10" bodyfile="src/neopixel.cpp" bodystart="22" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classLEDStateMachine_1afe9fbed7a5c5effc2596ec1749bbf4d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LEDStateMachine::setLEDColor</definition>
+        <argsstring>(uint32_t color)</argsstring>
+        <name>setLEDColor</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the NeoPixel LED to the color. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired color to display on the LED. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="90" column="10" bodyfile="src/neopixel.cpp" bodystart="81" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classLEDStateMachine_1aeb810862a1e8b3d1f1f52831c7245b59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LEDStateMachine::asyncBlink</definition>
+        <argsstring>(uint32_t color, uint32_t interval=BLINK_PERIOD)</argsstring>
+        <name>asyncBlink</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>interval</declname>
+          <defval>BLINK_PERIOD</defval>
+        </param>
+        <briefdescription>
+<para>Asynchronously blinks the LED without blocking code execution (like when using <computeroutput>delay()</computeroutput>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired color to display on the LED </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval the LED stays ON and OFF </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="98" column="10" bodyfile="src/neopixel.cpp" bodystart="87" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classLEDStateMachine_1a12acd4b1a2a8a759d5eecf8462d5f2d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LEDStateMachine::asyncAlternatingBlink</definition>
+        <argsstring>(uint32_t firstColor, uint32_t secondColor, uint32_t interval=BLINK_PERIOD)</argsstring>
+        <name>asyncAlternatingBlink</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>firstColor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>secondColor</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>interval</declname>
+          <defval>BLINK_PERIOD</defval>
+        </param>
+        <briefdescription>
+<para>Asynchronously alternates between two different LED colors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>firstColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first desired color to display on the LED. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secondColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second desired color to display on the LED. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interval each color will be displayed before switching. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/neopixel.h" line="107" column="10" bodyfile="src/neopixel.cpp" bodystart="94" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LEDStateMachine</label>
+        <link refid="classLEDStateMachine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>StateMachine</label>
+        <link refid="classStateMachine"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LEDStateMachine</label>
+        <link refid="classLEDStateMachine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>StateMachine</label>
+        <link refid="classStateMachine"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/neopixel.h" line="61" column="1" bodyfile="include/neopixel.h" bodystart="61" bodyend="108"/>
+    <listofallmembers>
+      <member refid="classLEDStateMachine_1a12acd4b1a2a8a759d5eecf8462d5f2d6" prot="private" virt="non-virtual"><scope>LEDStateMachine</scope><name>asyncAlternatingBlink</name></member>
+      <member refid="classLEDStateMachine_1aeb810862a1e8b3d1f1f52831c7245b59" prot="private" virt="non-virtual"><scope>LEDStateMachine</scope><name>asyncBlink</name></member>
+      <member refid="classLEDStateMachine_1a6ed1eea0bc40da373e40e267b46e06ac" prot="public" virt="non-virtual"><scope>LEDStateMachine</scope><name>begin</name></member>
+      <member refid="classStateMachine_1a5f46155fddb373901168c700f9d4d023" prot="public" virt="non-virtual"><scope>LEDStateMachine</scope><name>changeSystemState</name></member>
+      <member refid="classStateMachine_1a2a66289bc12dcbc88266ef25c2f1491a" prot="protected" virt="non-virtual"><scope>LEDStateMachine</scope><name>currentState</name></member>
+      <member refid="classLEDStateMachine_1a5553c8f564dead6ffa8c5f716e6a82cd" prot="public" virt="virtual"><scope>LEDStateMachine</scope><name>executeState</name></member>
+      <member refid="classLEDStateMachine_1a618aead359e8e8cebeaf1e1653eb4284" prot="public" virt="non-virtual"><scope>LEDStateMachine</scope><name>LEDStateMachine</name></member>
+      <member refid="classLEDStateMachine_1afe9fbed7a5c5effc2596ec1749bbf4d1" prot="private" virt="non-virtual"><scope>LEDStateMachine</scope><name>setLEDColor</name></member>
+      <member refid="classStateMachine_1a1b4d29aa68785888048d72dba673c203" prot="public" virt="non-virtual"><scope>LEDStateMachine</scope><name>StateMachine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

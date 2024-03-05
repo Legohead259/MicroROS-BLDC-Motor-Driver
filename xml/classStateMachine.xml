@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classStateMachine" kind="class" language="C++" prot="public">
+    <compoundname>StateMachine</compoundname>
+    <derivedcompoundref refid="classLEDStateMachine" prot="public" virt="non-virtual">LEDStateMachine</derivedcompoundref>
+    <includes local="no">state_machine.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classStateMachine_1a2a66289bc12dcbc88266ef25c2f1491a" prot="protected" static="no" mutable="no">
+        <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref> &amp;</type>
+        <definition>State&amp; StateMachine::currentState</definition>
+        <argsstring></argsstring>
+        <name>currentState</name>
+        <briefdescription>
+<para>Variable to store the pointer to the memory address of the current system state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="77" column="11" bodyfile="include/state_machine.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classStateMachine_1a1b4d29aa68785888048d72dba673c203" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>StateMachine::StateMachine</definition>
+        <argsstring>(State &amp;currentStatePtr)</argsstring>
+        <name>StateMachine</name>
+        <param>
+          <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref> &amp;</type>
+          <declname>currentStatePtr</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new State Machine object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentStatePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the system state global variable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="54" column="5" bodyfile="include/state_machine.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classStateMachine_1a2104bc41da7c2e3142635bfeb9bbfe58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void StateMachine::executeState</definition>
+        <argsstring>()</argsstring>
+        <name>executeState</name>
+        <reimplementedby refid="classLEDStateMachine_1a5553c8f564dead6ffa8c5f716e6a82cd">executeState</reimplementedby>
+        <briefdescription>
+<para>Execute functions based on the current system state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Should be executed in an asynchronous loop </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="61" column="18" bodyfile="include/state_machine.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classStateMachine_1a5f46155fddb373901168c700f9d4d023" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void StateMachine::changeSystemState</definition>
+        <argsstring>(State newState)</argsstring>
+        <name>changeSystemState</name>
+        <param>
+          <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref></type>
+          <declname>newState</declname>
+        </param>
+        <briefdescription>
+<para>Changes the value of the global <computeroutput>systemState</computeroutput> variable. Saves the system state to <computeroutput>previousSystemState</computeroutput> before making the change. If the State Machine object is initialized with the <computeroutput>systemState</computeroutput> variable, this will automatically update its internal state value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new desired system state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="71" column="17" bodyfile="include/state_machine.h" bodystart="71" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Superclass object that encapsulates and handles a changing system state variable. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LEDStateMachine</label>
+        <link refid="classLEDStateMachine"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>StateMachine</label>
+        <link refid="classStateMachine"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/state_machine.h" line="47" column="1" bodyfile="include/state_machine.h" bodystart="47" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classStateMachine_1a5f46155fddb373901168c700f9d4d023" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>changeSystemState</name></member>
+      <member refid="classStateMachine_1a2a66289bc12dcbc88266ef25c2f1491a" prot="protected" virt="non-virtual"><scope>StateMachine</scope><name>currentState</name></member>
+      <member refid="classStateMachine_1a2104bc41da7c2e3142635bfeb9bbfe58" prot="public" virt="virtual"><scope>StateMachine</scope><name>executeState</name></member>
+      <member refid="classStateMachine_1a1b4d29aa68785888048d72dba673c203" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>StateMachine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_9c1dfb55e5a5697e4c51128841c5bf41" kind="dir">
+    <compoundname>src/examples/utils</compoundname>
+    <innerdir refid="dir_dc16f6ff147fa0ba28d6b6844d02cce9">src/examples/utils/calibration</innerdir>
+    <innerdir refid="dir_2214e603fcc1e4feb90121aed6ac18f2">src/examples/utils/i2c_scanner</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/examples/utils/"/>
+  </compounddef>
+</doxygen>

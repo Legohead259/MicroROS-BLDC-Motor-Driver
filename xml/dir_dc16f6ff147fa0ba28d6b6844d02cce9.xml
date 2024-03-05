@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_dc16f6ff147fa0ba28d6b6844d02cce9" kind="dir">
+    <compoundname>src/examples/utils/calibration</compoundname>
+    <innerdir refid="dir_2a4fa6c42cab561a1e8c95235acd925d">src/examples/utils/calibration/find_kv_rating</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/examples/utils/calibration/"/>
+  </compounddef>
+</doxygen>

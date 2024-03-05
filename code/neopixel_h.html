@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED State Machine &mdash; OlympianESC-Docs 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="State Machine" href="state_machine_h.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            OlympianESC-Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Source Code:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main_cpp.html">Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state_machine_h.html">State Machine</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LED State Machine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#neopixel_8h_1intro">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#neopixel_8h_1colors_patterns">LED Colors and Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv45strip"><code class="docutils literal notranslate"><span class="pre">strip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv47LED_OFF"><code class="docutils literal notranslate"><span class="pre">LED_OFF</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv45WHITE"><code class="docutils literal notranslate"><span class="pre">WHITE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv44BLUE"><code class="docutils literal notranslate"><span class="pre">BLUE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv45GREEN"><code class="docutils literal notranslate"><span class="pre">GREEN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv43RED"><code class="docutils literal notranslate"><span class="pre">RED</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv44CYAN"><code class="docutils literal notranslate"><span class="pre">CYAN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv47MAGENTA"><code class="docutils literal notranslate"><span class="pre">MAGENTA</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv46YELLOW"><code class="docutils literal notranslate"><span class="pre">YELLOW</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv46ORANGE"><code class="docutils literal notranslate"><span class="pre">ORANGE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv415ledStateMachine"><code class="docutils literal notranslate"><span class="pre">ledStateMachine</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#_CPPv415LEDStateMachine"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine15LEDStateMachineER5State"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::LEDStateMachine()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine5beginEv"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::begin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine12executeStateEv"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::executeState()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine11setLEDColorE8uint32_t"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::setLEDColor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine10asyncBlinkE8uint32_t8uint32_t"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::asyncBlink()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv4N15LEDStateMachine21asyncAlternatingBlinkE8uint32_t8uint32_t8uint32_t"><code class="docutils literal notranslate"><span class="pre">LEDStateMachine::asyncAlternatingBlink()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OlympianESC-Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LED State Machine</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code/neopixel_h.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="led-state-machine">
+<span id="header-neopixel"></span><h1>LED State Machine<a class="headerlink" href="#led-state-machine" title="Link to this heading"></a></h1>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Braidan Duffy</p>
+</dd>
+</dl>
+</p>
+<section id="neopixel_8h_1intro">
+<h2>Introduction<a class="headerlink" href="#neopixel_8h_1intro" title="Link to this heading"></a></h2>
+<p id="neopixel_8h_1intro">This class integrates the <code class="docutils literal notranslate"><a class="reference internal" href="state_machine_h.html#classStateMachine"><span class="std std-ref"><span class="pre">StateMachine</span></span></a></code> superclass and defines some NeoPixel-specific functions. The OlympianESC evaluation board uses a NeoPixel RGB LED for user feedback. This includes showing connection and error states, motor controls, and identification testing. The color and pattern of the LED depends on the system state as discussed in the next section.</p>
+</section>
+<section id="neopixel_8h_1colors_patterns">
+<h2>LED Colors and Patterns<a class="headerlink" href="#neopixel_8h_1colors_patterns" title="Link to this heading"></a></h2>
+<p id="neopixel_8h_1colors_patterns">The NeoPixel RGB LED can be commanded to show a practically infinite range of colors in 255 brightness steps. For the system states defined in <code class="docutils literal notranslate"><span class="pre">state_machine.h</span></code>, we can build a table for colors and patterns users can associate with each state:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>System State   </p></th>
+<th class="head"><p>Color(s)   </p></th>
+<th class="head"><p>Pattern    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IDLE_NO_CONNECTION   </p></td>
+<td><p>Yellow   </p></td>
+<td><p>Blinking    </p></td>
+</tr>
+<tr class="row-odd"><td><p>IDLE_WITH_CONNECTION   </p></td>
+<td><p>Yellow   </p></td>
+<td><p>Solid    </p></td>
+</tr>
+<tr class="row-even"><td><p>PARTIAL_FORWARD   </p></td>
+<td><p>Green   </p></td>
+<td><p>Blinking    </p></td>
+</tr>
+<tr class="row-odd"><td><p>PARTIAL_REVERSE   </p></td>
+<td><p>Red   </p></td>
+<td><p>Blinking    </p></td>
+</tr>
+<tr class="row-even"><td><p>FULL_FORWARD   </p></td>
+<td><p>Green   </p></td>
+<td><p>Solid    </p></td>
+</tr>
+<tr class="row-odd"><td><p>FULL_REVERSE   </p></td>
+<td><p>Red   </p></td>
+<td><p>Solid    </p></td>
+</tr>
+<tr class="row-even"><td><p>DEVICE_IDENTIFY   </p></td>
+<td><p>White, Magenta   </p></td>
+<td><p>Blinking, alternating    </p></td>
+</tr>
+<tr class="row-odd"><td><p>MOTOR_DISABLED   </p></td>
+<td><p>Orange, Blue   </p></td>
+<td><p>Blinking, alternating    </p></td>
+</tr>
+<tr class="row-even"><td><p>SENSOR_FAULT   </p></td>
+<td><p>Orange, Magenta   </p></td>
+<td><p>Blinking, alternating    </p></td>
+</tr>
+<tr class="row-odd"><td><p>DRIVER_FAULT   </p></td>
+<td><p>Orange, Cyan   </p></td>
+<td><p>Blinking, alternating    </p></td>
+</tr>
+<tr class="row-even"><td><p>TRANSPORT_FAULT   </p></td>
+<td><p>Orange, Yellow   </p></td>
+<td><p>Blinking, alternating   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><dl class="simple">
+<dt><strong>Version</strong></dt><dd><p>1.0 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2024-03-05</p>
+</dd>
+<dt><strong>Copyright</strong></dt><dd><p>Copyright (c) 2024 </p>
+</dd>
+</dl>
+</p>
+</section>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.NUM_PIXELS">
+<span class="target" id="neopixel_8h_1a893011783fefc21f30baf08142cd3c35"></span><span class="sig-name descname"><span class="n"><span class="pre">NUM_PIXELS</span></span></span><a class="headerlink" href="#c.NUM_PIXELS" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.MAX_BRIGHTNESS">
+<span class="target" id="neopixel_8h_1a2134a5a06f0865c945543a1f07eba387"></span><span class="sig-name descname"><span class="n"><span class="pre">MAX_BRIGHTNESS</span></span></span><a class="headerlink" href="#c.MAX_BRIGHTNESS" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.BLINK_PERIOD">
+<span class="target" id="neopixel_8h_1a1a4dc816cd79a0f3c5de1095bb094881"></span><span class="sig-name descname"><span class="n"><span class="pre">BLINK_PERIOD</span></span></span><a class="headerlink" href="#c.BLINK_PERIOD" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.IDENTIFY_TIMEOUT">
+<span class="target" id="neopixel_8h_1ad4f24fa30082fd81530b2025b162f7dc"></span><span class="sig-name descname"><span class="n"><span class="pre">IDENTIFY_TIMEOUT</span></span></span><a class="headerlink" href="#c.IDENTIFY_TIMEOUT" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45strip">
+<span id="_CPPv35strip"></span><span id="_CPPv25strip"></span><span id="strip__Adafruit_NeoPixel"></span><span class="target" id="neopixel_8h_1acf2771bd8bfaf855bbcc6c30301bf380"></span><span class="n"><span class="pre">Adafruit_NeoPixel</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strip</span></span></span><a class="headerlink" href="#_CPPv45strip" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv47LED_OFF">
+<span id="_CPPv37LED_OFF"></span><span id="_CPPv27LED_OFF"></span><span id="LED_OFF__uint32_tC"></span><span class="target" id="neopixel_8h_1ad5dcaa56dfbc8a8336d7935a6f210fff"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LED_OFF</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv47LED_OFF" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45WHITE">
+<span id="_CPPv35WHITE"></span><span id="_CPPv25WHITE"></span><span id="WHITE__uint32_tC"></span><span class="target" id="neopixel_8h_1acf6845a9cc897e1e358560d1a7f0dd31"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WHITE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv45WHITE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44BLUE">
+<span id="_CPPv34BLUE"></span><span id="_CPPv24BLUE"></span><span id="BLUE__uint32_tC"></span><span class="target" id="neopixel_8h_1aafe9e585acf3525c1b551359a72206e0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BLUE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv44BLUE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv45GREEN">
+<span id="_CPPv35GREEN"></span><span id="_CPPv25GREEN"></span><span id="GREEN__uint32_tC"></span><span class="target" id="neopixel_8h_1a0865512a9bb6b19e84267299f8936daa"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GREEN</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv45GREEN" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv43RED">
+<span id="_CPPv33RED"></span><span id="_CPPv23RED"></span><span id="RED__uint32_tC"></span><span class="target" id="neopixel_8h_1a65c666c353fdb6dc7cc726f8a5b48ddc"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RED</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv43RED" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44CYAN">
+<span id="_CPPv34CYAN"></span><span id="_CPPv24CYAN"></span><span id="CYAN__uint32_tC"></span><span class="target" id="neopixel_8h_1a5fa208b7248182ee653c4f083464e9c9"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CYAN</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv44CYAN" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv47MAGENTA">
+<span id="_CPPv37MAGENTA"></span><span id="_CPPv27MAGENTA"></span><span id="MAGENTA__uint32_tC"></span><span class="target" id="neopixel_8h_1a7ae3fb3e6e67ffcd7770fa90a93341b7"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MAGENTA</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv47MAGENTA" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46YELLOW">
+<span id="_CPPv36YELLOW"></span><span id="_CPPv26YELLOW"></span><span id="YELLOW__uint32_tC"></span><span class="target" id="neopixel_8h_1ae91461e39bc2be9c92809f0106f8effc"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">YELLOW</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv46YELLOW" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46ORANGE">
+<span id="_CPPv36ORANGE"></span><span id="_CPPv26ORANGE"></span><span id="ORANGE__uint32_tC"></span><span class="target" id="neopixel_8h_1a93b9e8c04bf7328964c9237b40f4de3f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ORANGE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45strip" title="strip"><span class="n"><span class="pre">strip</span></span></a><span class="p"><span class="pre">.</span></span><span class="n"><span class="pre">Color</span></span><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">165</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv46ORANGE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv415ledStateMachine">
+<span id="_CPPv315ledStateMachine"></span><span id="_CPPv215ledStateMachine"></span><span id="ledStateMachine__LEDStateMachine"></span><span class="target" id="neopixel_8h_1a390654c06c7e53864060b6343ca77256"></span><a class="reference internal" href="#_CPPv415LEDStateMachine" title="LEDStateMachine"><span class="n"><span class="pre">LEDStateMachine</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ledStateMachine</span></span></span><a class="headerlink" href="#_CPPv415ledStateMachine" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv415LEDStateMachine">
+<span id="_CPPv315LEDStateMachine"></span><span id="_CPPv215LEDStateMachine"></span><span id="LEDStateMachine"></span><span class="target" id="classLEDStateMachine"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LEDStateMachine</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="state_machine_h.html#_CPPv412StateMachine" title="StateMachine"><span class="n"><span class="pre">StateMachine</span></span></a><a class="headerlink" href="#_CPPv415LEDStateMachine" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine15LEDStateMachineER5State">
+<span id="_CPPv3N15LEDStateMachine15LEDStateMachineER5State"></span><span id="_CPPv2N15LEDStateMachine15LEDStateMachineER5State"></span><span id="LEDStateMachine::LEDStateMachine__StateR"></span><span class="target" id="classLEDStateMachine_1a618aead359e8e8cebeaf1e1653eb4284"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LEDStateMachine</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="state_machine_h.html#_CPPv45State" title="State"><span class="n"><span class="pre">State</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">currentStatePtr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine15LEDStateMachineER5State" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classLEDStateMachine"><span class="std std-ref">LEDStateMachine</span></a> object. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>currentStatePtr</strong> – Reference to the global <code class="docutils literal notranslate"><span class="pre">currentState</span></code> variable </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine5beginEv">
+<span id="_CPPv3N15LEDStateMachine5beginEv"></span><span id="_CPPv2N15LEDStateMachine5beginEv"></span><span id="LEDStateMachine::begin__void"></span><span class="target" id="classLEDStateMachine_1a6ed1eea0bc40da373e40e267b46e06ac"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine5beginEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Initializes the NeoPixel LED and sets its brightness to <code class="docutils literal notranslate"><span class="pre">MAX_BRIGHTNESS</span></code></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine12executeStateEv">
+<span id="_CPPv3N15LEDStateMachine12executeStateEv"></span><span id="_CPPv2N15LEDStateMachine12executeStateEv"></span><span id="LEDStateMachine::executeState"></span><span class="target" id="classLEDStateMachine_1a5553c8f564dead6ffa8c5f716e6a82cd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">executeState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine12executeStateEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Executes various LED state tasks based on the current system state. This should be executed in a continuous loop as it needs constant updating. Any LED functions executed within should be asynchronous (non-blocking). If applicable, they should also be thread safe. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine11setLEDColorE8uint32_t">
+<span id="_CPPv3N15LEDStateMachine11setLEDColorE8uint32_t"></span><span id="_CPPv2N15LEDStateMachine11setLEDColorE8uint32_t"></span><span id="LEDStateMachine::setLEDColor__uint32_t"></span><span class="target" id="classLEDStateMachine_1afe9fbed7a5c5effc2596ec1749bbf4d1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setLEDColor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine11setLEDColorE8uint32_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Sets the NeoPixel LED to the color. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> – Desired color to display on the LED. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine10asyncBlinkE8uint32_t8uint32_t">
+<span id="_CPPv3N15LEDStateMachine10asyncBlinkE8uint32_t8uint32_t"></span><span id="_CPPv2N15LEDStateMachine10asyncBlinkE8uint32_t8uint32_t"></span><span id="LEDStateMachine::asyncBlink__uint32_t.uint32_t"></span><span class="target" id="classLEDStateMachine_1aeb810862a1e8b3d1f1f52831c7245b59"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncBlink</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">interval</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">BLINK_PERIOD</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine10asyncBlinkE8uint32_t8uint32_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Asynchronously blinks the LED without blocking code execution (like when using <code class="docutils literal notranslate"><span class="pre">delay()</span></code>) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> – Desired color to display on the LED </p></li>
+<li><p><strong>interval</strong> – Interval the LED stays ON and OFF </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15LEDStateMachine21asyncAlternatingBlinkE8uint32_t8uint32_t8uint32_t">
+<span id="_CPPv3N15LEDStateMachine21asyncAlternatingBlinkE8uint32_t8uint32_t8uint32_t"></span><span id="_CPPv2N15LEDStateMachine21asyncAlternatingBlinkE8uint32_t8uint32_t8uint32_t"></span><span id="LEDStateMachine::asyncAlternatingBlink__uint32_t.uint32_t.uint32_t"></span><span class="target" id="classLEDStateMachine_1a12acd4b1a2a8a759d5eecf8462d5f2d6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">asyncAlternatingBlink</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">firstColor</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">secondColor</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">interval</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">BLINK_PERIOD</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15LEDStateMachine21asyncAlternatingBlinkE8uint32_t8uint32_t8uint32_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Asynchronously alternates between two different LED colors. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>firstColor</strong> – The first desired color to display on the LED. </p></li>
+<li><p><strong>secondColor</strong> – The second desired color to display on the LED. </p></li>
+<li><p><strong>interval</strong> – The interval each color will be displayed before switching. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="state_machine_h.html" class="btn btn-neutral float-left" title="State Machine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Braidan Duffy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

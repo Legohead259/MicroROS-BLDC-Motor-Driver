@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="tmag5273__test_8cpp" kind="file" language="C++">
+    <compoundname>tmag5273_test.cpp</compoundname>
+    <includes local="no">Wire.h</includes>
+    <includes local="yes">SparkFun_TMAG5273_Arduino_Library.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>SparkFun_TMAG5273_Arduino_Library.h</label>
+      </node>
+      <node id="2">
+        <label>Wire.h</label>
+      </node>
+      <node id="1">
+        <label>src/examples/tmag5273_test/tmag5273_test.cpp</label>
+        <link refid="tmag5273__test_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="tmag5273__test_8cpp_1a9343f492686bfe94b4735ca07dd49aa3" prot="public" static="no" mutable="no">
+        <type>TMAG5273</type>
+        <definition>TMAG5273 sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="5" column="10" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tmag5273__test_8cpp_1af9af55d36115b44e1997c518d666cbf9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t i2cAddress</definition>
+        <argsstring></argsstring>
+        <name>i2cAddress</name>
+        <initializer>= TMAG5273_I2C_ADDRESS_INITIAL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="8" column="9" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tmag5273__test_8cpp_1ab0d3fb5464c2895ffb9f5b787c16bd5c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t conversionAverage</definition>
+        <argsstring></argsstring>
+        <name>conversionAverage</name>
+        <initializer>= TMAG5273_X32_CONVERSION</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="11" column="9" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tmag5273__test_8cpp_1a762d902995f125b7c98887c8e4e699eb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t magneticChannel</definition>
+        <argsstring></argsstring>
+        <name>magneticChannel</name>
+        <initializer>= TMAG5273_XYX_ENABLE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="12" column="9" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tmag5273__test_8cpp_1acdd60aa6de5f4f7c03f218697926c324" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t angleCalculation</definition>
+        <argsstring></argsstring>
+        <name>angleCalculation</name>
+        <initializer>= TMAG5273_XY_ANGLE_CALCULATION</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="13" column="9" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="tmag5273__test_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="15" column="6" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="15" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="tmag5273__test_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/tmag5273_test/tmag5273_test.cpp" line="49" column="6" bodyfile="src/examples/tmag5273_test/tmag5273_test.cpp" bodystart="49" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>establish<sp/>serial<sp/>communication<sp/>on<sp/>the<sp/>I2C<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SparkFun_TMAG5273_Arduino_Library.h&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>send<sp/>and<sp/>recieve<sp/>specific<sp/>information<sp/>from<sp/>our<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>new<sp/>sensor<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">TMAG5273<sp/>sensor;<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>I2C<sp/>default<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">uint8_t<sp/>i2cAddress<sp/>=<sp/>TMAG5273_I2C_ADDRESS_INITIAL;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>constants<sp/>for<sp/>setting<sp/>up<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">uint8_t<sp/>conversionAverage<sp/>=<sp/>TMAG5273_X32_CONVERSION;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">uint8_t<sp/>magneticChannel<sp/>=<sp/>TMAG5273_XYX_ENABLE;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">uint8_t<sp/>angleCalculation<sp/>=<sp/>TMAG5273_XY_ANGLE_CALCULATION;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>Wire.begin();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>serial<sp/>communication<sp/>at<sp/>115200<sp/>baud</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>Serial.begin(115200);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Begin<sp/>example<sp/>of<sp/>the<sp/>magnetic<sp/>sensor<sp/>code<sp/>(and<sp/>add<sp/>whitespace<sp/>for<sp/>easy<sp/>reading)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;TMAG5273<sp/>Example<sp/>3:<sp/>Angle<sp/>Calculations&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>begin<sp/>is<sp/>successful<sp/>(0),<sp/>then<sp/>start<sp/>example</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sensor.begin(i2cAddress,<sp/>Wire)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Begin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Otherwise,<sp/>infinite<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Device<sp/>failed<sp/>to<sp/>setup<sp/>-<sp/>Freezing<sp/>code.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);<sp/></highlight><highlight class="comment">//<sp/>Runs<sp/>forever</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>device<sp/>at<sp/>32x<sp/>average<sp/>mode<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>sensor.setConvAvg(conversionAverage);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Choose<sp/>new<sp/>angle<sp/>to<sp/>calculate<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Can<sp/>calculate<sp/>angles<sp/>between<sp/>XYX,<sp/>YXY,<sp/>YZY,<sp/>and<sp/>XZX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>sensor.setMagneticChannel(magneticChannel);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>angle<sp/>calculation<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Can<sp/>choose<sp/>between<sp/>XY,<sp/>YZ,<sp/>or<sp/>XZ<sp/>priority</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>sensor.setAngleEn(angleCalculation);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((sensor.getMagneticChannel()<sp/>!=<sp/>0)<sp/>&amp;&amp;<sp/>(sensor.getAngleEn()<sp/>!=<sp/>0))<sp/></highlight><highlight class="comment">//<sp/>Checks<sp/>if<sp/>mag<sp/>channels<sp/>are<sp/>on<sp/>-<sp/>turns<sp/>on<sp/>in<sp/>setup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>angleCalculation<sp/>=<sp/>sensor.getAngleResult();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;XYX:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.print(angleCalculation,<sp/>4);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;°&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Mag<sp/>Channels<sp/>disabled,<sp/>stopping..&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>delay(10);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/examples/tmag5273_test/tmag5273_test.cpp"/>
+  </compounddef>
+</doxygen>

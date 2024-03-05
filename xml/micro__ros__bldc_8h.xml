@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="micro__ros__bldc_8h" kind="file" language="C++">
+    <compoundname>micro_ros_bldc.h</compoundname>
+    <includes refid="micro__ros____actions_8h" local="yes">micro_ros__actions.h</includes>
+    <includes refid="micro__ros____pubsub_8h" local="yes">micro_ros__pubsub.h</includes>
+    <includes refid="micro__ros____services_8h" local="yes">micro_ros__services.h</includes>
+    <includes refid="micro__ros____parameters_8h" local="yes">micro_ros__parameters.h</includes>
+    <includes refid="neopixel_8h" local="yes">neopixel.h</includes>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="micro__ros__bldc_8cpp" local="yes">src/micro_ros_bldc.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>state_machine.h</label>
+        <link refid="state__machine_8h"/>
+      </node>
+      <node id="2">
+        <label>neopixel.h</label>
+        <link refid="neopixel_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Adafruit_NeoPixel.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="1">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="micro__ros__bldc_8h_1a5c56d3486c42f1c8e3d3669c84069c34" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t MicroROSTask</definition>
+        <argsstring></argsstring>
+        <name>MicroROSTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="30" column="21" bodyfile="src/micro_ros_bldc.cpp" bodystart="8" bodyend="-1" declfile="include/micro_ros_bldc.h" declline="30" declcolumn="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a48024ee75210075ffac385abcf60408c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void microROSTaskCallback</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>microROSTaskCallback</name>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+<para>The callback that is executed by the <computeroutput>MicroROSTask</computeroutput> every cycle Creates an infinite loop where the LED state machine is handled based on the Micro-ROS agent status When the Micro-ROS agent is unconnected, the system will continually attempt to connect to the agent over the transport layer. This reconnection is attempted every 500 ms with a timeout of 100ms. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the agent is connected, all of the Micro-ROS entities are created using <computeroutput>createEntities()</computeroutput>. When the entities are created, the system state is changed to <computeroutput>AGENT_CONNECTED</computeroutput> and the motor is enabled and the ESC should be connected to the host ROS2 system.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parameter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="46" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="185" bodyend="229" declfile="include/micro_ros_bldc.h" declline="46" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1af267130a0d3fa963b846a45e3265e338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void neopixelTimerCallback</definition>
+        <argsstring>(rcl_timer_t *timer, int64_t last_call_time)</argsstring>
+        <name>neopixelTimerCallback</name>
+        <param>
+          <type>rcl_timer_t *</type>
+          <declname>timer</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>last_call_time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="47" column="6" declfile="include/micro_ros_bldc.h" declline="47" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1af508908b953324e87dab2ec4de9b7836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createPublishers</definition>
+        <argsstring>()</argsstring>
+        <name>createPublishers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="55" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="11" bodyend="19" declfile="include/micro_ros_bldc.h" declline="55" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a00b85e834f56fec839bb0d69192059b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createServices</definition>
+        <argsstring>()</argsstring>
+        <name>createServices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="56" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="41" bodyend="72" declfile="include/micro_ros_bldc.h" declline="56" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a31caa24522b503b50160fca8f7068425" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createServicers</definition>
+        <argsstring>()</argsstring>
+        <name>createServicers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="57" column="6" declfile="include/micro_ros_bldc.h" declline="57" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1ae06ace45d4de5b7cce234800b74f28cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool addServices</definition>
+        <argsstring>()</argsstring>
+        <name>addServices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="58" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="74" bodyend="109" declfile="include/micro_ros_bldc.h" declline="58" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a5e9f7c25e92e40253495fea68d1e93f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createTimers</definition>
+        <argsstring>()</argsstring>
+        <name>createTimers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="59" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="111" bodyend="119" declfile="include/micro_ros_bldc.h" declline="59" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a0d256fc327ca76e5422e5fab23c5c309" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool addTimers</definition>
+        <argsstring>()</argsstring>
+        <name>addTimers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="60" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="121" bodyend="127" declfile="include/micro_ros_bldc.h" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a2bc07c34ce88e61fa0974a4624441358" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createEntities</definition>
+        <argsstring>()</argsstring>
+        <name>createEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="61" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="140" bodyend="165" declfile="include/micro_ros_bldc.h" declline="61" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1a2e7926540dee22390e96b786f23fa249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void destroyEntities</definition>
+        <argsstring>()</argsstring>
+        <name>destroyEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="62" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="167" bodyend="183" declfile="include/micro_ros_bldc.h" declline="62" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros__bldc_8h_1aad1731e4a5ab829821fc91c6453389f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void microROSNodeSetup</definition>
+        <argsstring>()</argsstring>
+        <name>microROSNodeSetup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros_bldc.h" line="63" column="6" bodyfile="src/micro_ros_bldc.cpp" bodystart="231" bodyend="242" declfile="include/micro_ros_bldc.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The main header file for the Micro-ROS node running on the ESC. Contains the sub-includes and specifies some of the callbacks and main node functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Braidan Duffy </para>
+</simplesect>
+<simplesect kind="copyright"><para>2024</para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>micro_ros_bldc_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>micro_ros_bldc_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__actions.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__pubsub.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__services.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__parameters.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="neopixel_8h" kindref="compound">neopixel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>TIMER<sp/>CALLBACKS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>FreeRTOS<sp/>task<sp/>to<sp/>execute<sp/>Micro-ROS<sp/>on<sp/>a<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>TaskHandle_t<sp/>MicroROSTask;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="micro__ros__bldc_8h_1a48024ee75210075ffac385abcf60408c" kindref="member">microROSTaskCallback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parameter);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>neopixelTimerCallback(rcl_timer_t<sp/>*<sp/>timer,<sp/>int64_t<sp/>last_call_time);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>NODE<sp/>FUNCTIONS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>======================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createPublishers();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createServices();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createServicers();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addServices();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createTimers();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addTimers();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createEntities();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroyEntities();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>microROSNodeSetup();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>micro_ros_bldc_h</highlight></codeline>
+    </programlisting>
+    <location file="include/micro_ros_bldc.h"/>
+  </compounddef>
+</doxygen>

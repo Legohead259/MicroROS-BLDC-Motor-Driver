@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structparameter__t" kind="struct" language="C++" prot="public">
+    <compoundname>parameter_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structparameter__t_1a26b8d8183f3dc6afd3a6c322211c3b22" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* parameter_t::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="44" column="16" bodyfile="include/micro_ros__parameters.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structparameter__t_1aecd307539787c25eebcd1a93cc8cafa0" prot="public" static="no" mutable="no">
+        <type>rclc_parameter_type_t</type>
+        <definition>rclc_parameter_type_t parameter_t::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="45" column="27" bodyfile="include/micro_ros__parameters.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structparameter__t_1a841e48971f516366a8fef742247b85c7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool parameter_t::bool_value</definition>
+        <argsstring></argsstring>
+        <name>bool_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="46" column="10" bodyfile="include/micro_ros__parameters.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structparameter__t_1a282ff843bd83be03dcadb35cce569560" prot="public" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t parameter_t::integer_value</definition>
+        <argsstring></argsstring>
+        <name>integer_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="47" column="13" bodyfile="include/micro_ros__parameters.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structparameter__t_1a1f6055ef12ea7318f814b6b8680ead18" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double parameter_t::double_value</definition>
+        <argsstring></argsstring>
+        <name>double_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="48" column="12" bodyfile="include/micro_ros__parameters.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structparameter__t_1a66c785ce6cac6de5ce85122f2f392fe5" prot="public" static="no" mutable="no">
+        <type>ParameterChangeHandler</type>
+        <definition>ParameterChangeHandler parameter_t::onChangePtr</definition>
+        <argsstring></argsstring>
+        <name>onChangePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="49" column="28" bodyfile="include/micro_ros__parameters.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structparameter__t_1a4ac865264083df8711245c258b09db4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void parameter_t::onChange</definition>
+        <argsstring>()</argsstring>
+        <name>onChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="51" column="10" bodyfile="include/micro_ros__parameters.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/micro_ros__parameters.h" line="43" column="1" bodyfile="include/micro_ros__parameters.h" bodystart="43" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structparameter__t_1a841e48971f516366a8fef742247b85c7" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>bool_value</name></member>
+      <member refid="structparameter__t_1a1f6055ef12ea7318f814b6b8680ead18" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>double_value</name></member>
+      <member refid="structparameter__t_1a282ff843bd83be03dcadb35cce569560" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>integer_value</name></member>
+      <member refid="structparameter__t_1a26b8d8183f3dc6afd3a6c322211c3b22" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>key</name></member>
+      <member refid="structparameter__t_1a4ac865264083df8711245c258b09db4a" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>onChange</name></member>
+      <member refid="structparameter__t_1a66c785ce6cac6de5ce85122f2f392fe5" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>onChangePtr</name></member>
+      <member refid="structparameter__t_1aecd307539787c25eebcd1a93cc8cafa0" prot="public" virt="non-virtual"><scope>parameter_t</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

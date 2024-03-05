@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_e931c1a3f0014e624d0645a271726ad2">src/examples</innerdir>
+    <innerfile refid="foc__bldc_8cpp">foc_bldc.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="micro__ros____actions_8cpp">micro_ros__actions.cpp</innerfile>
+    <innerfile refid="micro__ros____parameters_8cpp">micro_ros__parameters.cpp</innerfile>
+    <innerfile refid="micro__ros____pubsub_8cpp">micro_ros__pubsub.cpp</innerfile>
+    <innerfile refid="micro__ros____services_8cpp">micro_ros__services.cpp</innerfile>
+    <innerfile refid="micro__ros__bldc_8cpp">micro_ros_bldc.cpp</innerfile>
+    <innerfile refid="neopixel_8cpp">neopixel.cpp</innerfile>
+    <innerfile refid="state__machine_8cpp">state_machine.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

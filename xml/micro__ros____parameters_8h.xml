@@ -1,0 +1,1053 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="micro__ros____parameters_8h" kind="file" language="C++">
+    <compoundname>micro_ros__parameters.h</compoundname>
+    <includes refid="micro__ros____definitions_8h" local="yes">micro_ros__definitions.h</includes>
+    <includedby refid="micro__ros____parameters_8cpp" local="yes">src/micro_ros__parameters.cpp</includedby>
+    <includedby refid="micro__ros__bldc_8h" local="yes">include/micro_ros_bldc.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/micro_ros__parameters.h</label>
+        <link refid="micro__ros____parameters_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structparameter__t" prot="public">parameter_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a16532f687472de9b465ce35c3f941178" prot="public" static="no">
+        <name>PARAM_NAME__CONTROLLER_MODE</name>
+        <initializer>&quot;controller_mode&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="17" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a43ff40fc5a96991f46f41a889c6dd34c" prot="public" static="no">
+        <name>PARAM_NAME__POLE_PAIRS</name>
+        <initializer>&quot;pole_pairs&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="18" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1ab3a003dd0a6e67d48ccd54f43a4e4fc6" prot="public" static="no">
+        <name>PARAM_NAME__PHASE_RESISTANCE</name>
+        <initializer>&quot;phase_r&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="19" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a123d1dbdabd5310bfa3ddf61040cb534" prot="public" static="no">
+        <name>PARAM_NAME__KV_RATING</name>
+        <initializer>&quot;kv_rating&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="20" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a9ec406f8564627bd0620001b03a0717a" prot="public" static="no">
+        <name>PARAM_NAME__PHASE_INDUCTANCE</name>
+        <initializer>&quot;phase_l&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="21" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a02286add3bae3e91b7c330c7d9a7c84c" prot="public" static="no">
+        <name>PARAM_NAME__VELOCITY_P</name>
+        <initializer>&quot;velocity_p&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="22" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a0259c441cd5fd6aa1336069ad31b5851" prot="public" static="no">
+        <name>PARAM_NAME__VELOCITY_I</name>
+        <initializer>&quot;velocity_i&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="23" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1af740a128510850501b6591478d2179ad" prot="public" static="no">
+        <name>PARAM_NAME__VELOCITY_D</name>
+        <initializer>&quot;velocity_d&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="24" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a6fb0780e800cb0e0cccd6cd514159460" prot="public" static="no">
+        <name>PARAM_NAME__VELOCITY_OUTPUT_RAMP</name>
+        <initializer>&quot;velocity_ramp&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="25" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1ab868ed6db742a3aa0b1db5180385be99" prot="public" static="no">
+        <name>PARAM_NAME__VELOCITY_LPF_TF</name>
+        <initializer>&quot;velocity_lpf_tf&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="26" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1aee2bc2d20dab0f10e379f97d52a7b0b0" prot="public" static="no">
+        <name>PARAM_NAME__ANGLE_P</name>
+        <initializer>&quot;angle_p&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="27" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1aea9aba65bd560528ecb61bd11e023313" prot="public" static="no">
+        <name>PARAM_NAME__ANGLE_I</name>
+        <initializer>&quot;angle_i&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="28" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1aa083482d9a117a8027d24506396c431c" prot="public" static="no">
+        <name>PARAM_NAME__ANGLE_D</name>
+        <initializer>&quot;angle_d&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="29" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a675d2b804ac028d603d100595c51df05" prot="public" static="no">
+        <name>PARAM_NAME__ANGLE_OUTPUT_RAMP</name>
+        <initializer>&quot;angle_ramp&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="30" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a550f520317f25ab523bd568af06e9ef9" prot="public" static="no">
+        <name>PARAM_NAME__ANGLE_LPF_TF</name>
+        <initializer>&quot;angle_lpf_tf&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="31" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a0ad9851efe7657f449422a8a895caf6c" prot="public" static="no">
+        <name>PARAM_NAME__DRIVER_VOLTAGE_LIMIT</name>
+        <initializer>&quot;driver_v_limit&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="32" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a3fc171ad915a202580285628a7625479" prot="public" static="no">
+        <name>PARAM_NAME__MOTOR_VOLTAGE_LIMIT</name>
+        <initializer>&quot;motor_v_limit&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="33" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a5b3c7a197e0e57563c1dff8d7ddcebac" prot="public" static="no">
+        <name>PARAM_NAME__MOTOR_CURRENT_LIMIT</name>
+        <initializer>&quot;motor_i_limit&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="34" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1a5b0b4443258d8522d17cf0100d4ee996" prot="public" static="no">
+        <name>PARAM_NAME__MOTOR_VELOCITY_LIMIT</name>
+        <initializer>&quot;motor_vel_limit&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="35" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="micro__ros____parameters_8h_1ae80c74b7cac856ec6868587f85c47427" prot="public" static="no">
+        <name>NUM_PARAMETERS</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="37" column="9" bodyfile="include/micro_ros__parameters.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="micro__ros____parameters_8h_1aab96668b79108ec37d777d4e9a9f3a3a" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="structparameter__t" kindref="compound">parameter_t</ref> *)&gt;</type>
+        <definition>typedef std::function&lt;void(parameter_t*)&gt; ParameterChangeHandler</definition>
+        <argsstring></argsstring>
+        <name>ParameterChangeHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="41" column="23" bodyfile="include/micro_ros__parameters.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="micro__ros____parameters_8h_1a892de9dafe858ef4593f364164a4e453" prot="public" static="no">
+        <type>struct <ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>typedef struct parameter_t parameter_t</definition>
+        <argsstring></argsstring>
+        <name>parameter_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="52" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a1bb6e45ea1a7fa12b2ad42a7adc69686" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t controllerMode</definition>
+        <argsstring></argsstring>
+        <name>controllerMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="54" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="13" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="54" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a2d0a7b97699ac77d10b822fd3719592d" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t polePairs</definition>
+        <argsstring></argsstring>
+        <name>polePairs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="55" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="18" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="55" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1af206e46c7e6547e0ee76c65d7f75a3bc" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t phaseResistance</definition>
+        <argsstring></argsstring>
+        <name>phaseResistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="56" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="23" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="56" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1afc9c3b721bd653ef549d81ad3cdbdcbf" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t kvRating</definition>
+        <argsstring></argsstring>
+        <name>kvRating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="57" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="28" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="57" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a77361e5500531aac6de92f22802f8f0c" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t phaseInductance</definition>
+        <argsstring></argsstring>
+        <name>phaseInductance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="58" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="33" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="58" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1aed2472f2ed73310a0f210710318d73c2" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t velocityP</definition>
+        <argsstring></argsstring>
+        <name>velocityP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="59" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="38" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="59" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a4465ab85e82a6b6cd897c80a971bfe21" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t velocityI</definition>
+        <argsstring></argsstring>
+        <name>velocityI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="60" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="43" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="60" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a0ac95453884a2927f369a16cc2a717c0" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t velocityD</definition>
+        <argsstring></argsstring>
+        <name>velocityD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="61" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="48" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="61" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1aa8949827ed2cf43d7ce1ac35796eb8c3" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t velocityOutputRamp</definition>
+        <argsstring></argsstring>
+        <name>velocityOutputRamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="62" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="53" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="62" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a13a3c0a1ed4cba102f6d84c1f7136406" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t velocityLPFTf</definition>
+        <argsstring></argsstring>
+        <name>velocityLPFTf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="63" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="58" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="63" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1af7d79cdfef5c3e940041f393cdb00b40" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t angleP</definition>
+        <argsstring></argsstring>
+        <name>angleP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="64" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="63" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="64" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1add22122ce27ff4427036714c75250597" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t angleI</definition>
+        <argsstring></argsstring>
+        <name>angleI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="65" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="68" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="65" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a2c0003953dcd696443be27bb2831bcdf" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t angleD</definition>
+        <argsstring></argsstring>
+        <name>angleD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="66" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="73" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="66" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a8fbb5732e488cb1904c29de64c38e899" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t angleOutputRamp</definition>
+        <argsstring></argsstring>
+        <name>angleOutputRamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="67" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="78" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="67" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a7e05270ae880a1bb12fc9bb5648b2006" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t angleLPFTf</definition>
+        <argsstring></argsstring>
+        <name>angleLPFTf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="68" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="83" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="68" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a9ea484a1230ffc361b49afbf247759b6" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t driverVoltageLimit</definition>
+        <argsstring></argsstring>
+        <name>driverVoltageLimit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="69" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="88" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="69" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1ad5a2179c744c73eb7e9ecf2144ef7388" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t motorVoltageLimit</definition>
+        <argsstring></argsstring>
+        <name>motorVoltageLimit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="70" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="93" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="70" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1ada9bf524b482be838df28f67351979d9" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t motorCurrentLimit</definition>
+        <argsstring></argsstring>
+        <name>motorCurrentLimit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="71" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="98" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="71" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1acaac4cad154ecaf5981dcea681491f4b" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref></type>
+        <definition>parameter_t motorVelocityLimit</definition>
+        <argsstring></argsstring>
+        <name>motorVelocityLimit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="72" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="103" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="72" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1abff3a2afdf48423b36b5238e017f22b3" prot="public" static="no" mutable="no">
+        <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+        <definition>parameter_t* params[NUM_PARAMETERS]</definition>
+        <argsstring>[NUM_PARAMETERS]</argsstring>
+        <name>params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="73" column="20" bodyfile="src/micro_ros__parameters.cpp" bodystart="109" bodyend="-1" declfile="include/micro_ros__parameters.h" declline="73" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____parameters_8h_1a75d0fd7b8409a15425c649e796e38bea" prot="public" static="no" mutable="no">
+        <type>const rclc_parameter_options_t</type>
+        <definition>const rclc_parameter_options_t parameterServiceOpts</definition>
+        <argsstring></argsstring>
+        <name>parameterServiceOpts</name>
+        <initializer>= {
+    .notify_changed_over_dds = true,        
+    .max_params = NUM_PARAMETERS,           
+    .allow_undeclared_parameters = false,   
+    .low_mem_mode = false                   
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="77" column="32" bodyfile="include/micro_ros__parameters.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a99cdfc45749b484a8e5ab6a9144b515f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initializeParameterService</definition>
+        <argsstring>()</argsstring>
+        <name>initializeParameterService</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="84" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="185" bodyend="220" declfile="include/micro_ros__parameters.h" declline="84" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a3caede0a5b5f76ead9c72109763eba0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveParam</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>saveParam</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="86" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="268" bodyend="285" declfile="include/micro_ros__parameters.h" declline="86" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a36ca7e44c19cdca2087c503898543613" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void controllerModeChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>controllerModeChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="94" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="293" bodyend="343" declfile="include/micro_ros__parameters.h" declline="94" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a0b7bcda7886e06713b98a836e69eaf17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void polePairsChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>polePairsChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="95" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="345" bodyend="348" declfile="include/micro_ros__parameters.h" declline="95" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1ac7b2f196d98ef30f860321029f64609d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void phaseResistanceChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>phaseResistanceChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="96" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="350" bodyend="352" declfile="include/micro_ros__parameters.h" declline="96" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a3985e05a30b87b8bde70c9a994edde2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void kvRatingChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>kvRatingChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="97" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="354" bodyend="356" declfile="include/micro_ros__parameters.h" declline="97" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1aecd4bb1435659db77aac17efa81a044e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void phaseInductanceChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>phaseInductanceChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="98" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="358" bodyend="360" declfile="include/micro_ros__parameters.h" declline="98" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a3c845d42425928628b3074afc529aec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void velocityPChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>velocityPChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="99" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="362" bodyend="364" declfile="include/micro_ros__parameters.h" declline="99" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1af45af447027d1a58339429c73343b57a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void velocityIChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>velocityIChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="100" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="366" bodyend="368" declfile="include/micro_ros__parameters.h" declline="100" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1ab4164956d69c05b0e9fff4bed7021ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void velocityDChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>velocityDChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="101" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="370" bodyend="372" declfile="include/micro_ros__parameters.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1aaf072f8e5814a786f368733f3c669b3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void velocityRampChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>velocityRampChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="102" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="374" bodyend="376" declfile="include/micro_ros__parameters.h" declline="102" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1aa55c882de0585c1a7ff8147ae4800299" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void velocityLPFChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>velocityLPFChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="103" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="378" bodyend="380" declfile="include/micro_ros__parameters.h" declline="103" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a588aea920d6bcae6d73c03f50f5f1af5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void anglePChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>anglePChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="104" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="382" bodyend="384" declfile="include/micro_ros__parameters.h" declline="104" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a6bec8c986cc7a4de552cb6ffab7495ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angleIChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>angleIChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="105" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="386" bodyend="388" declfile="include/micro_ros__parameters.h" declline="105" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1ae1045b9d26ea1548d739eac8f90e6739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angleDChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>angleDChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="106" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="390" bodyend="392" declfile="include/micro_ros__parameters.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a318427b72653844a8fefcf403f12bdcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angleRampChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>angleRampChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="107" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="394" bodyend="396" declfile="include/micro_ros__parameters.h" declline="107" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1abbb4cff01e1c92361aca9e11faa8762b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angleLFPChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>angleLFPChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="108" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="398" bodyend="400" declfile="include/micro_ros__parameters.h" declline="108" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1ab8c5518919dc86fc48605e38c566847d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void driverVoltageLimitChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>driverVoltageLimitChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="109" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="402" bodyend="404" declfile="include/micro_ros__parameters.h" declline="109" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a28b923e62748812292e0bdc0bc8a251f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void driverCurrentLimitChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>driverCurrentLimitChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="110" column="6" declfile="include/micro_ros__parameters.h" declline="110" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1aebc4bbf7c3e1a6a7bd6946cc517c3afb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void motorVoltageLimitChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>motorVoltageLimitChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="111" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="406" bodyend="408" declfile="include/micro_ros__parameters.h" declline="111" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1ac14dd4cec164084457f2e1682d186196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void motorCurrentLimitChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>motorCurrentLimitChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="112" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="410" bodyend="412" declfile="include/micro_ros__parameters.h" declline="112" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="micro__ros____parameters_8h_1a24934f216c79bdd06478247329acf87a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void motorVelocityLimitChangeCallback</definition>
+        <argsstring>(parameter_t *param)</argsstring>
+        <name>motorVelocityLimitChangeCallback</name>
+        <param>
+          <type><ref refid="structparameter__t" kindref="compound">parameter_t</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__parameters.h" line="113" column="6" bodyfile="src/micro_ros__parameters.cpp" bodystart="414" bodyend="416" declfile="include/micro_ros__parameters.h" declline="113" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MICRO_ROS__PARAMETERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_ROS__PARAMETERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__definitions.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>PARAMETER<sp/>DEFINTIONS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ARDUINO_ARCH_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Preferences<sp/>parameterSettings;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ARDUINO_ARCH_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>NOTE:<sp/>Due<sp/>to<sp/>restrictions<sp/>within<sp/>the<sp/>Preferences<sp/>library,<sp/>parameter<sp/>names<sp/>are<sp/>limited<sp/>to<sp/>16<sp/>characters!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__CONTROLLER_MODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;controller_mode&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__POLE_PAIRS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;pole_pairs&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__PHASE_RESISTANCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;phase_r&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__KV_RATING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;kv_rating&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__PHASE_INDUCTANCE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;phase_l&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__VELOCITY_P<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;velocity_p&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__VELOCITY_I<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;velocity_i&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__VELOCITY_D<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;velocity_d&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__VELOCITY_OUTPUT_RAMP<sp/><sp/><sp/><sp/>&quot;velocity_ramp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__VELOCITY_LPF_TF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;velocity_lpf_tf&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__ANGLE_P<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;angle_p&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__ANGLE_I<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;angle_i&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__ANGLE_D<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;angle_d&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__ANGLE_OUTPUT_RAMP<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;angle_ramp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__ANGLE_LPF_TF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;angle_lpf_tf&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__DRIVER_VOLTAGE_LIMIT<sp/><sp/><sp/><sp/>&quot;driver_v_limit&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__MOTOR_VOLTAGE_LIMIT<sp/><sp/><sp/><sp/><sp/>&quot;motor_v_limit&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__MOTOR_CURRENT_LIMIT<sp/><sp/><sp/><sp/><sp/>&quot;motor_i_limit&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PARAM_NAME__MOTOR_VELOCITY_LIMIT<sp/><sp/><sp/><sp/>&quot;motor_vel_limit&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUM_PARAMETERS<sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structparameter__t" kindref="compound">parameter_t</ref>;<sp/></highlight><highlight class="comment">//<sp/>Forward<sp/>declare<sp/>the<sp/>struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::function&lt;void(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*)&gt;<sp/>ParameterChangeHandler;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structparameter__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>rclc_parameter_type_t<sp/>type;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>bool_value;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>int64_t<sp/>integer_value;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>double_value;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>ParameterChangeHandler<sp/>onChangePtr;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onChange()<sp/>{<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(onChangePtr<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>onChangePtr(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}<sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>controllerMode;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>polePairs;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>phaseResistance;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>kvRating;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>phaseInductance;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>velocityP;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>velocityI;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>velocityD;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>velocityOutputRamp;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>velocityLPFTf;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>angleP;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>angleI;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>angleD;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>angleOutputRamp;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>angleLPFTf;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>driverVoltageLimit;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>motorVoltageLimit;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>motorCurrentLimit;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref><sp/>motorVelocityLimit;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>params[NUM_PARAMETERS];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>parameter<sp/>server<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rclc_parameter_options_t<sp/>parameterServiceOpts<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>.notify_changed_over_dds<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Publish<sp/>parameter<sp/>events<sp/>to<sp/>other<sp/>ROS<sp/>2<sp/>nodes<sp/>as<sp/>well.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>.max_params<sp/>=<sp/>NUM_PARAMETERS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>number<sp/>of<sp/>parameters<sp/>allowed<sp/>on<sp/>the<sp/>rclc_parameter_server_t<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>.allow_undeclared_parameters<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allows<sp/>creation<sp/>of<sp/>parameters<sp/>from<sp/>external<sp/>parameter<sp/>clients.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>.low_mem_mode<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reduces<sp/>the<sp/>memory<sp/>used<sp/>by<sp/>the<sp/>parameter<sp/>server,<sp/>applies<sp/>constraints</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initializeParameterService();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>saveParam(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>PARAMETER<sp/>CHANGE<sp/>CALLBACKS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>controllerModeChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>polePairsChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>phaseResistanceChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>kvRatingChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>phaseInductanceChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>velocityPChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>velocityIChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>velocityDChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>velocityRampChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>velocityLPFChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>anglePChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>angleIChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>angleDChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>angleRampChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>angleLFPChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>driverVoltageLimitChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>driverCurrentLimitChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>motorVoltageLimitChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>motorCurrentLimitChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>motorVelocityLimitChangeCallback(<ref refid="structparameter__t" kindref="compound">parameter_t</ref>*<sp/>param);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_ROS__PARAMETERS_H</highlight></codeline>
+    </programlisting>
+    <location file="include/micro_ros__parameters.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structButton" kind="struct" language="C++" prot="public">
+    <compoundname>Button</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structButton_1acf0d63d4934fed27dbd37e54ba91f597" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t Button::PIN</definition>
+        <argsstring></argsstring>
+        <name>PIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="61" column="19" bodyfile="src/examples/factory/factory.cpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structButton_1a70302361a18ea7cdb4d92af0506bda05" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Button::numberKeyPresses</definition>
+        <argsstring></argsstring>
+        <name>numberKeyPresses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="62" column="14" bodyfile="src/examples/factory/factory.cpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structButton_1a5e7b737e832d3567e3bb1fa0b5064b76" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Button::pressed</definition>
+        <argsstring></argsstring>
+        <name>pressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="63" column="10" bodyfile="src/examples/factory/factory.cpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/examples/factory/factory.cpp" line="60" column="1" bodyfile="src/examples/factory/factory.cpp" bodystart="60" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structButton_1a70302361a18ea7cdb4d92af0506bda05" prot="public" virt="non-virtual"><scope>Button</scope><name>numberKeyPresses</name></member>
+      <member refid="structButton_1acf0d63d4934fed27dbd37e54ba91f597" prot="public" virt="non-virtual"><scope>Button</scope><name>PIN</name></member>
+      <member refid="structButton_1a5e7b737e832d3567e3bb1fa0b5064b76" prot="public" virt="non-virtual"><scope>Button</scope><name>pressed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

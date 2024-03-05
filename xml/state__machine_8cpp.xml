@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="state__machine_8cpp" kind="file" language="C++">
+    <compoundname>state_machine.cpp</compoundname>
+    <includes refid="state__machine_8h" local="yes">state_machine.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/state_machine.cpp</label>
+        <link refid="state__machine_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>state_machine.h</label>
+        <link refid="state__machine_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="state__machine_8cpp_1ae845c503c2ab2c9adf1d1068fe66c66e" prot="public" static="no" mutable="no">
+        <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref></type>
+        <definition>State systemState</definition>
+        <argsstring></argsstring>
+        <name>systemState</name>
+        <initializer>= <ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" kindref="member">IDLE_NO_CONNECTION</ref></initializer>
+        <briefdescription>
+<para>Current system state. Defaults to <computeroutput>IDLE_NO_CONNECTION</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/state_machine.cpp" line="3" column="7" bodyfile="src/state_machine.cpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="state__machine_8cpp_1aba87b71c8ddf828d5fe0fcb3b5a0700b" prot="public" static="no" mutable="no">
+        <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref></type>
+        <definition>State previousSystemState</definition>
+        <argsstring></argsstring>
+        <name>previousSystemState</name>
+        <initializer>= <ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" kindref="member">IDLE_NO_CONNECTION</ref></initializer>
+        <briefdescription>
+<para>Previous system state. Defaults to <computeroutput>IDLE_NO_CONNECTION</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/state_machine.cpp" line="4" column="7" bodyfile="src/state_machine.cpp" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="state__machine_8h" kindref="compound">state_machine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/><ref refid="state__machine_8h_1ae845c503c2ab2c9adf1d1068fe66c66e" kindref="member">systemState</ref><sp/>=<sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" kindref="member">IDLE_NO_CONNECTION</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/><ref refid="state__machine_8h_1aba87b71c8ddf828d5fe0fcb3b5a0700b" kindref="member">previousSystemState</ref><sp/>=<sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" kindref="member">IDLE_NO_CONNECTION</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="src/state_machine.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="state__machine_8h" kind="file" language="C++">
+    <compoundname>state_machine.h</compoundname>
+    <includedby refid="state__machine_8cpp" local="yes">src/state_machine.cpp</includedby>
+    <includedby refid="micro__ros____definitions_8h" local="yes">include/micro_ros__definitions.h</includedby>
+    <includedby refid="neopixel_8h" local="yes">include/neopixel.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/state_machine.h</label>
+        <link refid="state__machine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/neopixel.h</label>
+        <link refid="neopixel_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classStateMachine" prot="public">StateMachine</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>State</name>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" prot="public">
+          <name>IDLE_NO_CONNECTION</name>
+          <briefdescription>
+<para>Micro-ROS node is awaiting connection to Agent. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8ad58a21316a5ebb9bfc2af3c8ec753917" prot="public">
+          <name>IDLE_WITH_CONNECTION</name>
+          <briefdescription>
+<para>Micro-ROS node is connected to Agent. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a30b37da141505d0953465840bfe4f2bf" prot="public">
+          <name>PARTIAL_FORWARD</name>
+          <briefdescription>
+<para>Motor is moving forward, but not at full speed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8af9e1ae00226af7dc2c40c28d87f94333" prot="public">
+          <name>PARTIAL_REVERSE</name>
+          <briefdescription>
+<para>Motor is moving reverse, but not at full speed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a2b8c762d7281d97b75ac497c10bf384d" prot="public">
+          <name>FULL_FORWARD</name>
+          <briefdescription>
+<para>Motor is moving forward at full speed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a5813b277c15e7951bc5ccf99497bfa87" prot="public">
+          <name>FULL_REVERSE</name>
+          <briefdescription>
+<para>Motor is moving reverse at full speed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a8b0c281ff4234fb52fee358960418ee4" prot="public">
+          <name>DEVICE_IDENTIFY</name>
+          <briefdescription>
+<para>Micro-ROS node is commanded to identify itself using the LED. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8aefd32de581cfe881ef211d48f3df6218" prot="public">
+          <name>MOTOR_DISABLED</name>
+          <briefdescription>
+<para>Motor is disabled due to motor fault. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a2fb21173a5d10d20feb06f3462185b41" prot="public">
+          <name>SENSOR_FAULT</name>
+          <briefdescription>
+<para>One or more sensors have encountered an error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8ab83050c7b2393ab56158925c5af0a120" prot="public">
+          <name>DRIVER_FAULT</name>
+          <briefdescription>
+<para>The motor driver has encountered an error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a883ea94e299113ade2bfa53bc5286ca1" prot="public">
+          <name>TRANSPORT_FAULT</name>
+          <briefdescription>
+<para>The Micro-ROS transport layer has encountered an error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="26" column="1" bodyfile="include/state_machine.h" bodystart="26" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="state__machine_8h_1ae845c503c2ab2c9adf1d1068fe66c66e" prot="public" static="no" mutable="no">
+        <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref></type>
+        <definition>State systemState</definition>
+        <argsstring></argsstring>
+        <name>systemState</name>
+        <briefdescription>
+<para>Current system state. Defaults to <computeroutput>IDLE_NO_CONNECTION</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="40" column="14" bodyfile="src/state_machine.cpp" bodystart="3" bodyend="-1" declfile="include/state_machine.h" declline="40" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="state__machine_8h_1aba87b71c8ddf828d5fe0fcb3b5a0700b" prot="public" static="no" mutable="no">
+        <type><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref></type>
+        <definition>State previousSystemState</definition>
+        <argsstring></argsstring>
+        <name>previousSystemState</name>
+        <briefdescription>
+<para>Previous system state. Defaults to <computeroutput>IDLE_NO_CONNECTION</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/state_machine.h" line="41" column="14" bodyfile="src/state_machine.cpp" bodystart="4" bodyend="-1" declfile="include/state_machine.h" declline="41" declcolumn="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Template class for the internal state machine. This class does not hold any inherent value except as a superclass for the LED state machine. This file defines the system states and abstracts the underlying state tracking. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Braidan Duffy</para>
+</simplesect>
+</para>
+<sect1 id="state__machine_8h_1usage">
+<title>Usage</title>
+<para>The <computeroutput><ref refid="classStateMachine" kindref="compound">StateMachine</ref></computeroutput> object tracks the value of <computeroutput>systemState</computeroutput> through a pointer reference. By changing the value of <computeroutput>systemState</computeroutput>, the machine will automatically adjust the execution process defined in <computeroutput>executeState()</computeroutput>. This is best done through the state method <computeroutput><ref refid="classStateMachine_1a5f46155fddb373901168c700f9d4d023" kindref="member">StateMachine::changeSystemState()</ref></computeroutput> as it will automatically update the previous system state as well.</para>
+<para><simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>2024-03-05</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2024 </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>STATE_MACHINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATE_MACHINE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Enum<sp/>to<sp/>represent<sp/>different<sp/>states</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a97fa0c4089afb13fd4cf8d01264ba6eb" kindref="member">IDLE_NO_CONNECTION</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8ad58a21316a5ebb9bfc2af3c8ec753917" kindref="member">IDLE_WITH_CONNECTION</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a30b37da141505d0953465840bfe4f2bf" kindref="member">PARTIAL_FORWARD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8af9e1ae00226af7dc2c40c28d87f94333" kindref="member">PARTIAL_REVERSE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a2b8c762d7281d97b75ac497c10bf384d" kindref="member">FULL_FORWARD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a5813b277c15e7951bc5ccf99497bfa87" kindref="member">FULL_REVERSE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a8b0c281ff4234fb52fee358960418ee4" kindref="member">DEVICE_IDENTIFY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8aefd32de581cfe881ef211d48f3df6218" kindref="member">MOTOR_DISABLED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a2fb21173a5d10d20feb06f3462185b41" kindref="member">SENSOR_FAULT</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8ab83050c7b2393ab56158925c5af0a120" kindref="member">DRIVER_FAULT</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8a883ea94e299113ade2bfa53bc5286ca1" kindref="member">TRANSPORT_FAULT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/><ref refid="state__machine_8h_1ae845c503c2ab2c9adf1d1068fe66c66e" kindref="member">systemState</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/><ref refid="state__machine_8h_1aba87b71c8ddf828d5fe0fcb3b5a0700b" kindref="member">previousSystemState</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classStateMachine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classStateMachine" kindref="compound">StateMachine</ref><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classStateMachine_1a1b4d29aa68785888048d72dba673c203" kindref="member">StateMachine</ref>(<ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/>&amp;currentStatePtr)<sp/>:<sp/><ref refid="classStateMachine_1a2a66289bc12dcbc88266ef25c2f1491a" kindref="member">currentState</ref>(currentStatePtr)<sp/>{}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classStateMachine_1a2104bc41da7c2e3142635bfeb9bbfe58" kindref="member">executeState</ref>()<sp/>{};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classStateMachine_1a5f46155fddb373901168c700f9d4d023" kindref="member">changeSystemState</ref>(<ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/>newState)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1aba87b71c8ddf828d5fe0fcb3b5a0700b" kindref="member">previousSystemState</ref><sp/>=<sp/><ref refid="state__machine_8h_1ae845c503c2ab2c9adf1d1068fe66c66e" kindref="member">systemState</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1ae845c503c2ab2c9adf1d1068fe66c66e" kindref="member">systemState</ref><sp/>=<sp/>newState;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="state__machine_8h_1a5d74787dedbc4e11c1ab15bf487e61f8" kindref="member">State</ref><sp/>&amp;<ref refid="classStateMachine_1a2a66289bc12dcbc88266ef25c2f1491a" kindref="member">currentState</ref>;<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>STATE_MACHINE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/state_machine.h"/>
+  </compounddef>
+</doxygen>

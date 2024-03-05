@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e931c1a3f0014e624d0645a271726ad2" kind="dir">
+    <compoundname>src/examples</compoundname>
+    <innerdir refid="dir_39a7156680b0b07371d868a2a5b07519">src/examples/factory</innerdir>
+    <innerdir refid="dir_5f6f94597f0e435a737890303984d904">src/examples/micro-ros_reconnection</innerdir>
+    <innerdir refid="dir_7c12013347949114fe6ecc3c87b9df50">src/examples/subscriber</innerdir>
+    <innerdir refid="dir_dc36bf91761cb1892011d2f1f62f6770">src/examples/tmag5273_test</innerdir>
+    <innerdir refid="dir_9c1dfb55e5a5697e4c51128841c5bf41">src/examples/utils</innerdir>
+    <innerdir refid="dir_99de0a46a0155a3224965336d9b6a2d8">src/examples/velocity_controller</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/examples/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="foc__bldc_8cpp" kind="file" language="C++">
+    <compoundname>foc_bldc.cpp</compoundname>
+    <includes refid="foc__bldc_8h" local="yes">foc_bldc.h</includes>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a4c40d548d989499dc4a3a77aede2d93f" prot="public" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex sensorFOCMutex</definition>
+        <argsstring></argsstring>
+        <name>sensorFOCMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="9" column="12" bodyfile="src/foc_bldc.cpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a9343f492686bfe94b4735ca07dd49aa3" prot="public" static="no" mutable="no">
+        <type>TMAG5273</type>
+        <definition>TMAG5273 sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="10" column="10" bodyfile="src/foc_bldc.cpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a3ff5bcdab699434551e1ea0e2b871e18" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool angleSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>angleSensorInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="11" column="6" bodyfile="src/foc_bldc.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a4480c9f4d7ef0bd18abfd4dc0c84d7d7" prot="public" static="no" mutable="no">
+        <type>InlineCurrentSense</type>
+        <definition>InlineCurrentSense currentSensor</definition>
+        <argsstring></argsstring>
+        <name>currentSensor</name>
+        <initializer>= InlineCurrentSense(0.012, 20, PHASE_U_SENSE, PHASE_V_SENSE, PHASE_W_SENSE)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="12" column="20" bodyfile="src/foc_bldc.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a5cd99dd593a81c89459b762b3cd1a631" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool currentSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>currentSensorInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="13" column="6" bodyfile="src/foc_bldc.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a43d80622234e4367e362e93b7d565fe9" prot="public" static="no" mutable="no">
+        <type>GenericSensor</type>
+        <definition>GenericSensor sensorFOC</definition>
+        <argsstring></argsstring>
+        <name>sensorFOC</name>
+        <initializer>= GenericSensor(readTMAG5273Callback, initTMAG5273Callback)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="37" column="15" bodyfile="src/foc_bldc.cpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a98c14dc9cab98a575a69b871b98716f7" prot="public" static="no" mutable="no">
+        <type>BLDCMotor</type>
+        <definition>BLDCMotor motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <initializer>= BLDCMotor(7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="45" column="11" bodyfile="src/foc_bldc.cpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a773de43e86b02898d484d10269046d53" prot="public" static="no" mutable="no">
+        <type>BLDCDriver6PWM</type>
+        <definition>BLDCDriver6PWM driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <initializer>= BLDCDriver6PWM(
+                            PHASE_U_HIGH, PHASE_U_LOW, 
+                            PHASE_V_HIGH, PHASE_V_LOW, 
+                            PHASE_W_HIGH, PHASE_W_LOW, 
+                            DRIVER_ENABLE)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="46" column="16" bodyfile="src/foc_bldc.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1af0df2177301e4061ab72ade2ea437bcd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="52" column="7" bodyfile="src/foc_bldc.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="foc__bldc_8cpp_1a4e14b8ccf1889aa0f74cfca37a46b5bf" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t focTask</definition>
+        <argsstring></argsstring>
+        <name>focTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="53" column="14" bodyfile="src/foc_bldc.cpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="foc__bldc_8cpp_1aec4b6990ed1c828cbaa9325ffcccb0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>initTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="21" column="6" bodyfile="src/foc_bldc.cpp" bodystart="21" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8cpp_1af0ef01945756ce82a3e53cabab6aa93c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float readTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>readTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="33" column="7" bodyfile="src/foc_bldc.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8cpp_1ab2efd9e24cbf7f3c2170cfb77e289938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void controlMotorTask</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>controlMotorTask</name>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="55" column="6" bodyfile="src/foc_bldc.cpp" bodystart="55" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="foc__bldc_8cpp_1ab5a39290deaf7e2a4297d2975acdbde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void focBLDCSetup</definition>
+        <argsstring>()</argsstring>
+        <name>focBLDCSetup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/foc_bldc.cpp" line="66" column="6" bodyfile="src/foc_bldc.cpp" bodystart="66" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;foc_bldc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>FOC<sp/>OBJECTS<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">std::mutex<sp/>sensorFOCMutex;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">TMAG5273<sp/>sensor;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>angleSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">InlineCurrentSense<sp/>currentSensor<sp/>=<sp/>InlineCurrentSense(0.012,<sp/>20,<sp/>PHASE_U_SENSE,<sp/>PHASE_V_SENSE,<sp/>PHASE_W_SENSE);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>currentSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>FOC<sp/>SENSOR<sp/>INSTANTIATION<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initTMAG5273Callback()<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Starting<sp/>TMAG5273...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL))<sp/>{<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>start<sp/>TMAG5273&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);<sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>further<sp/>code<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.setConvAvg(TMAG5273_X32_CONVERSION);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.setAngleEn(0x01);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>angleSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>readTMAG5273Callback()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sensor.getAngleResult()<sp/>/<sp/>180<sp/>*<sp/>PI;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">GenericSensor<sp/>sensorFOC<sp/>=<sp/>GenericSensor(readTMAG5273Callback,<sp/>initTMAG5273Callback);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===<sp/>MOTOR<sp/>INSTANTIATION<sp/>===</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===========================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">BLDCMotor<sp/>motor<sp/>=<sp/>BLDCMotor(7);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">BLDCDriver6PWM<sp/>driver<sp/>=<sp/>BLDCDriver6PWM(</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE_U_HIGH,<sp/>PHASE_U_LOW,<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE_V_HIGH,<sp/>PHASE_V_LOW,<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE_W_HIGH,<sp/>PHASE_W_LOW,<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DRIVER_ENABLE);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>target<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">TaskHandle_t<sp/>focTask;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>controlMotorTask(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>parameter)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.printf(</highlight><highlight class="stringliteral">&quot;Motor<sp/>control<sp/>on<sp/>Core<sp/>%d\r\n&quot;</highlight><highlight class="normal">,<sp/>xPortGetCoreID());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sensorFOCMutex.lock();<sp/></highlight><highlight class="comment">//<sp/>Block<sp/>execution<sp/>until<sp/>sensorFOC<sp/>is<sp/>released,<sp/>then<sp/>grab<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor.loopFOC();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor.move(target);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sensorFOCMutex.unlock();<sp/></highlight><highlight class="comment">//<sp/>Release<sp/>sensorFOC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(10);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>focBLDCSetup()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>magnetic<sp/>sensor<sp/>hardware</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Initializing<sp/>FOC<sp/>sensor...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>sensorFOC.init();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>link<sp/>the<sp/>motor<sp/>to<sp/>the<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkSensor(&amp;sensorFOC);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>driver<sp/>config</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Initializing<sp/>driver...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.voltage_power_supply<sp/>=<sp/>3.3;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.pwm_frequency<sp/>=<sp/>20000;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.init();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkDriver(&amp;driver);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>comment<sp/>out<sp/>if<sp/>not<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.useMonitoring(Serial1);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>motor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.init();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Current<sp/>Sensor<sp/>init</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Initializing<sp/>current<sp/>sensor...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentSensor.init())<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Current<sp/>sense<sp/>init<sp/>failed!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);<sp/></highlight><highlight class="comment">//<sp/>Block<sp/>further<sp/>code<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>currentSensor.linkDriver(&amp;driver);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkCurrentSense(&amp;currentSensor);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>align<sp/>sensor<sp/>and<sp/>start<sp/>FOC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.initFOC();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.disable();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Motor<sp/>ready.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>xTaskCreatePinnedToCore(</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlMotorTask,<sp/></highlight><highlight class="comment">/*<sp/>Function<sp/>to<sp/>implement<sp/>the<sp/>task<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Motor<sp/>Control&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="comment">/*<sp/>Name<sp/>of<sp/>the<sp/>task<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10000,<sp/><sp/></highlight><highlight class="comment">/*<sp/>Stack<sp/>size<sp/>in<sp/>words<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL,<sp/><sp/></highlight><highlight class="comment">/*<sp/>Task<sp/>input<sp/>parameter<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/></highlight><highlight class="comment">/*<sp/>Priority<sp/>of<sp/>the<sp/>task<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;focTask,<sp/><sp/></highlight><highlight class="comment">/*<sp/>Task<sp/>handle.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1);<sp/></highlight><highlight class="comment">/*<sp/>Core<sp/>where<sp/>the<sp/>task<sp/>should<sp/>run<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/foc_bldc.cpp"/>
+  </compounddef>
+</doxygen>

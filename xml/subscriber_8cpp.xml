@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="subscriber_8cpp" kind="file" language="C++">
+    <compoundname>subscriber.cpp</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">micro_ros_platformio.h</includes>
+    <includes local="no">micro_ros_utilities/type_utilities.h</includes>
+    <includes local="no">micro_ros_utilities/string_utilities.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">rcl/rcl.h</includes>
+    <includes local="no">rcl/error_handling.h</includes>
+    <includes local="no">rclc/rclc.h</includes>
+    <includes local="no">rclc/executor.h</includes>
+    <includes local="no">sensor_msgs/msg/joy.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>rclc/rclc.h</label>
+      </node>
+      <node id="7">
+        <label>rcl/rcl.h</label>
+      </node>
+      <node id="3">
+        <label>micro_ros_platformio.h</label>
+      </node>
+      <node id="4">
+        <label>micro_ros_utilities/type_utilities.h</label>
+      </node>
+      <node id="1">
+        <label>src/examples/subscriber/subscriber.cpp</label>
+        <link refid="subscriber_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>rcl/error_handling.h</label>
+      </node>
+      <node id="10">
+        <label>rclc/executor.h</label>
+      </node>
+      <node id="11">
+        <label>sensor_msgs/msg/joy.h</label>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="5">
+        <label>micro_ros_utilities/string_utilities.h</label>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="subscriber_8cpp_1a9cb001747cb67f240459b3b105a63529" prot="public" static="no">
+        <name>RCCHECK</name>
+        <param><defname>fn</defname></param>
+        <initializer>{ rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){<ref refid="subscriber_8cpp_1a1ba932e26c7eb955eb2ad83e9f4adaf1" kindref="member">error_loop</ref>();}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="69" column="9" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="subscriber_8cpp_1a7970198dc43b523050ff0fa9b0a94b8d" prot="public" static="no">
+        <name>RCSOFTCHECK</name>
+        <param><defname>fn</defname></param>
+        <initializer>{ rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="70" column="9" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="subscriber_8cpp_1a488dd6cb1af690c5c2ec3200d9a3433c" prot="public" static="no" mutable="no">
+        <type>rcl_subscription_t</type>
+        <definition>rcl_subscription_t subscriber</definition>
+        <argsstring></argsstring>
+        <name>subscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="50" column="20" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1a560f24520b968f40428c1f1e93a73901" prot="public" static="no" mutable="no">
+        <type>sensor_msgs__msg__Joy</type>
+        <definition>sensor_msgs__msg__Joy joystickMsg</definition>
+        <argsstring></argsstring>
+        <name>joystickMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="51" column="23" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1a864bc8f364fa8dd00b7265f7fd39ce84" prot="public" static="no" mutable="no">
+        <type>rclc_executor_t</type>
+        <definition>rclc_executor_t executor</definition>
+        <argsstring></argsstring>
+        <name>executor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="52" column="17" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1ad7ca784e9d6a36f1a990ccef47340149" prot="public" static="no" mutable="no">
+        <type>rclc_support_t</type>
+        <definition>rclc_support_t support</definition>
+        <argsstring></argsstring>
+        <name>support</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="53" column="16" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1acc1518bac7ff8bf75ac11589055d7578" prot="public" static="no" mutable="no">
+        <type>rcl_allocator_t</type>
+        <definition>rcl_allocator_t allocator</definition>
+        <argsstring></argsstring>
+        <name>allocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="54" column="17" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1ab69e3b0b5d335275c7e2da94c0886b1c" prot="public" static="no" mutable="no">
+        <type>rcl_node_t</type>
+        <definition>rcl_node_t node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="55" column="12" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1af9d2cadeca4b4137782e75dc578211f6" prot="public" static="no" mutable="no">
+        <type>rcl_timer_t</type>
+        <definition>rcl_timer_t timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="56" column="13" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="subscriber_8cpp_1a79347acaa453073c4568857329f56edb" prot="public" static="yes" mutable="no">
+        <type>const rmw_qos_profile_t</type>
+        <definition>const rmw_qos_profile_t joystickProfile</definition>
+        <argsstring></argsstring>
+        <name>joystickProfile</name>
+        <initializer>= {
+    RMW_QOS_POLICY_HISTORY_KEEP_LAST,
+    1,
+    RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT,
+    RMW_QOS_POLICY_DURABILITY_VOLATILE,
+    {1LL, 1LL},
+    {1LL, 1LL},
+    RMW_QOS_POLICY_LIVELINESS_AUTOMATIC,
+    RMW_QOS_LIVELINESS_LEASE_DURATION_DEFAULT,
+    false
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="57" column="32" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="subscriber_8cpp_1a1ba932e26c7eb955eb2ad83e9f4adaf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void error_loop</definition>
+        <argsstring>()</argsstring>
+        <name>error_loop</name>
+        <briefdescription>
+<para>Enters an infinite loop where the LED blinks every 100ms. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="77" column="6" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="77" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="subscriber_8cpp_1a4b19da9417373e7f1b4f6ffb5c31d81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void subscription_callback</definition>
+        <argsstring>(const void *msgin)</argsstring>
+        <name>subscription_callback</name>
+        <param>
+          <type>const void *</type>
+          <declname>msgin</declname>
+        </param>
+        <briefdescription>
+<para>Toggles the LED based on the value of the data field in the Int32 message. This function is triggered when a new message is received on the <computeroutput>micro_ros_arduino_subscriber</computeroutput> topic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msgin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message sent from the ROS2 host system via the <computeroutput>micro_ros_arduino_subscriber</computeroutput> topic </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="90" column="6" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+<para>This function is called when the microcontroller first boots. It includes all of the initialization code to build the Micro-ROS transport and node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="100" column="6" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="100" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>This function is continually executed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/subscriber/subscriber.cpp" line="156" column="6" bodyfile="src/examples/subscriber/subscriber.cpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Adapted from the Micro-ROS Arduino Subscriber example This script opens a serial transport through the Serial0 (<computeroutput>Serial</computeroutput>) port at 115200 baud. When the Micro-ROS agent connects to this transport, the microcontroller will subscribe to the <computeroutput>micro_ros_arduino_subscriber</computeroutput> topic. This topic is a <computeroutput>std_msgs.msg.Int32</computeroutput> type message that is expecting a <computeroutput>data</computeroutput> value of either 0 or 1. This value is written to the LED as a digital write, i.e. <computeroutput>data=0</computeroutput> is LED OFF, <computeroutput>data=1</computeroutput> is LED ON. \ On a ROS2 host with Micro-ROS installed in the workspace, open a terminal in the root workspace and enter the command: </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Braidan Duffy (<ulink url="mailto:legohead259@gmail.com">legohead259@gmail.com</ulink>)</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal">source<sp/>install/setup.bash<sp/>&amp;&amp;<sp/>ros2<sp/>run<sp/>micro_ros_agent<sp/>micro_ros_agent<sp/>serial<sp/>--dev<sp/>/dev/ttyUSB0<sp/>-b<sp/>115200</highlight></codeline>
+</programlisting></para>
+<para>This will open a transport to the microcontroller. You should see output reporting a successful creation of participant, topic, subscriber, and datareader. Then, open a new terminal in the root workspace and enter the command:</para>
+<para><programlisting><codeline><highlight class="normal">source<sp/>install/setup.bash<sp/>&amp;&amp;<sp/>ros2<sp/>topic<sp/>pub<sp/>/micro_ros_arduino_subscriber<sp/>std_msgs/Int32<sp/>&quot;{data:<sp/>VALUE}&quot;</highlight></codeline>
+</programlisting></para>
+<para>Where <computeroutput>VALUE</computeroutput> is replaced by either 0 or 1 depending on if you want the LED OFF or ON. To exit the program, exit the terminal windows.</para>
+<para><simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>2024-02-29</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2024 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro_ros_platformio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro_ros_utilities/type_utilities.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro_ros_utilities/string_utilities.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rcl/rcl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rcl/error_handling.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclc/rclc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rclc/executor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sensor_msgs/msg/joy.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">rcl_subscription_t<sp/>subscriber;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">sensor_msgs__msg__Joy<sp/>joystickMsg;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">rclc_executor_t<sp/>executor;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">rclc_support_t<sp/>support;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">rcl_allocator_t<sp/>allocator;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">rcl_node_t<sp/>node;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">rcl_timer_t<sp/>timer;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>rmw_qos_profile_t<sp/>joystickProfile<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>RMW_QOS_POLICY_HISTORY_KEEP_LAST,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>1,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>RMW_QOS_POLICY_DURABILITY_VOLATILE,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>{1LL,<sp/>1LL},</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{1LL,<sp/>1LL},</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>RMW_QOS_POLICY_LIVELINESS_AUTOMATIC,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>RMW_QOS_LIVELINESS_LEASE_DURATION_DEFAULT,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RCCHECK(fn)<sp/>{<sp/>rcl_ret_t<sp/>temp_rc<sp/>=<sp/>fn;<sp/>if((temp_rc<sp/>!=<sp/>RCL_RET_OK)){error_loop();}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RCSOFTCHECK(fn)<sp/>{<sp/>rcl_ret_t<sp/>temp_rc<sp/>=<sp/>fn;<sp/>if((temp_rc<sp/>!=<sp/>RCL_RET_OK)){}}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a1ba932e26c7eb955eb2ad83e9f4adaf1" kindref="member">error_loop</ref>(){</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(LED_BUILTIN,<sp/>!digitalRead(LED_BUILTIN));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(100);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4b19da9417373e7f1b4f6ffb5c31d81a" kindref="member">subscription_callback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>msgin)<sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs__msg__Joy<sp/>*<sp/>msg<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs__msg__Joy<sp/>*)msgin;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(LED_BUILTIN,<sp/>(msg-&gt;buttons.data[0]<sp/>==<sp/>0)<sp/>?<sp/>LOW<sp/>:<sp/>HIGH);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin(921600);<sp/></highlight><highlight class="comment">//<sp/>Increase<sp/>to<sp/>maximum<sp/>possible<sp/>speed<sp/>to<sp/>reduce<sp/>input<sp/>lag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.begin(115200,<sp/>SERIAL_8N1,<sp/>RX1_PIN,<sp/>TX1_PIN);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Starting<sp/>setup&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>set_microros_serial_transports(Serial);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(LED_BUILTIN,<sp/>OUTPUT);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(LED_BUILTIN,<sp/>HIGH);<sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>allocator<sp/>=<sp/>rcl_get_default_allocator();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>init_options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Initializing<sp/>supporter...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_support_init(&amp;support,<sp/>0,<sp/>NULL,<sp/>&amp;allocator));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Creating<sp/>node...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_node_init_default(&amp;node,<sp/></highlight><highlight class="stringliteral">&quot;micro_ros_arduino_node&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>&amp;support));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>subscriber</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Creating<sp/>subscriber...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_subscription_init(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;subscriber,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;node,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs,<sp/>msg,<sp/>Joy),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;joy&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;joystickProfile));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.print(</highlight><highlight class="stringliteral">&quot;Setting<sp/>subscriber<sp/>memory...&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Debug</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>subscriber<sp/>message<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>micro_ros_utilities_memory_conf_t<sp/>conf<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.max_ros2_type_sequence_capacity<sp/>=<sp/>20,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.max_basic_type_sequence_capacity<sp/>=<sp/>20,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>micro_ros_utilities_create_message_memory(</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs,<sp/>msg,<sp/>Joy),</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;joystickMsg,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conf);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;done!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>executor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_executor_init(&amp;executor,<sp/>&amp;support.context,<sp/>1,<sp/>&amp;allocator));</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_executor_add_subscription(&amp;executor,<sp/>&amp;subscriber,<sp/>&amp;joystickMsg,<sp/>&amp;<ref refid="subscriber_8cpp_1a4b19da9417373e7f1b4f6ffb5c31d81a" kindref="member">subscription_callback</ref>,<sp/>ON_NEW_DATA));</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial1.println(</highlight><highlight class="stringliteral">&quot;Finished<sp/>setup&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>delay(100);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>RCCHECK(rclc_executor_spin_some(&amp;executor,<sp/>RCL_MS_TO_NS(100)));</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/examples/subscriber/subscriber.cpp"/>
+  </compounddef>
+</doxygen>

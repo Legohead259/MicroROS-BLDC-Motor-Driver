@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="find__kv__rating_8cpp" kind="file" language="C++">
+    <compoundname>find_kv_rating.cpp</compoundname>
+    <includes local="no">SimpleFOC.h</includes>
+    <includes local="no">SparkFun_TMAG5273_Arduino_Library.h</includes>
+    <includes local="no">Wire.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>SparkFun_TMAG5273_Arduino_Library.h</label>
+      </node>
+      <node id="2">
+        <label>SimpleFOC.h</label>
+      </node>
+      <node id="4">
+        <label>Wire.h</label>
+      </node>
+      <node id="1">
+        <label>src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp</label>
+        <link refid="find__kv__rating_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a41ee5db7dd6979b64a62336e4effe510" prot="public" static="no">
+        <name>uh16</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find KV rating for motor with magnetic sensors</para>
+<para>Motor KV rating is defined as the increase of the motor velocity expressed in rotations per minute [rpm] per each 1 Volt int voltage control mode.</para>
+<para>This example will set your motor in the torque control mode using voltage and set 1 volt to the motor. By reading the velocity it will calculate the motors KV rating.<itemizedlist>
+<listitem><para>To make this estimation more credible you can try increasing the target voltage (or decrease in some cases)</para>
+</listitem><listitem><para>The KV rating should be relatively static number - it should not change considerably with the increase in the voltage </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="15" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a0ed921466b568cf68df6c0d722963fcc" prot="public" static="no">
+        <name>ul17</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="16" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a7a6f9d51b513df12dbdb79f50d3208f5" prot="public" static="no">
+        <name>vh18</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="17" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a944f0e222cfb483b69fd5aa54533c32c" prot="public" static="no">
+        <name>wh19</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="18" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a26c269d1918229e2e7b72e21fbf98142" prot="public" static="no">
+        <name>vl23</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="19" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1a2f609ac396115b00e44b20045b63aa01" prot="public" static="no">
+        <name>wl33</name>
+        <initializer>33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="20" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="find__kv__rating_8cpp_1ac84a5b1acc10e2b1db85fdc18181837c" prot="public" static="no">
+        <name>curSense</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="21" column="9" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a9343f492686bfe94b4735ca07dd49aa3" prot="public" static="no" mutable="no">
+        <type>TMAG5273</type>
+        <definition>TMAG5273 sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="23" column="10" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a3ff5bcdab699434551e1ea0e2b871e18" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool angleSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>angleSensorInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="24" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a5cd99dd593a81c89459b762b3cd1a631" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool currentSensorInitialized</definition>
+        <argsstring></argsstring>
+        <name>currentSensorInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="25" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a43d80622234e4367e362e93b7d565fe9" prot="public" static="no" mutable="no">
+        <type>GenericSensor</type>
+        <definition>GenericSensor sensorFOC</definition>
+        <argsstring></argsstring>
+        <name>sensorFOC</name>
+        <initializer>= GenericSensor(readTMAG5273Callback, initTMAG5273Callback)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="40" column="15" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a98c14dc9cab98a575a69b871b98716f7" prot="public" static="no" mutable="no">
+        <type>BLDCMotor</type>
+        <definition>BLDCMotor motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <initializer>= BLDCMotor(7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="41" column="11" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a773de43e86b02898d484d10269046d53" prot="public" static="no" mutable="no">
+        <type>BLDCDriver6PWM</type>
+        <definition>BLDCDriver6PWM driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <initializer>= BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="42" column="16" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a2b13e1b94f2c61405bd9394a5ad71092" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float targetVoltage</definition>
+        <argsstring></argsstring>
+        <name>targetVoltage</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="45" column="7" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="find__kv__rating_8cpp_1a6f6d8eb66e8085a4563a5d7d9b5c6529" prot="public" static="no" mutable="no">
+        <type>Commander</type>
+        <definition>Commander command</definition>
+        <argsstring></argsstring>
+        <name>command</name>
+        <initializer>= Commander(Serial)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="48" column="11" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="find__kv__rating_8cpp_1aec4b6990ed1c828cbaa9325ffcccb0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>initTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="27" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="27" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="find__kv__rating_8cpp_1af0ef01945756ce82a3e53cabab6aa93c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float readTMAG5273Callback</definition>
+        <argsstring>()</argsstring>
+        <name>readTMAG5273Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="36" column="7" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="find__kv__rating_8cpp_1a394fd0a457adf4d8ee1f452d2498b1f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void doTarget</definition>
+        <argsstring>(char *cmd)</argsstring>
+        <name>doTarget</name>
+        <param>
+          <type>char *</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="49" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="find__kv__rating_8cpp_1ad6d53c73330e3c6f80e183da84063055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void calcKV</definition>
+        <argsstring>(char *cmd)</argsstring>
+        <name>calcKV</name>
+        <param>
+          <type>char *</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="50" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="find__kv__rating_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="56" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="56" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="find__kv__rating_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" line="104" column="6" bodyfile="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp" bodystart="104" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SimpleFOC.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SparkFun_TMAG5273_Arduino_Library.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uh16<sp/><sp/><sp/><sp/><sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ul17<sp/><sp/><sp/><sp/><sp/><sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vh18<sp/><sp/><sp/><sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>wh19<sp/><sp/><sp/><sp/><sp/><sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vl23<sp/><sp/><sp/><sp/><sp/><sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>wl33<sp/><sp/><sp/><sp/><sp/><sp/>33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>curSense<sp/><sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">TMAG5273<sp/>sensor;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>angleSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>currentSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initTMAG5273Callback(){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.setAngleEn(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!sensor.begin(TMAG5273_I2C_ADDRESS_INITIAL))<sp/>{<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1);<sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>further<sp/>code<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>sensor.setAngleEn(0x01);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>angleSensorInitialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>readTMAG5273Callback(){</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sensor.getAngleResult()<sp/>/<sp/>180<sp/>*<sp/>PI;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">GenericSensor<sp/>sensorFOC<sp/>=<sp/>GenericSensor(readTMAG5273Callback,<sp/>initTMAG5273Callback);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">BLDCMotor<sp/>motor<sp/>=<sp/>BLDCMotor(7);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">BLDCDriver6PWM<sp/>driver<sp/>=<sp/>BLDCDriver6PWM(uh16,<sp/>ul17,<sp/>vh18,<sp/>vl23,<sp/>wh19,<sp/>wl33,<sp/><sp/>curSense);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">//<sp/>voltage<sp/>set<sp/>point<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>targetVoltage<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>instantiate<sp/>the<sp/>commander</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">Commander<sp/>command<sp/>=<sp/>Commander(Serial);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doTarget(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmd)<sp/>{<sp/>command.scalar(&amp;targetVoltage,<sp/>cmd);<sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>calcKV(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmd)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calculate<sp/>the<sp/>KV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(motor.shaft_velocity/motor.target*30.0f/_PI);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>use<sp/>monitoring<sp/>with<sp/>serial<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Starting...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.begin();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>comment<sp/>out<sp/>if<sp/>not<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.useMonitoring(Serial);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>encoder<sp/>sensor<sp/>hardware</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Initializing<sp/>FOC<sp/>sensor...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>sensorFOC.init();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>link<sp/>the<sp/>motor<sp/>to<sp/>the<sp/>sensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Linking<sp/>FOC<sp/>sensor...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkSensor(&amp;sensorFOC);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>driver<sp/>config</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>IMPORTANT!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>to<sp/>set<sp/>the<sp/>correct<sp/>power<sp/>supply<sp/>voltage<sp/>[V]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.voltage_power_supply<sp/>=<sp/>3.3;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.init();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>link<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkDriver(&amp;driver);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>aligning<sp/>voltage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.voltage_sensor_align<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>motion<sp/>control<sp/>loop<sp/>to<sp/>be<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.controller<sp/>=<sp/>MotionControlType::torque;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>motor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.init();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>align<sp/>sensor<sp/>and<sp/>start<sp/>FOC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.initFOC();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>target<sp/>command<sp/>T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>command.add(</highlight><highlight class="charliteral">&apos;T&apos;</highlight><highlight class="normal">,<sp/>doTarget,<sp/></highlight><highlight class="stringliteral">&quot;target<sp/>voltage&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>command.add(</highlight><highlight class="charliteral">&apos;K&apos;</highlight><highlight class="normal">,<sp/>calcKV,<sp/></highlight><highlight class="stringliteral">&quot;calculate<sp/>KV<sp/>rating&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(F(</highlight><highlight class="stringliteral">&quot;Motor<sp/>ready.&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(F(</highlight><highlight class="stringliteral">&quot;Set<sp/>the<sp/>target<sp/>voltage<sp/>:<sp/>-<sp/>command<sp/>T&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(F(</highlight><highlight class="stringliteral">&quot;Calculate<sp/>the<sp/>motor<sp/>KV<sp/>:<sp/>-<sp/>command<sp/>K&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay(1000);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Timestamp<sp/>(ms)<sp/>|<sp/>Loop<sp/>time<sp/>(ms)<sp/>|<sp/>Shaft<sp/>velocity<sp/>(rps)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>static<sp/>uint32_t<sp/>_lastCall<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>main<sp/>FOC<sp/>algorithm<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>faster<sp/>you<sp/>run<sp/>this<sp/>function<sp/>the<sp/>better</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arduino<sp/>UNO<sp/>loop<sp/><sp/>~1kHz</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bluepill<sp/>loop<sp/>~10kHz<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.loopFOC();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Motion<sp/>control<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>velocity,<sp/>position<sp/>or<sp/>voltage<sp/>(defined<sp/>in<sp/>motor.controller)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>function<sp/>can<sp/>be<sp/>run<sp/>at<sp/>much<sp/>lower<sp/>frequency<sp/>than<sp/>loopFOC()<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>You<sp/>can<sp/>also<sp/>use<sp/>motor.move()<sp/>and<sp/>set<sp/>the<sp/>motor.target<sp/>in<sp/>the<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.move(targetVoltage);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>user<sp/>communication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>command.run();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Serial.printf(&quot;%lu<sp/>|<sp/>%lu<sp/>|<sp/>%d\r\n&quot;,<sp/>millis(),<sp/>millis()-_lastCall,<sp/>motor.shaft_velocity);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>_lastCall<sp/>=<sp/>millis();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Serial.println(sensor.getAngleResult());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/examples/utils/calibration/find_kv_rating/find_kv_rating.cpp"/>
+  </compounddef>
+</doxygen>

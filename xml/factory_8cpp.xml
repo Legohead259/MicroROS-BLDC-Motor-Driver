@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="factory_8cpp" kind="file" language="C++">
+    <compoundname>factory.cpp</compoundname>
+    <includes local="no">Wire.h</includes>
+    <includes local="no">SimpleFOC.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/examples/factory/factory.cpp</label>
+        <link refid="factory_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SimpleFOC.h</label>
+      </node>
+      <node id="2">
+        <label>Wire.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structButton" prot="public">Button</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="factory_8cpp_1a01db13ce6b937cc305d8e66db4bf8557" prot="public" static="no">
+        <name>auxBtn2</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="37" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1af5eb857185974766c84d405991b13925" prot="public" static="no">
+        <name>auxBtn1</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="38" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a41ee5db7dd6979b64a62336e4effe510" prot="public" static="no">
+        <name>uh16</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="41" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a0ed921466b568cf68df6c0d722963fcc" prot="public" static="no">
+        <name>ul17</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="42" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a7a6f9d51b513df12dbdb79f50d3208f5" prot="public" static="no">
+        <name>vh18</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="43" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a944f0e222cfb483b69fd5aa54533c32c" prot="public" static="no">
+        <name>wh19</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="44" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a26c269d1918229e2e7b72e21fbf98142" prot="public" static="no">
+        <name>vl23</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="45" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1a2f609ac396115b00e44b20045b63aa01" prot="public" static="no">
+        <name>wl33</name>
+        <initializer>33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="46" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="factory_8cpp_1ac84a5b1acc10e2b1db85fdc18181837c" prot="public" static="no">
+        <name>curSense</name>
+        <initializer>32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="47" column="9" bodyfile="src/examples/factory/factory.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="factory_8cpp_1ab30ba07e2a0bd07a15e45a92c32db9c5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="49" column="6" bodyfile="src/examples/factory/factory.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1a98c14dc9cab98a575a69b871b98716f7" prot="public" static="no" mutable="no">
+        <type>BLDCMotor</type>
+        <definition>BLDCMotor motor</definition>
+        <argsstring></argsstring>
+        <name>motor</name>
+        <initializer>= BLDCMotor(7)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="52" column="11" bodyfile="src/examples/factory/factory.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1a773de43e86b02898d484d10269046d53" prot="public" static="no" mutable="no">
+        <type>BLDCDriver6PWM</type>
+        <definition>BLDCDriver6PWM driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <initializer>= BLDCDriver6PWM(uh16, ul17, vh18, vl23, wh19, wl33,  curSense)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="53" column="16" bodyfile="src/examples/factory/factory.cpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1a3c6a37bc0036000a15e2fd8ab210f220" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float target_velocity</definition>
+        <argsstring></argsstring>
+        <name>target_velocity</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="54" column="7" bodyfile="src/examples/factory/factory.cpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1a6f6d8eb66e8085a4563a5d7d9b5c6529" prot="public" static="no" mutable="no">
+        <type>Commander</type>
+        <definition>Commander command</definition>
+        <argsstring></argsstring>
+        <name>command</name>
+        <initializer>= Commander(Serial)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="55" column="11" bodyfile="src/examples/factory/factory.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1a4866b292277c6de5cd4ffe7e14a39309" prot="public" static="no" mutable="no">
+        <type><ref refid="structButton" kindref="compound">Button</ref></type>
+        <definition>Button aux1</definition>
+        <argsstring></argsstring>
+        <name>aux1</name>
+        <initializer>= {auxBtn1, 0, false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="65" column="8" bodyfile="src/examples/factory/factory.cpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="factory_8cpp_1ab60d169f75121dc2ad9a272b93973bb9" prot="public" static="no" mutable="no">
+        <type><ref refid="structButton" kindref="compound">Button</ref></type>
+        <definition>Button aux2</definition>
+        <argsstring></argsstring>
+        <name>aux2</name>
+        <initializer>= {auxBtn2, 0, false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="66" column="8" bodyfile="src/examples/factory/factory.cpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="factory_8cpp_1a394fd0a457adf4d8ee1f452d2498b1f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void doTarget</definition>
+        <argsstring>(char *cmd)</argsstring>
+        <name>doTarget</name>
+        <param>
+          <type>char *</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="56" column="6" bodyfile="src/examples/factory/factory.cpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="factory_8cpp_1a8fff825070fec506f05652c733d8485d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void doLimit</definition>
+        <argsstring>(char *cmd)</argsstring>
+        <name>doLimit</name>
+        <param>
+          <type>char *</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="57" column="6" bodyfile="src/examples/factory/factory.cpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="factory_8cpp_1a66e60cb3c3d966632378318183ac51d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void IRAM_ATTR</type>
+        <definition>void IRAM_ATTR isr1</definition>
+        <argsstring>()</argsstring>
+        <name>isr1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="68" column="16" bodyfile="src/examples/factory/factory.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="factory_8cpp_1a656c4642beaf65b8c055743869171a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void IRAM_ATTR</type>
+        <definition>void IRAM_ATTR isr2</definition>
+        <argsstring>()</argsstring>
+        <name>isr2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="74" column="16" bodyfile="src/examples/factory/factory.cpp" bodystart="74" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="factory_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="92" column="6" bodyfile="src/examples/factory/factory.cpp" bodystart="92" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="factory_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/examples/factory/factory.cpp" line="113" column="6" bodyfile="src/examples/factory/factory.cpp" bodystart="113" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/******************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>IoT<sp/>Motor<sp/>Driver<sp/>Example</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>Written<sp/>By:</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Madison<sp/>Chodikov</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eric<sp/>Orosel</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>Company:<sp/>SparkFun<sp/>Electronics<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>Date:<sp/>September<sp/>1<sp/>2023</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>sketch<sp/>is<sp/>a<sp/>stripped<sp/>down<sp/>version<sp/>of<sp/>the<sp/>firmware<sp/>that<sp/>is<sp/>preprogrammed</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>on<sp/>the<sp/>IoT<sp/>Motor<sp/>Driver.<sp/>It<sp/>is<sp/>based<sp/>on<sp/>the<sp/>open<sp/>loop,<sp/>velocity<sp/>motor<sp/>control</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>example<sp/>from<sp/>the<sp/>SimpleFOC<sp/>Arduino<sp/>library.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>sketch<sp/>will<sp/>spin<sp/>the<sp/>motor<sp/>based<sp/>on<sp/>the<sp/>button<sp/>inputs:</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Button<sp/>13:<sp/>Starts/Stops<sp/>the<sp/>motor<sp/>rotation</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Button<sp/>14:<sp/>When<sp/>spinning,<sp/>switches<sp/>the<sp/>direction<sp/>of<sp/>rotation</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>Products:</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IoT<sp/>Brushless<sp/>Motor<sp/>Driver:<sp/>https://www.sparkfun.com/products/22132</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>Repository:</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>https://github.com/sparkfun/SparkFun_IoT_Brushless_Motor_Driver</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">===============================================================================</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>SparkFun<sp/>code,<sp/>firmware,<sp/>and<sp/>software<sp/>is<sp/>released<sp/>under<sp/>the<sp/>MIT<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/>License<sp/>(http://opensource.org/licenses/MIT).</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/>Distributed<sp/>as-is;<sp/>no<sp/>warranty<sp/>is<sp/>given.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SimpleFOC.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//http://librarymanager/All#Simple%20FOC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//GPIO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>auxBtn2<sp/><sp/><sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>auxBtn1<sp/><sp/><sp/>14<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//driver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uh16<sp/><sp/><sp/><sp/><sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ul17<sp/><sp/><sp/><sp/><sp/><sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vh18<sp/><sp/><sp/><sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>wh19<sp/><sp/><sp/><sp/><sp/><sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vl23<sp/><sp/><sp/><sp/><sp/><sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>wl33<sp/><sp/><sp/><sp/><sp/><sp/>33</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>curSense<sp/><sp/>32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>state<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//motor<sp/>driver</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">BLDCMotor<sp/>motor<sp/>=<sp/>BLDCMotor(7);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">BLDCDriver6PWM<sp/>driver<sp/>=<sp/>BLDCDriver6PWM(uh16,<sp/>ul17,<sp/>vh18,<sp/>vl23,<sp/>wh19,<sp/>wl33,<sp/><sp/>curSense);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>target_velocity<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">Commander<sp/>command<sp/>=<sp/>Commander(Serial);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doTarget(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmd)<sp/>{<sp/>command.scalar(&amp;target_velocity,<sp/>cmd);<sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doLimit(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cmd)<sp/>{<sp/>command.scalar(&amp;motor.voltage_limit,<sp/>cmd);<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structButton" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structButton" kindref="compound">Button</ref>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>PIN;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>numberKeyPresses;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pressed;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="structButton" kindref="compound">Button</ref><sp/>aux1<sp/>=<sp/>{auxBtn1,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><ref refid="structButton" kindref="compound">Button</ref><sp/>aux2<sp/>=<sp/>{auxBtn2,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>IRAM_ATTR<sp/>isr1(){</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>aux1.pressed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>target_velocity<sp/>=<sp/>target_velocity*(-1);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Changing<sp/>directions..<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>IRAM_ATTR<sp/>isr2(){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>aux2.numberKeyPresses++;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>aux2.pressed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((aux2.numberKeyPresses<sp/>%<sp/>2)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_velocity<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Stopping<sp/>motor..<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_velocity<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>motor.enable();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Starting<sp/>motor..<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//motor<sp/>demo<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.voltage_power_supply<sp/>=<sp/>3.3;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.pwm_frequency<sp/>=<sp/>20000;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.voltage_limit<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>driver.init();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.linkDriver(&amp;driver);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.voltage_limit<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.controller<sp/>=<sp/>MotionControlType::velocity_openloop;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.init();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.disable();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(aux1.PIN,<sp/>INPUT_PULLUP);<sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>pin<sp/>14<sp/>on<sp/>the<sp/>ESP32<sp/>as<sp/>an<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>attachInterrupt(aux1.PIN,<sp/>isr1,<sp/>FALLING);<sp/></highlight><highlight class="comment">//<sp/>Triggers<sp/>when<sp/>aux1<sp/>is<sp/>pulled<sp/>to<sp/>GND<sp/>(button<sp/>pressed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(aux2.PIN,<sp/>INPUT_PULLUP);<sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>pin<sp/>13<sp/>on<sp/>the<sp/>ESP32<sp/>as<sp/>an<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>attachInterrupt(aux2.PIN,<sp/>isr2,<sp/>FALLING);<sp/></highlight><highlight class="comment">//<sp/>Triggers<sp/>when<sp/>aux2<sp/>is<sp/>pulled<sp/>to<sp/>GND<sp/>(button<sp/>pressed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(100);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="subscriber_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Button<sp/>Press<sp/>ISR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(aux1.pressed){<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aux1.pressed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Turning<sp/>motor<sp/>on<sp/>and<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(aux2.pressed){<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aux2.pressed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>open<sp/>loop<sp/>velocity<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>using<sp/>motor.voltage_limit<sp/>and<sp/>motor.velocity_limit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>motor<sp/>movement</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>motor.move(target_velocity);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>user<sp/>communication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>command.run();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(5);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/examples/factory/factory.cpp"/>
+  </compounddef>
+</doxygen>

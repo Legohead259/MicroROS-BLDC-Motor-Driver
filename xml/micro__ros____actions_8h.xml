@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="micro__ros____actions_8h" kind="file" language="C++">
+    <compoundname>micro_ros__actions.h</compoundname>
+    <includes refid="micro__ros____definitions_8h" local="yes">micro_ros__definitions.h</includes>
+    <includedby refid="micro__ros____actions_8cpp" local="yes">src/micro_ros__actions.cpp</includedby>
+    <includedby refid="micro__ros__bldc_8h" local="yes">include/micro_ros_bldc.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/micro_ros_bldc.h</label>
+        <link refid="micro__ros__bldc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/micro_ros__actions.h</label>
+        <link refid="micro__ros____actions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="micro__ros____actions_8h_1a436bad4dc2e8294cf329fbad94c4337c" prot="public" static="no" mutable="no">
+        <type>Home_Goal</type>
+        <definition>Home_Goal homeGoal</definition>
+        <argsstring></argsstring>
+        <name>homeGoal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__actions.h" line="7" column="18" bodyfile="src/micro_ros__actions.cpp" bodystart="3" bodyend="-1" declfile="include/micro_ros__actions.h" declline="7" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____actions_8h_1a45751cc6973e1b1a3ffd3f26ac90ad49" prot="public" static="no" mutable="no">
+        <type>Home_Feedback</type>
+        <definition>Home_Feedback homefeedback</definition>
+        <argsstring></argsstring>
+        <name>homefeedback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__actions.h" line="8" column="22" bodyfile="src/micro_ros__actions.cpp" bodystart="4" bodyend="-1" declfile="include/micro_ros__actions.h" declline="8" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="micro__ros____actions_8h_1ac70fb835ed6019c297840276d12e2db9" prot="public" static="no" mutable="no">
+        <type>Home_Result</type>
+        <definition>Home_Result homeResult</definition>
+        <argsstring></argsstring>
+        <name>homeResult</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/micro_ros__actions.h" line="9" column="20" bodyfile="src/micro_ros__actions.cpp" bodystart="5" bodyend="-1" declfile="include/micro_ros__actions.h" declline="9" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MICRO_ROS_ACTIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_ROS_ACTIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;micro_ros__definitions.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Instantiate<sp/>message<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Home_Goal<sp/>homeGoal;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Home_Feedback<sp/>homefeedback;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>Home_Result<sp/>homeResult;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_ROS_ACTIONS_H</highlight></codeline>
+    </programlisting>
+    <location file="include/micro_ros__actions.h"/>
+  </compounddef>
+</doxygen>

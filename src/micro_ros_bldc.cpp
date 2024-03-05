@@ -25,17 +25,15 @@ bool createSubscribers() {
         ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Joy),
         "joy"));
 
-    Serial1.print("Setting subscriber memory..."); // Debug
     // Initialize subscriber message memory
     micro_ros_utilities_memory_conf_t conf = {
         .max_ros2_type_sequence_capacity = 20,
         .max_basic_type_sequence_capacity = 20,
     };
-    Serial1.print(micro_ros_utilities_create_message_memory(
+    micro_ros_utilities_create_message_memory(
         ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, Joy),
         &joystickMsg,
-        conf));
-    Serial1.println("done!"); // Debug
+        conf);
 
     return true;
 }

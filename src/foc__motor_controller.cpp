@@ -1,10 +1,11 @@
 #include "foc__motor_controller.h"
 
-bool MotorController::initialize() {
-    const MotorControllerSettings settings = {
+bool MotorController::initialize_default() {
+    return initialize(&defaultSettings);
+}
 
-    };
-    setSettings(&settings);
+bool MotorController::initialize(const MotorControllerSettings* settings) {
+    setSettings(settings);
     focGenericSensor.init();
     motor.linkSensor(&focGenericSensor);
     driver.init();

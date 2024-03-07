@@ -77,7 +77,8 @@ struct MotorController {
 
     float target;
 
-    bool initialize();
+    bool initialize_default();
+    bool initialize(const MotorControllerSettings* settings);
     void setSettings(const MotorControllerSettings* settings);
     
     void run();
@@ -87,6 +88,10 @@ struct MotorController {
     void disable();
 
     std::mutex* focSensorMutex; ///< Mutex to protect access to the controller's FOC sensor. This is required because the FOC control loop and the other applications may ping the sensor simultaneously.
+};
+
+const MotorControllerSettings defaultSettings = {
+
 };
 
 void controlMotorTask( void * parameter);

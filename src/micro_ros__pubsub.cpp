@@ -33,13 +33,11 @@ unsigned long _lastSwitch = 0; // Time variable for the last time "switch" was c
 void angularMeasurementCallback(rcl_timer_t * timer, int64_t last_call_time) {
     RCLC_UNUSED(last_call_time);
     if (timer != NULL) {
-        sensorFOCMutex.lock(); // Block execution until sensorFOC is released, then grab it
         RCSOFTCHECK(rcl_publish(&angularPositionPublisher, &angularMeasurementMsg, NULL));
-        sensorFOC.update();
+        motorControllerPtr->focSensorUpdate();
         angularMeasurementMsg.timestamp = millis();
-        angularMeasurementMsg.angular_position = motor.shaftAngle();
-        angularMeasurementMsg.angular_velocity = motor.shaftVelocity();
-        sensorFOCMutex.unlock(); // Release sensorFOC
+        angularMeasurementMsg.angular_position = motorControllerPtr->getShaftAngle();
+        angularMeasurementMsg.angular_velocity = motorControllerPtr->getShaftVelocity();
     }
 }
 
@@ -55,13 +53,13 @@ void joystickCallback(const void* msgin) {
     if (msg->buttons.data[START] && (millis() - _lastEnable) > ENABLE_TIMEOUT) { // Check for enable button pressed and timeout passed
         _lastEnable = millis();
         // TODO: Make thread safe
-        motor.enabled ? motor.disable() : motor.enable(); // Enable or disable motor
-        target = 5.0;
+        motorControllerPtr->getEnabled() ? motorControllerPtr->disable() : motorControllerPtr->enable(); // Change motor enabled state
+        motorControllerPtr->setTarget(5.0);
     }
 
     if (msg->buttons.data[BUTTON_A] && (millis() - _lastSwitch) > SWITCH_TIMEOUT) { // Check for switch direction button pressed and timeout passed
         // TODO: Make thread safe
         _lastSwitch = millis();
-        target = -target;
+        motorControllerPtr->reverse();
     }
 }

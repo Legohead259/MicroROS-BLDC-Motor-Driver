@@ -32,7 +32,7 @@ void deviceIdentifyCallback(const void* req, void* res) {
     Trigger_Request* req_in = (Trigger_Request*) req;
     Trigger_Response* res_in = (Trigger_Response*) res;
 
-    changeSystemState(DEVICE_IDENTIFY);
+    StateMachine::changeSystemState(DEVICE_IDENTIFY);
 
     // Send response back to client
     res_in->success = true;
@@ -43,15 +43,15 @@ void setTargetCallback(const void* req, void* res) {
     SetTarget_Response* res_in = (SetTarget_Response*) res;
 
     // Set target velocity based on request value
-    target = req_in->target;
+    motorControllerPtr->setTarget(req_in->target);
 
     // Update system state from target
-    if (target != 0) {
-        systemState = (target > 0) ? PARTIAL_FORWARD : PARTIAL_REVERSE;
+    if (req_in->target != 0) {
+        StateMachine::changeSystemState((req_in->target > 0) ? PARTIAL_FORWARD : PARTIAL_REVERSE);
     }
     // TODO: Set and check maxes (FULL_FORWARD, FULL_REVERSE)
     else {
-        systemState = IDLE_WITH_CONNECTION;
+        StateMachine::changeSystemState(previousSystemState);
     }
 
     // Send response back to client
@@ -62,14 +62,14 @@ void enableMotorCallback(const void* req, void* res) {
     Trigger_Request* req_in = (Trigger_Request*) req;
     Trigger_Response* res_in = (Trigger_Response*) res;
 
-    motor.enable();
-    res_in->success = motor.enabled;
+    motorControllerPtr->enable();
+    res_in->success = motorControllerPtr->getEnabled();
 }
 
 void disableMotorCallback(const void* req, void* res) {
     Trigger_Request* req_in = (Trigger_Request*) req;
     Trigger_Response* res_in = (Trigger_Response*) res;
 
-    motor.disable();
-    res_in->success = !motor.enabled;
+    motorControllerPtr->disable();
+    res_in->success = !motorControllerPtr->getEnabled();
 }

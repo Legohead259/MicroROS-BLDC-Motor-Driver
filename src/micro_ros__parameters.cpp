@@ -296,18 +296,18 @@ void controllerModeChangeCallback(parameter_t* param) {
     bool _isTorqueControl = _mode >= SetControlMode_ModeCodes::TORQUE_VOLTAGE && _mode <= SetControlMode_ModeCodes::TORQUE_FOC_CURRENT;
 
     // Check for motor failure mode
-    if (motor.motor_status == FOCMotorStatus::motor_error ||
-        motor.motor_status == FOCMotorStatus::motor_calib_failed ||
-        motor.motor_status == FOCMotorStatus::motor_init_failed) {
+    if (motorControllerPtr->motor.motor_status == FOCMotorStatus::motor_error ||
+        motorControllerPtr->motor.motor_status == FOCMotorStatus::motor_calib_failed ||
+        motorControllerPtr->motor.motor_status == FOCMotorStatus::motor_init_failed) {
         
         // res_in->result = SetControlMode_ResultCodes::FAILURE_FOC_ERROR;
         return;
     }
 
     // Check if requested mode is closed-loop and feedback sensor initialized
-    if ((_isClosedLoop && !angleSensorInitialized)) {
+    if ((_isClosedLoop && !motorControllerPtr->flags.angleSensorInitialized)) {
         // Account for torque control without angle sensor, but with current sensor
-        if (!(_isTorqueControl && currentSensorInitialized)) {
+        if (!(_isTorqueControl && motorControllerPtr->flags.currentSensorInitialized)) {
             // res_in->result = SetControlMode_ResultCodes::FAILURE_FEEDBACK_ERROR;
             return;
         }
@@ -316,21 +316,21 @@ void controllerModeChangeCallback(parameter_t* param) {
     // Set controller mode
     switch (_mode) {
     case SetControlMode_ModeCodes::POSITION_CLOSED_LOOP:
-        motor.controller = MotionControlType::angle;
+        motorControllerPtr->motor.controller = MotionControlType::angle;
         break;
     case SetControlMode_ModeCodes::VELOCITY_CLOSED_LOOP:
-        motor.controller = MotionControlType::velocity;
+        motorControllerPtr->motor.controller = MotionControlType::velocity;
         break;
     case SetControlMode_ModeCodes::TORQUE_VOLTAGE:
     case SetControlMode_ModeCodes::TORQUE_CURRENT:
     case SetControlMode_ModeCodes::TORQUE_FOC_CURRENT:
-        motor.controller = MotionControlType::torque;
+        motorControllerPtr->motor.controller = MotionControlType::torque;
         break;
     case SetControlMode_ModeCodes::POSITION_OPEN_LOOP:
-        motor.controller = MotionControlType::angle_openloop;
+        motorControllerPtr->motor.controller = MotionControlType::angle_openloop;
         break;
     case SetControlMode_ModeCodes::VELOCITY_OPEN_LOOP:
-        motor.controller = MotionControlType::velocity_openloop;
+        motorControllerPtr->motor.controller = MotionControlType::velocity_openloop;
         break;
     default:
         // res_in->result = SetControlMode_ResultCodes::FAILURE_UNSPECIFIED;
@@ -343,74 +343,74 @@ void controllerModeChangeCallback(parameter_t* param) {
 }
 
 void polePairsChangeCallback(parameter_t* param) {
-    motor.pole_pairs = param->integer_value;
+    motorControllerPtr->motor.pole_pairs = param->integer_value;
     Serial1.println("Set pole pairs Using callback!");
 }
 
 void phaseResistanceChangeCallback(parameter_t* param) {
-    motor.phase_resistance = param->double_value;
+    motorControllerPtr->motor.phase_resistance = param->double_value;
 }
 
 void kvRatingChangeCallback(parameter_t* param) {
-    motor.KV_rating = param->integer_value;
+    motorControllerPtr->motor.KV_rating = param->integer_value;
 }
 
 void phaseInductanceChangeCallback(parameter_t* param) {
-    motor.phase_inductance = param->double_value;
+    motorControllerPtr->motor.phase_inductance = param->double_value;
 }
 
 void velocityPChangeCallback(parameter_t* param) {
-    motor.PID_velocity.P = param->double_value;
+    motorControllerPtr->motor.PID_velocity.P = param->double_value;
 }
 
 void velocityIChangeCallback(parameter_t* param) {
-    motor.PID_velocity.I = param->double_value;
+    motorControllerPtr->motor.PID_velocity.I = param->double_value;
 }
 
 void velocityDChangeCallback(parameter_t* param) {
-    motor.PID_velocity.D = param->double_value;
+    motorControllerPtr->motor.PID_velocity.D = param->double_value;
 }
 
 void velocityRampChangeCallback(parameter_t* param) {
-    motor.PID_velocity.output_ramp = param->double_value;
+    motorControllerPtr->motor.PID_velocity.output_ramp = param->double_value;
 }
 
 void velocityLPFChangeCallback(parameter_t* param) {
-    motor.LPF_velocity.Tf = param->double_value;
+    motorControllerPtr->motor.LPF_velocity.Tf = param->double_value;
 }
 
 void anglePChangeCallback(parameter_t* param) {
-    motor.P_angle.P = param->double_value;
+    motorControllerPtr->motor.P_angle.P = param->double_value;
 }
 
 void angleIChangeCallback(parameter_t* param) {
-    motor.P_angle.I = param->double_value;
+    motorControllerPtr->motor.P_angle.I = param->double_value;
 }
 
 void angleDChangeCallback(parameter_t* param) {
-    motor.P_angle.D = param->double_value;
+    motorControllerPtr->motor.P_angle.D = param->double_value;
 }
 
 void angleRampChangeCallback(parameter_t* param) {
-    motor.P_angle.output_ramp = param->double_value;
+    motorControllerPtr->motor.P_angle.output_ramp = param->double_value;
 }
 
 void angleLFPChangeCallback(parameter_t* param) {
-    motor.LPF_angle.Tf = param->double_value;
+    motorControllerPtr->motor.LPF_angle.Tf = param->double_value;
 }
 
 void driverVoltageLimitChangeCallback(parameter_t* param) {
-    driver.voltage_limit = param->double_value;
+    motorControllerPtr->driver.voltage_limit = param->double_value;
 }
 
 void motorVoltageLimitChangeCallback(parameter_t* param) {
-    motor.voltage_limit = param->double_value;
+    motorControllerPtr->motor.voltage_limit = param->double_value;
 }
 
 void motorCurrentLimitChangeCallback(parameter_t* param) {
-    motor.current_limit = param->double_value;
+    motorControllerPtr->motor.current_limit = param->double_value;
 }
 
 void motorVelocityLimitChangeCallback(parameter_t* param) {
-    motor.voltage_limit = param->double_value;
+    motorControllerPtr->motor.voltage_limit = param->double_value;
 }

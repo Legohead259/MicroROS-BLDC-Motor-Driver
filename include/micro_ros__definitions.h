@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 #include <mutex>
-#include "foc_bldc.h"
+#include "foc.h"
 #include "state_machine.h"
 #include "micro_ros__joystick_map.h"
 
@@ -75,6 +75,10 @@ extern rcl_allocator_t allocator;
 extern rclc_support_t support;
 extern rcl_node_t node;
 extern rclc_executor_t executor;
+
+// Instantiate application-specific objects
+extern TaskHandle_t MicroROSTask; ///< The FreeRTOS task to execute Micro-ROS on a core
+extern MotorController* motorControllerPtr; ///< Pointer to the motor controller used in the Node
 
 // Define various parameters
 
